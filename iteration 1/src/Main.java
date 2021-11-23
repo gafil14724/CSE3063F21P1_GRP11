@@ -19,7 +19,7 @@ public class Main {
         StudentId my = new StudentId(new Student("baris", "hazar", 3, 19));
         System.out.println(my);
 
-        Grade grade = new Grade(new Course("cc", "name", "fall", 21, 3, 2, null), 50);
+        Grade grade = new Grade(new Course("CSE3055", "name", "fall", 21, 3, 2, null), 50);
         System.out.println(grade.getLetterGrade());
 
 
