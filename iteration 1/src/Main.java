@@ -1,10 +1,7 @@
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -19,9 +16,20 @@ public class Main {
         StudentId my = new StudentId(new Student("baris", "hazar", 3, 19));
         System.out.println(my);
 
-        Grade grade = new Grade(new Course("CSE3055", "name", "fall", 21, 3, 2, null), 50);
+        Grade grade = new Grade(new Course("CSE3055", "name", "fall",
+                21, 3, 5, 2,2, null), 50);
         System.out.println(grade.getLetterGrade());
 
+
+
+        CourseSection test = new CourseSection(new Course());
+        boolean[][] arr = test.getCourseProgram();
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
        /* ArrayList<String> names = new ArrayList<>();

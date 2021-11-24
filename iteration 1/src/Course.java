@@ -5,20 +5,34 @@ public class Course {
     private boolean fall;
     private int quota;
     private int credits;
+    private int[] sectionHours = new int[2]; // {Theoretical, Practical}
     private int year;
     private Course[] preRequisites;
 
-    public Course(String courseCode, String courseName, String semester,
-                  int quota, int credits, int year, Course[] preRequisites) {
+    public Course() {
+
+    }
+
+    public Course(String courseCode, String courseName, String semester, int quota,
+                   int credits, int theoretical, int practical, int year, Course[] preRequisites) {
 
         this.courseCode = courseCode;
         this.courseName = courseName;
         setFall(semester);
         this.quota = quota;
         this.credits = credits;
+        setSectionHours(theoretical, practical);
         this.year = year;
         this.preRequisites = preRequisites;
 
+    }
+
+    public int getSectionHours() { //Returns the total section hours by summing theoretical and practical hours
+        return sectionHours[0] + sectionHours[1];
+    }
+
+    public void setSectionHours(int theoretical, int practical) {
+        this.sectionHours = new int[]{theoretical, practical};
     }
 
     public String getCourseCode() {

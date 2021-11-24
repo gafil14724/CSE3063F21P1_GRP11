@@ -1,14 +1,57 @@
+import java.util.ArrayList;
+
 public class Schedule {
 
-    private CourseSection courseSection;
-    private CourseSection[][] program;
+    public static final int DAYS = 5;
+    public static final int HOURS = 8;
 
-    public Schedule (CourseSection courseSection, int lectueHours) {
-        this.courseSection = courseSection;
-        addToProgram(lectueHours);
+    private ArrayList<CourseSection>[][] program; // Arraylist of 2d array of courseSection (there can be multiple courses in 1 hour)
+
+    public Schedule () {
+        program = new ArrayList[DAYS][HOURS];
     }
 
-    public void addToProgram(int lecturehours) {
+    /**Takes a courseSection as argument and adds it to
+     * the schedule by taking its courseProgram into consideration*/
+    public void addToProgram(CourseSection courseSection) {
+        boolean[][] courseProgram = courseSection.getCourseProgram();
 
+        for (int i = 0; i < DAYS; i++) {
+            for (int j = 0; j < HOURS; j++) {
+
+                if (courseProgram[i][j]) {
+                    program[i][j].add(courseSection);
+                }
+            }
+        }
+    }
+
+    /**Takes a course section as argument and compares it with
+     * current schedule, if there is more than 1 hour collision between
+     * courseProgram and current schedule returns true, otherwise false */
+    public boolean isCollision(CourseSection courseSection) {
+        boolean[][] courseProgram = courseSection.getCourseProgram();
+        int collidedHours = 0; // total num of collided hours
+
+        for (int i = 0; i < DAYS; i++) {
+            for (int j = 0; j < HOURS; j++) {
+
+                // If courseProgram and schedule has lectures in the same hour
+                if (courseProgram[i][j] && !program[i][j].isEmpty()) {
+                    collidedHours++;
+                }
+            }
+        }
+
+        return collidedHours > 1; // Return true if collided hours is greater than one, false otherwise.
+
+    }
+
+    public ArrayList<CourseSection>[][] getProgram() {
+        return program;
+    }
+
+    public void setProgram(ArrayList<CourseSection>[][] program) {
+        this.program = program;
     }
 }
