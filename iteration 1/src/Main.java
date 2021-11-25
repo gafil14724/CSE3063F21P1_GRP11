@@ -13,28 +13,15 @@ public class Main {
     public static void main(String[] args) throws IOException, ParseException {
 
 
-        StudentId my = new StudentId(new Student("baris", "hazar", 3, 19));
-        System.out.println(my);
-
-        Grade grade = new Grade(new Course("CSE3055", "name", "fall",
-                21, 3, 5, 2,2, null), 50);
-        System.out.println(grade.getLetterGrade());
+        RegistrationSystem x = new RegistrationSystem("fall");
 
 
 
-        CourseSection test = new CourseSection(new Course());
-        boolean[][] arr = test.getCourseProgram();
-        for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 8; j++) {
-                System.out.print(arr[i][j] + " ");
-            }
-            System.out.println();
-        }
 
+    }
 
-       /* ArrayList<String> names = new ArrayList<>();
-        ArrayList<String> surnames = new ArrayList<>();
-
+    public static ArrayList<String> getNamesList() throws IOException, ParseException {
+        ArrayList<String> names = new ArrayList<>();
 
         JSONParser parser = new JSONParser();
         Object nameObj = parser.parse(new FileReader("names.json"));
@@ -45,7 +32,13 @@ public class Main {
             names.add(iterator.next());
         }
 
+        return names;
+    }
 
+    public static ArrayList<String> getSurnamesList() throws IOException, ParseException {
+        ArrayList<String> surnames = new ArrayList<>();
+
+        JSONParser parser = new JSONParser();
         Object surnameObj = parser.parse(new FileReader("surnames.json"));
         JSONObject surnameJson =  (JSONObject) surnameObj;
         JSONArray surname = (JSONArray) surnameJson.get("surnames");
@@ -54,23 +47,6 @@ public class Main {
             surnames.add(iterator2.next());
         }
 
-        System.out.println(surnames);*/
-
-       /* File names = new File("names.txt");
-        List<String> list = new ArrayList<String>();
-
-        Scanner sc = new Scanner(names);
-        while (sc.hasNext()) {
-            list.add(sc.nextLine());
-        }
-
-        for (String s : list){
-            System.out.println(s);
-        }
-
-        // this method converts a list to JSON Array
-        String jsonStr = JSONArray.toJSONString(list);
-        System.out.println(jsonStr);*/
-
+        return surnames;
     }
 }

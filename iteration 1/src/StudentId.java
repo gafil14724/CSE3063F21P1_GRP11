@@ -1,29 +1,26 @@
 public class StudentId {
 
     private final String depCode = "1501";
-    String studentId;
+    private int year;
+    private int registrationOrder;
 
 
-    public StudentId(Student student) {
-        setStudentId(student);
+    public StudentId(int year, int registrationOrder) {
+        this.year = year;
+        this.registrationOrder = registrationOrder;
     }
 
     public String getStudentId() {
-        return studentId;
+        return depCode + getYearString() + getRegistrationString();
     }
 
-    public void setStudentId(Student student) {
-        studentId = depCode + getYearString(student) + getRegistrationString(student);
-    }
-
-    private String getYearString(Student student) {
-        int year = (2021 - student.getCurrentYear()) % 100;
-        String yearString = String.valueOf(year);
+    private String getYearString() {
+        int idYear = (2021 - year) % 100;
+        String yearString = String.valueOf(idYear);
         return yearString;
     }
 
-    private String getRegistrationString(Student student) {
-        int registrationOrder = student.getRegistrationOrder();
+    private String getRegistrationString() {
         return String.format("%03d", registrationOrder);
     }
 

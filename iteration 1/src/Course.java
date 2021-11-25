@@ -3,27 +3,31 @@ public class Course {
     private String courseCode;
     private String courseName;
     private boolean fall;
+    private String courseType;
     private int quota;
     private int credits;
     private int[] sectionHours = new int[2]; // {Theoretical, Practical}
     private int year;
-    private Course[] preRequisites;
+    private int requiredCredits;
+    private Course preRequisite;
 
     public Course() {
 
     }
 
-    public Course(String courseCode, String courseName, String semester, int quota,
-                   int credits, int theoretical, int practical, int year, Course[] preRequisites) {
+    public Course(String courseCode, String courseName, String semester, String courseType, int quota,
+                   int credits, int theoretical, int practical, int year, int requiredCredits, Course preRequisite) {
 
         this.courseCode = courseCode;
         this.courseName = courseName;
         setFall(semester);
+        this.courseType = courseType;
         this.quota = quota;
         this.credits = credits;
         setSectionHours(theoretical, practical);
         this.year = year;
-        this.preRequisites = preRequisites;
+        this.requiredCredits = requiredCredits;
+        this.preRequisite = preRequisite;
 
     }
 
@@ -91,11 +95,35 @@ public class Course {
         this.year = year;
     }
 
-    public Course[] getPreRequisites() {
-        return preRequisites;
+    public Course getPreRequisite() {
+        return preRequisite;
     }
 
-    public void setPreRequisites(Course[] preRequisites) {
-        this.preRequisites = preRequisites;
+    public void setPreRequisite(Course preRequisite) {
+        this.preRequisite = preRequisite;
+    }
+
+    public void setFall(boolean fall) {
+        this.fall = fall;
+    }
+
+    public String getCourseType() {
+        return courseType;
+    }
+
+    public void setCourseType(String courseType) {
+        this.courseType = courseType;
+    }
+
+    public void setSectionHours(int[] sectionHours) {
+        this.sectionHours = sectionHours;
+    }
+
+    public int getRequiredCredits() {
+        return requiredCredits;
+    }
+
+    public void setRequiredCredits(int requiredCredits) {
+        this.requiredCredits = requiredCredits;
     }
 }

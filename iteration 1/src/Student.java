@@ -19,7 +19,7 @@ public class Student {
         this.surname = surname;
         this.currentYear = currentYear;
         this.registrationOrder = registrationOrder;
-        studentId = new StudentId(this);
+        studentId = new StudentId(currentYear, registrationOrder);
     }
 
     public ArrayList<Course> getPassedCourses() {
