@@ -2,7 +2,7 @@ public class Course {
 
     private String courseCode;
     private String courseName;
-    private boolean fall;
+    private String semester;
     private String courseType;
     private int quota;
     private int credits;
@@ -20,7 +20,7 @@ public class Course {
 
         this.courseCode = courseCode;
         this.courseName = courseName;
-        setFall(semester);
+        this.semester = semester;
         this.courseType = courseType;
         this.quota = quota;
         this.credits = credits;
@@ -28,6 +28,10 @@ public class Course {
         this.year = year;
         this.requiredCredits = requiredCredits;
         this.preRequisite = preRequisite;
+
+    }
+
+    public void setPreRequisite() {
 
     }
 
@@ -55,20 +59,13 @@ public class Course {
         this.courseName = courseName;
     }
 
-    public boolean isFall() {
-        return fall;
+
+    public String getSemester() {
+        return semester;
     }
 
-    public void setFall(String semester) {
-        semester = semester.toLowerCase();
-        if (semester.equals("fall")) {
-            fall = true;
-        }else if (semester.equals("spring")) {
-            fall = false;
-        }else {
-            System.out.println("Wrong semester!");
-            System.exit(-1);
-        }
+    public void setSemester(String semester) {
+        this.semester = semester;
     }
 
     public int getQuota() {
@@ -101,10 +98,6 @@ public class Course {
 
     public void setPreRequisite(Course preRequisite) {
         this.preRequisite = preRequisite;
-    }
-
-    public void setFall(boolean fall) {
-        this.fall = fall;
     }
 
     public String getCourseType() {

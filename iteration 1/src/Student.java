@@ -1,5 +1,5 @@
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Student {
 
@@ -13,13 +13,19 @@ public class Student {
     private Advisor advisor;
     private Schedule schedule;
     private Transcript transcript;
+    private RegistrationSystem registrationSystem;
 
-    public Student(String name, String surname, int currentYear, int registrationOrder) {
+    public Student(String name, String surname, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
         this.name = name;
         this.surname = surname;
         this.currentYear = currentYear;
         this.registrationOrder = registrationOrder;
+        grades = new ArrayList<>();
+        currentCourses = new ArrayList<>();
         studentId = new StudentId(currentYear, registrationOrder);
+        this.registrationSystem = registrationSystem;
+        transcript = new Transcript(this);
+        schedule = new Schedule();
     }
 
     public ArrayList<Course> getPassedCourses() {
@@ -30,12 +36,41 @@ public class Student {
         return passedCourses;
     }
 
-    public void addPassedCourse(Course course, int grade) {
+    /**Takes a course as argument and checks if student
+     * has passed that course by iterating over student's
+     * grades*/
+    public boolean hasPassedCourse(Course course) {
+        ArrayList<Course> passedCourses = getPassedCourses();
+
+        for (Course c : passedCourses) {
+           if (course.getCourseCode().equals(c.getCourseCode())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addToCurrentCourses(CourseSection courseSection) {
+        schedule.addToProgram(courseSection);
+        getCurrentCourses().add(courseSection.getCourse());
+    }
+
+    public void addPassedCourse(Course course) {
+        int grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
+
         grades.add(new Grade(course, grade));
     }
 
     public void requestCourse(CourseSection courseSection) {
-        // Advisor.approveCourse(courseSection, this);
+         advisor.approveCourse(this, courseSection);
+    }
+
+
+    public void requestCourses() {
+        ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedCourses(this);
+        for (CourseSection c: offeredCourses) {
+            requestCourse(c);
+        }
     }
 
 

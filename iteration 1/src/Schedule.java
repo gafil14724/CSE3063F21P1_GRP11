@@ -5,10 +5,10 @@ public class Schedule {
     public static final int DAYS = 5;
     public static final int HOURS = 8;
 
-    private ArrayList<CourseSection>[][] program; // Arraylist of 2d array of courseSection (there can be multiple courses in 1 hour)
+    private CourseSection[][] program;
 
     public Schedule () {
-        program = new ArrayList[DAYS][HOURS];
+        program = new CourseSection[DAYS][HOURS];
     }
 
     /**Takes a courseSection as argument and adds it to
@@ -20,7 +20,7 @@ public class Schedule {
             for (int j = 0; j < HOURS; j++) {
 
                 if (courseProgram[i][j]) {
-                    program[i][j].add(courseSection);
+                    program[i][j] = courseSection;
                 }
             }
         }
@@ -37,7 +37,7 @@ public class Schedule {
             for (int j = 0; j < HOURS; j++) {
 
                 // If courseProgram and schedule has lectures in the same hour
-                if (courseProgram[i][j] && !program[i][j].isEmpty()) {
+                if (courseProgram[i][j] && program[i][j] != null) {
                     collidedHours++;
                 }
             }
@@ -47,11 +47,11 @@ public class Schedule {
 
     }
 
-    public ArrayList<CourseSection>[][] getProgram() {
+    public CourseSection[][] getProgram() {
         return program;
     }
 
-    public void setProgram(ArrayList<CourseSection>[][] program) {
+    public void setProgram(CourseSection[][] program) {
         this.program = program;
     }
 }

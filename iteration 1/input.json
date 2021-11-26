@@ -1,6 +1,9 @@
 {
-  "Probability": "1",
-  "Quota": "200",
+  "PassProbability": "0.5",
+  "Quota": "0",
+  "Advisors": "2",
+  "Students": "1",
+  "CurrentSemester": "spring",
   "Courses": [
       {
         "courseCode": "ATA121",

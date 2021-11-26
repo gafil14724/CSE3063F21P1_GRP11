@@ -12,6 +12,7 @@ public class CourseSection {
         this.course = course;
         setSectionHour();
         courseProgram = new boolean[Schedule.DAYS][Schedule.HOURS];
+        students = new ArrayList<>();
         setCourseProgram();
     }
 
@@ -33,9 +34,12 @@ public class CourseSection {
     public void addStudent(Student student) {
         if (!isFull()) {
             students.add(student);
+            student.addToCurrentCourses(this);
             if (getQuota() == students.size()) { // Set the full true if after the addition, course section is full
                 setFull(true);
             }
+        }else {
+            System.out.println("Quota is full for course section " + getCourse().getCourseCode());
         }
 
     }
