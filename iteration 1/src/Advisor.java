@@ -11,12 +11,15 @@ public class Advisor {
 
     public void approveCourse(Student student, CourseSection courseSection) {
         if (!checkCredits(student, courseSection)) {
-            System.out.println("Credit condition isn't satisfied!!");
-        }else if (checkCollision(student, courseSection)) {
-            System.out.println("More than one hour collision!");
+            student.setBuffer("\nCredit condition isn't satisfied!!");
         }else if (!checkPrerequisite(student, courseSection)) {
-            System.out.println(courseSection.getCourse().getPreRequisite().getCourseName() + " is prerequisite to: " + courseSection.getCourse().getCourseName());
-        }else {
+            student.setBuffer("\nThe system didn't allow " + courseSection.getCourseSectionCode() +
+                    " because student failed prerequisite -> " + courseSection.getCourse().getPreRequisite().getCourseCode());
+            courseSection.setPrerequisiteStatistics(courseSection.getPrerequisiteStatistics() + 1);
+        }else if (checkCollision(student, courseSection)) {
+            courseSection.setCollisionStatistics(courseSection.getCollisionStatistics() + 1);
+        }
+        else {
             courseSection.addStudent(student);
         }
     }

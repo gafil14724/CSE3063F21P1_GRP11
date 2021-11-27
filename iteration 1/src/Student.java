@@ -14,6 +14,7 @@ public class Student {
     private Schedule schedule;
     private Transcript transcript;
     private RegistrationSystem registrationSystem;
+    private String buffer = "";
 
     public Student(String name, String surname, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
         this.name = name;
@@ -25,7 +26,7 @@ public class Student {
         studentId = new StudentId(currentYear, registrationOrder);
         this.registrationSystem = registrationSystem;
         transcript = new Transcript(this);
-        schedule = new Schedule();
+        schedule = new Schedule(this);
     }
 
     public ArrayList<Course> getPassedCourses() {
@@ -57,8 +58,8 @@ public class Student {
 
     public void addPassedCourse(Course course) {
         int grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
-
         grades.add(new Grade(course, grade));
+        buffer += "\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade();
     }
 
     public void requestCourse(CourseSection courseSection) {
@@ -68,11 +69,28 @@ public class Student {
 
     public void requestCourses() {
         ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedCourses(this);
+        setBuffer("\n\nOffered Courses: \n");
+        for (CourseSection c : offeredCourses) {
+            setBuffer(c.getCourseSectionCode() + " ");
+        }
+        setBuffer("\n");
         for (CourseSection c: offeredCourses) {
             requestCourse(c);
         }
+
+        setBuffer("\n\nCurrent Courses: \n");
+        for (Course c: currentCourses) {
+            setBuffer(c.getCourseCode() + " ");
+        }
     }
 
+    public String getBuffer() {
+        return buffer;
+    }
+
+    public void setBuffer(String buffer) {
+        this.buffer += buffer;
+    }
 
     public String getName() {
         return name;

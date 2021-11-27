@@ -4,7 +4,9 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import javax.sound.midi.Soundbank;
+import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -19,29 +21,10 @@ public class RegistrationSystem {
     private double passProbability;
     private int studentCount;
     private int advisorCount;
+    private String statisticsBuffer = "";
 
     public  RegistrationSystem( ) throws IOException, ParseException {
-
         startTheSimulation();
-
-        for (Student s : students) {
-            for (Course c: s.getPassedCourses()) {
-                System.out.println(c.getCourseCode());
-            }
-            System.out.println("\n\n\n");
-            for (Course g: s.getCurrentCourses()) {
-                System.out.println(g.getCourseCode());
-            }
-            System.out.println("\n\n");
-        }
-
-
-        /*for (Course c : courses) {
-            if(c.getPreRequisite() != null)
-            System.out.println(c.getPreRequisite().getCourseCode());
-        }*/
-
-
     }
 
     private void startTheSimulation() {
@@ -51,6 +34,50 @@ public class RegistrationSystem {
         appointAdvisors();
         addPastCourses();
         requestCourses();
+        printRegistrationProcess();
+        printStatistics();
+        jsonOutput();
+    }
+
+    private void jsonOutput() {
+        for (Student s: students) {
+            JSONObject studentJson = new JSONObject();
+            studentJson.put("Registration process: ", s.getBuffer());
+            JSONArray jsonList = new JSONArray();
+            jsonList.add(studentJson);
+
+            try (FileWriter file = new FileWriter(new File( s.getStudentId().getStudentId() +  ".json"))) {
+                file.write(jsonList.toJSONString());
+                file.flush();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    private void printRegistrationProcess() {
+        for (Student s : students) {
+            System.out.println("==========\nRegistration process for: " + s.getStudentId().getStudentId());
+            System.out.println(s.getBuffer());
+            System.out.println("==============\n\n");
+        }
+    }
+
+    private void printStatistics() {
+        for (CourseSection c : courseSections) {
+            if (c.getCourse().getSemester().equals(semester) || c.getCourse().getSemester().equals("both")) {
+                statisticsBuffer += "\n\n\n============\nStatistics for: " + c.getCourseSectionCode() + "\n";
+                statisticsBuffer += c.getCollisionStatistics() + " students couldn't register because of more than " +
+                        "one hour collision with other courses\n";
+                statisticsBuffer += c.getPrerequisiteStatistics() + " students couldn't register because of prerequisite " +
+                        "conditions\n";
+                statisticsBuffer += c.getQuotaStatistics() + " students couldn't register because of quota problem\n";
+                statisticsBuffer += "==============";
+            }
+        }
+        System.out.println(statisticsBuffer);
     }
 
     private void requestCourses() {
@@ -81,6 +108,7 @@ public class RegistrationSystem {
         for (Student s: students) {
             int index = (int) (Math.random() * advisors.size()); //Random advisor's index to be appointed to the student
             s.setAdvisor(advisors.get(index));
+            s.setBuffer("Advisor: " + advisors.get(index).getFirstName() + " " + advisors.get(index).getLastName() + "\n");
         }
     }
 
@@ -88,14 +116,16 @@ public class RegistrationSystem {
     private void addPastCourses() {
         ArrayList<Course> pastCourses = new ArrayList<>();
         for (Course c : courses) {
-            if (c.getSemester().equals("fall")) {
+            if (c.getSemester().equals("fall") || c.getSemester().equals("both")) {
                 pastCourses.add(c);
             }
         }
 
         for (Student s : students) {
+            s.setBuffer("Passed Courses: ");
             for (Course c: pastCourses) {
                 if (Math.random() < passProbability) { //Passed courses are added according to the probability given as input
+
                     s.addPassedCourse(c);
                 }
             }
@@ -108,7 +138,8 @@ public class RegistrationSystem {
         ArrayList<CourseSection> offeredCourses = new ArrayList<>();
 
         for (CourseSection c: courseSections) {
-            if (!student.hasPassedCourse(c.getCourse())) {
+            if (!student.hasPassedCourse(c.getCourse()) && (c.getCourse().getSemester().equals(semester)
+            || c.getCourse().getSemester().equals("both"))) {
                 offeredCourses.add(c);
             }
         }
@@ -152,7 +183,7 @@ public class RegistrationSystem {
                 courses.add(newCourse); //Initialize each course and add it to the courses list
                 courseSections.add(new CourseSection(newCourse));
 
-                //System.out.println(newCourse.getPreRequisite() == null);
+
             }
 
         }

@@ -1,8 +1,8 @@
 {
-  "PassProbability": "0.5",
-  "Quota": "0",
-  "Advisors": "2",
-  "Students": "1",
+  "PassProbability": "1",
+  "Quota": "2000",
+  "Advisors": "10",
+  "Students": "30",
   "CurrentSemester": "spring",
   "Courses": [
       {
@@ -56,7 +56,7 @@
       {
         "courseCode": "MATH1001",
         "courseName": "Calculus I",
-        "semester": "fall",
+        "semester": "both",
         "courseType": "mandatory",
         "credits": "6",
         "theoretical": "4",
@@ -68,7 +68,7 @@
       {
         "courseCode": "PHYS1101",
         "courseName": "Physics I",
-        "semester": "fall",
+        "semester": "both",
         "courseType": "mandatory",
         "credits": "4",
         "theoretical": "3",

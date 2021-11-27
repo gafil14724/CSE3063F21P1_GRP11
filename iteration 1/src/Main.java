@@ -1,6 +1,4 @@
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 
 import org.json.simple.JSONArray;
@@ -12,12 +10,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException, ParseException {
 
-
-        RegistrationSystem x = new RegistrationSystem();
-
-
-
-
+        RegistrationSystem registrationSystem = new RegistrationSystem();
     }
 
     public static ArrayList<String> getNamesList() {

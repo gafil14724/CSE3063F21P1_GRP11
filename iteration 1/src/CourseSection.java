@@ -7,11 +7,14 @@ public class CourseSection {
     private int sectionHour;
     ArrayList<Student> students;
     private boolean[][] courseProgram;
+    private int quotaStatistics;
+    private int prerequisiteStatistics;
+    private int collisionStatistics;
 
     public CourseSection(Course course) {
         this.course = course;
         setSectionHour();
-        courseProgram = new boolean[Schedule.DAYS][Schedule.HOURS];
+        courseProgram = new boolean[Schedule.HOURS][Schedule.DAYS];
         students = new ArrayList<>();
         setCourseProgram();
     }
@@ -23,8 +26,8 @@ public class CourseSection {
             int randomDay = (int)(Math.random() * Schedule.DAYS);
             int randomHour = (int)(Math.random() * Schedule.HOURS);
 
-            if (!courseProgram[randomDay][randomHour]) {
-                courseProgram[randomDay][randomHour] = true;
+            if (!courseProgram[randomHour][randomDay]) {
+                courseProgram[randomHour][randomDay] = true;
             }else {
                 i--;
             }
@@ -39,7 +42,9 @@ public class CourseSection {
                 setFull(true);
             }
         }else {
-            System.out.println("Quota is full for course section " + getCourse().getCourseCode());
+            student.setBuffer("\nThe system didn't allow " + getCourseSectionCode() + " because " +
+                    "course section is full. ("  +  students.size() + ")");
+            quotaStatistics++;
         }
 
     }
@@ -56,8 +61,20 @@ public class CourseSection {
         return course;
     }
 
+    public String getCourseSectionCode() {
+        return getCourse().getCourseCode();
+    }
+
     public void setFull(boolean full) {
         this.full = full;
+    }
+
+    public int getCollisionStatistics() {
+        return collisionStatistics;
+    }
+
+    public void setCollisionStatistics(int collisionStatistics) {
+        this.collisionStatistics = collisionStatistics;
     }
 
     public int getSectionHour() {
@@ -72,6 +89,33 @@ public class CourseSection {
         return students;
     }
 
+    public void setCourse(Course course) {
+        this.course = course;
+    }
+
+    public void setSectionHour(int sectionHour) {
+        this.sectionHour = sectionHour;
+    }
+
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
+
+    public int getQuotaStatistics() {
+        return quotaStatistics;
+    }
+
+    public void setQuotaStatistics(int quotaStatistics) {
+        this.quotaStatistics = quotaStatistics;
+    }
+
+    public int getPrerequisiteStatistics() {
+        return prerequisiteStatistics;
+    }
+
+    public void setPrerequisiteStatistics(int prerequisiteStatistics) {
+        this.prerequisiteStatistics = prerequisiteStatistics;
+    }
 
     public boolean[][] getCourseProgram() {
         return courseProgram;
