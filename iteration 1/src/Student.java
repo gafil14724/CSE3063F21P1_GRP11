@@ -96,57 +96,40 @@ public class Student {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+
 
     public String getSurname() {
         return surname;
     }
 
-    public void setSurname(String surname) {
-        this.surname = surname;
-    }
+
 
     public int getRegistrationOrder() {
         return registrationOrder;
     }
 
-    public void setRegistrationOrder(int registrationOrder) {
-        this.registrationOrder = registrationOrder;
-    }
 
     public StudentId getStudentId() {
         return studentId;
     }
 
-    public void setStudentId(StudentId studentId) {
-        this.studentId = studentId;
-    }
+
 
     public ArrayList<Grade> getGrades() {
         return grades;
     }
 
-    public void setGrades(ArrayList<Grade> grades) {
-        this.grades = grades;
-    }
+
 
     public ArrayList<Course> getCurrentCourses() {
         return currentCourses;
     }
 
-    public void setCurrentCourses(ArrayList<Course> currentCourses) {
-        this.currentCourses = currentCourses;
-    }
 
     public int getCurrentYear() {
         return currentYear;
     }
 
-    public void setCurrentYear(int currentYear) {
-        this.currentYear = currentYear;
-    }
 
     public Advisor getAdvisor() {
         return advisor;
@@ -168,7 +151,4 @@ public class Student {
         return transcript;
     }
 
-    public void setTranscript(Transcript transcript) {
-        this.transcript = transcript;
-    }
 }

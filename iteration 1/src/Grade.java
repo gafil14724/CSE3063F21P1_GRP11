@@ -52,9 +52,6 @@ public class Grade {
         return intGrade;
     }
 
-    public void setIntGrade(int intGrade) {
-        this.intGrade = intGrade;
-    }
 
     public Course getCourse() {
         return course;

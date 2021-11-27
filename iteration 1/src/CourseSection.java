@@ -93,13 +93,7 @@ public class CourseSection {
         this.course = course;
     }
 
-    public void setSectionHour(int sectionHour) {
-        this.sectionHour = sectionHour;
-    }
 
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
-    }
 
     public int getQuotaStatistics() {
         return quotaStatistics;
@@ -121,7 +115,5 @@ public class CourseSection {
         return courseProgram;
     }
 
-    public void setCourseProgram(boolean[][] courseProgram) {
-        this.courseProgram = courseProgram;
-    }
+
 }

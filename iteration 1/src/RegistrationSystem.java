@@ -212,7 +212,7 @@ public class RegistrationSystem {
     }
 
     /**Returns the course in courses list by its course code*/
-    public  Course findCourse(String courseCode) {
+    private  Course findCourse(String courseCode) {
         for (Course c: courses) {
             if (c.getCourseCode().equals(courseCode)) {
                 return c;
