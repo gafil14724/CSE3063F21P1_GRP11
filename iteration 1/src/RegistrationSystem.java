@@ -3,7 +3,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -36,10 +35,26 @@ public class RegistrationSystem {
         requestCourses();
         printRegistrationProcess();
         printStatistics();
-        jsonOutput();
+        registrationProcessOutput();
+        statisticsOutput();
     }
 
-    private void jsonOutput() {
+    private void statisticsOutput() {
+        JSONObject statJson = new JSONObject();
+        statJson.put("Overall Statistics", statisticsBuffer);
+        JSONArray statList = new JSONArray();
+        statList.add(statJson);
+
+        try (FileWriter file = new FileWriter(new File(    "Statistics.json"))) {
+            file.write(statList.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void registrationProcessOutput() {
         for (Student s: students) {
             JSONObject studentJson = new JSONObject();
             studentJson.put("Registration process: ", s.getBuffer());
