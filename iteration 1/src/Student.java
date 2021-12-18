@@ -62,7 +62,7 @@ public class Student {
         buffer += "\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade();
     }
 
-    public void requestCourse(CourseSection courseSection) {
+    private void requestCourse(CourseSection courseSection) {
          advisor.approveCourse(this, courseSection);
     }
 
