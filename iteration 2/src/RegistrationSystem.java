@@ -11,6 +11,8 @@ import java.util.ArrayList;
 
 public class RegistrationSystem {
 
+    private static RegistrationSystem registrationSystem = null;
+
     private Semester semester;
     private int[] totalStudents = new int[4]; //Total students for each year(used in student id class)
     private ArrayList<Student> students = new ArrayList<>();
@@ -22,20 +24,23 @@ public class RegistrationSystem {
     private int advisorCount;
     private String statisticsBuffer = "";
 
-    public  RegistrationSystem( ) {
-        startTheSimulation();
+    private RegistrationSystem( ) { //Prevent instantiation
 
-        for (Course c: courses) {
-            System.out.println(((MandatoryCourse)c).getSemesterNumber());
-        }
     }
 
-    private void startTheSimulation() {
+    public static RegistrationSystem getInstance() {
+        if (registrationSystem == null) {
+            registrationSystem = new RegistrationSystem();
+        }
+        return registrationSystem;
+    }
+
+    public void startTheSimulation() {
         readInput();
         initializeAdvisors();
         initializeStudents();
         appointAdvisors();
-        addPassedCourses();
+        addPastCourses();
         requestCourses();
         printRegistrationProcess();
       //  printStatistics();
@@ -132,7 +137,7 @@ public class RegistrationSystem {
     }
 
 
-    private void addPassedCourses() {
+    private void addPastCourses() {
         for (Student s : students) {
             ArrayList<Course> pastCourses = new ArrayList<>();
 
@@ -144,15 +149,19 @@ public class RegistrationSystem {
                 }
             }
 
-            s.setBuffer("Passed Courses: ");
-            for (Course c : pastCourses) { // Student pass the passed courses with a certain probability (passprobability)
+            s.setBuffer("Past Courses: ");
+            for (Course c : pastCourses) { // Student pass the passed courses with a certain probability (passProbability)
                     if (Math.random() < passProbability && s.hasPassedCourse(c.getPreRequisite())) {
-                        s.addPassedCourse(c);
+                        s.getTranscript().addPassedCourse(c);
+                    }
+                    else {
+                        s.getTranscript().addFailedCourse(c);
                     }
             }
         }
 
     }
+
 
     public ArrayList<CourseSection> getOfferedCourseSections(Student student) {
         ArrayList<CourseSection> offeredCourseSections = new ArrayList<>();

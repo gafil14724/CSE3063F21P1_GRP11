@@ -7,7 +7,6 @@ public class Student {
     private String surname;
     private StudentId studentId;
     private int registrationOrder;
-    private ArrayList<Grade> grades;
     private ArrayList<Course> currentCourses;
     private int currentYear;
     private Advisor advisor;
@@ -21,7 +20,6 @@ public class Student {
         this.surname = surname;
         this.currentYear = currentYear;
         this.registrationOrder = registrationOrder;
-        grades = new ArrayList<>();
         currentCourses = new ArrayList<>();
         studentId = new StudentId(currentYear, registrationOrder);
         this.registrationSystem = registrationSystem;
@@ -29,30 +27,7 @@ public class Student {
         schedule = new Schedule(this);
     }
 
-    public ArrayList<Course> getPassedCourses() {
-        ArrayList<Course> passedCourses = new ArrayList<>();
-        for (Grade g : grades) {
-            passedCourses.add(g.getCourse());
-        }
-        return passedCourses;
-    }
 
-    /**Takes a course as argument and checks if student
-     * has passed that course by iterating over student's
-     * grades*/
-    public boolean hasPassedCourse(Course course) {
-        if (course == null) { // If course is null, return true (Used for courses that have no prerequisite)
-            return true;
-        }
-
-        ArrayList<Course> passedCourses = getPassedCourses();
-        for (Course c : passedCourses) {
-           if (course == c) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public int getSemesterNumber() {
         int semesterNumber = 0;
@@ -73,23 +48,14 @@ public class Student {
         getCurrentCourses().add(courseSection.getCourse());
     }
 
-    public void addPassedCourse(Course course) { //Adds a passed course with a random grade that is greater than 50
-        int grade = 0;
-        if (course instanceof MandatoryCourse && ((MandatoryCourse) course).getSemester() == Semester.SUMMER) {
-            grade = 100; //Grade is 100 for summer courses (Internships)
-        }
-        else {
-            grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
-        }
-
-        grades.add(new Grade(course, grade));
-        buffer += "\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade();
-    }
 
     private void requestCourse(CourseSection courseSection) {
          advisor.approveCourse(this, courseSection);
     }
 
+    public boolean hasPassedCourse(Course course) {
+        return transcript.hasPassedCourse(course);
+    }
 
     public void requestCourses() {
         ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedCourseSections(this);
@@ -135,12 +101,6 @@ public class Student {
 
     public StudentId getStudentId() {
         return studentId;
-    }
-
-
-
-    public ArrayList<Grade> getGrades() {
-        return grades;
     }
 
 

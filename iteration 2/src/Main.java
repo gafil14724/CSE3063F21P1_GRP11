@@ -8,9 +8,10 @@ import org.json.simple.parser.ParseException;
 
 public class Main {
 
-    public static void main(String[] args) throws IOException, ParseException {
+    public static void main(String[] args) {
 
-        RegistrationSystem registrationSystem = new RegistrationSystem();
+        RegistrationSystem registrationSystem = RegistrationSystem.getInstance();
+        registrationSystem.startTheSimulation();
     }
 
     public static ArrayList<String> getNamesList() {

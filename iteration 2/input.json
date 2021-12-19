@@ -1,9 +1,9 @@
 {
-  "PassProbability": "1",
+  "PassProbability": "0.5",
   "Quota": "250",
   "Advisors": "10",
   "Students": "10",
-  "CurrentSemester": "spring",
+  "CurrentSemester": "fall",
   "MandatoryCourses": [
       {
         "courseCode": "ATA121",
@@ -373,6 +373,11 @@
       "theoretical": "2",
       "practical": "0",
       "preRequisites": ""
+    }
+  ],
+  "ElectiveCourses": [
+    {
+
     }
   ]
   }
