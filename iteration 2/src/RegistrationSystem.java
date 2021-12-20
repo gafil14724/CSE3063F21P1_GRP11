@@ -201,23 +201,43 @@ public class RegistrationSystem {
             setSemester(semester);
 
             JSONArray inputCourses = (JSONArray) input.get("MandatoryCourses");
-
-            for(Object c: inputCourses) {
+            for(Object c: inputCourses) { //Read mandatory courses and initialize
                 JSONObject course = (JSONObject) c;
                 String courseCode = (String) course.get("courseCode");
                 float courseSemester = ((Number)course.get("semester")).floatValue();
                 int credits = (int)(long)course.get("credits");
                 int theoretical = (int)(long)course.get("theoretical");
                 int practical = (int)(long) course.get("practical");
-                String preRequisite = (String) course.get("preRequisites");
+                String preRequisiteString = (String) course.get("preRequisites");
+                Course preRequisite = findCourse(preRequisiteString);
 
 
                 Course newCourse = new MandatoryCourse(courseCode,  courseSemester,  quota, credits, theoretical,
-                        practical, findCourse(preRequisite));
-                courses.add(newCourse); //Initialize each course and add it to the courses list
-                courseSections.add(new CourseSection(newCourse, this));
+                        practical, preRequisite);
+                courses.add(newCourse);
             }
 
+            //Read nontechnical courses
+            JSONArray nontechnicalSemesters = (JSONArray) input.get("nonTechnicalSemesters");
+            ArrayList<Integer> nonTechSemNums = new ArrayList<>();
+            for (int i = 0; i< nontechnicalSemesters.size(); i++) {
+                nonTechSemNums.add((int)(long)nontechnicalSemesters.get(i));
+            }
+            int nonTechCredits = (int) (long) input.get("nonTechnicalCredits");
+            int nonTechTheoretical = (int) (long) input.get("nonTechnicalTheoretical");
+            int nonTechPractical = (int) (long) input.get("nonTechnicalPractical");
+            String nonTechPreReqString = (String) input.get("nonTechnicalPreRequisites");
+            Course nonTechPreRequisite = findCourse(nonTechPreReqString);
+
+            JSONArray nonTechCourses = (JSONArray) input.get("nonTechnicalElectiveCourses");
+            for (Object c: nonTechCourses) {
+                JSONObject course = (JSONObject) c;
+                String courseCode = (String) course.get("courseCode");
+
+                Course newNonTechElective = new ElectiveCourse(courseCode, quota, nonTechCredits, nonTechTheoretical,
+                        nonTechPractical, nonTechPreRequisite, "nontechnical", nonTechSemNums);
+                courses.add(newNonTechElective);
+            }
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -282,5 +302,9 @@ public class RegistrationSystem {
 
     public ArrayList<CourseSection> getCourseSections() {
         return courseSections;
+    }
+
+    public ArrayList<Course> getCourses() {
+        return courses;
     }
 }

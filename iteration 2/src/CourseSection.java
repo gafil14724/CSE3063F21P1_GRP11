@@ -12,9 +12,10 @@ public class CourseSection {
     private int prerequisiteStatistics;
     private int collisionStatistics;
 
-    public CourseSection(Course course, RegistrationSystem registrationSystem) {
+    public CourseSection(Course course) {
         this.course = course;
-        this.registrationSystem = registrationSystem;
+        this.registrationSystem = RegistrationSystem.getInstance();
+
         setSectionHour();
         courseProgram = new boolean[Schedule.HOURS][Schedule.DAYS];
         students = new ArrayList<>();
@@ -31,7 +32,7 @@ public class CourseSection {
 
 
             //If course program is empty for that hour and same semester course has no lectures in that hour
-            if (!courseProgram[randomHour][randomDay] && !collisionWithSameSemester(randomHour, randomDay)) {
+            if (!courseProgram[randomHour][randomDay] && !CollidesWithSameSemester(randomHour, randomDay)) {
                 courseProgram[randomHour][randomDay] = true;
             }else {
                 i--;
@@ -39,7 +40,7 @@ public class CourseSection {
         }
     }
 
-    private boolean collisionWithSameSemester(int randomHour, int randomDay) {
+    private boolean CollidesWithSameSemester(int randomHour, int randomDay) {
         boolean collisionWithSameSemester = false;
         for (CourseSection c : registrationSystem.getCourseSections()) {
             if (course instanceof MandatoryCourse && c.getCourse() instanceof MandatoryCourse) {

@@ -4,7 +4,7 @@ import java.util.Arrays;
 public class ElectiveCourse extends Course {
 
     private ElectiveType electiveType;
-    private ArrayList<Integer> semesters = new ArrayList<>();
+    private ArrayList<Integer> semesters;
 
     public ElectiveCourse(String courseCode, int quota, int credits, int theoretical,
                           int practical, Course preRequisite, String electiveType, ArrayList<Integer> semesters) {
@@ -20,7 +20,7 @@ public class ElectiveCourse extends Course {
             case "technical": this.electiveType = ElectiveType.TECHNICAL; break;
             case "faculty": this.electiveType = ElectiveType.FACULTY; break;
             default:
-                System.out.println("Incorrect Elective Type!!!");
+                System.out.println("Incorrect Elective Type For Elective Course!!!");
                 System.exit(-1);
         }
     }

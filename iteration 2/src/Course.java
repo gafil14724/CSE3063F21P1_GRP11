@@ -5,6 +5,7 @@ public abstract class Course {
     private int credits;
     private int[] sectionHours = new int[2]; // {Theoretical, Practical}
     private Course preRequisite;
+    private RegistrationSystem registrationSystem;
 
 
     protected Course(String courseCode, int quota,
@@ -15,6 +16,8 @@ public abstract class Course {
         this.credits = credits;
         setSectionHours(theoretical, practical);
         this.preRequisite = preRequisite;
+        registrationSystem = RegistrationSystem.getInstance(); // Singleton Controller class
+        registrationSystem.getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
     }
 
 
