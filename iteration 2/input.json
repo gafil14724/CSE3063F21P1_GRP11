@@ -1,384 +1,441 @@
 {
-  "PassProbability": "0.5",
-  "Quota": "250",
-  "Advisors": "10",
-  "Students": "10",
+  "PassProbability": 0,
+  "Quota": 250,
+  "Advisors": 10,
+  "Students": 10,
   "CurrentSemester": "fall",
   "MandatoryCourses": [
       {
         "courseCode": "ATA121",
-        "semester": "1",
-        "credits": "2",
-        "theoretical": "2",
-        "practical": "0",
+        "semester": 1,
+        "credits": 2,
+        "theoretical": 2,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "MBG1201",
-        "semester": "1",
-        "credits": "5",
-        "theoretical": "2",
-        "practical": "0",
+        "semester": 1,
+        "credits": 5,
+        "theoretical": 2,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "CSE1200",
-        "semester": "1",
-        "credits": "4",
-        "theoretical": "3",
-        "practical": "0",
+        "semester": 1,
+        "credits": 4,
+        "theoretical": 3,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "CSE1241",
-        "semester": "1",
-        "credits": "6",
-        "theoretical": "3",
-        "practical": "2",
+        "semester": 1,
+        "credits": 6,
+        "theoretical": 3,
+        "practical": 2,
         "preRequisites": ""
       },
       {
         "courseCode": "MATH1001",
-        "semester": "1",
-        "credits": "6",
-        "theoretical": "4",
-        "practical": "0",
+        "semester": 1,
+        "credits": 6,
+        "theoretical": 4,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "PHYS1101",
-        "semester": "1",
-        "credits": "4",
-        "theoretical": "3",
-        "practical": "0",
+        "semester": 1,
+        "credits": 4,
+        "theoretical": 3,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "PHYS1103",
-        "semester": "1",
-        "credits": "2",
-        "theoretical": "0",
-        "practical": "2",
+        "semester": 1,
+        "credits": 2,
+        "theoretical": 0,
+        "practical": 2,
         "preRequisites": ""
       },
       {
         "courseCode": "TRD121",
-        "semester": "1",
-        "credits": "2",
-        "theoretical": "2",
-        "practical": "0",
+        "semester": 1,
+        "credits": 2,
+        "theoretical": 2,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "ATA122",
-        "semester": "2",
-        "credits": "2",
-        "theoretical": "2",
-        "practical": "0",
+        "semester": 2,
+        "credits": 2,
+        "theoretical": 2,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "CSE1242",
-        "semester": "2",
-        "credits": "6",
-        "theoretical": "3",
-        "practical": "2",
+        "semester": 2,
+        "credits": 6,
+        "theoretical": 3,
+        "practical": 2,
         "preRequisites": "CSE1241"
 
       },
       {
         "courseCode": "MATH1002",
-        "semester": "2",
-        "credits": "6",
-        "theoretical": "4",
-        "practical": "0",
+        "semester": 2,
+        "credits": 6,
+        "theoretical": 4,
+        "practical": 0,
         "preRequisites": "MATH1001"
       },
       {
         "courseCode": "MATH2256",
-        "semester": "2",
-        "credits": "5",
-        "theoretical": "3",
-        "practical": "0",
+        "semester": 2,
+        "credits": 5,
+        "theoretical": 3,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "PHYS1102",
-        "semester": "2",
-        "credits": "4",
-        "theoretical": "3",
-        "practical": "0",
+        "semester": 2,
+        "credits": 4,
+        "theoretical": 3,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "PHYS1104",
-        "semester": "2",
-        "credits": "2",
-        "theoretical": "0",
-        "practical": "2",
+        "semester": 2,
+        "credits": 2,
+        "theoretical": 0,
+        "practical": 2,
         "preRequisites": ""
       },
       {
         "courseCode": "TRD122",
-        "semester": "2",
-        "credits": "2",
-        "theoretical": "2",
-        "practical": "0",
+        "semester": 2,
+        "credits": 2,
+        "theoretical": 2,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "CSE2023",
-        "semester": "3",
-        "credits": "6",
-        "theoretical": "3",
-        "practical": "0",
+        "semester": 3,
+        "credits": 6,
+        "theoretical": 3,
+        "practical": 0,
         "preRequisites": ""
       },
       {
         "courseCode": "CSE2225",
-        "semester": "3",
-        "credits": "7",
-        "theoretical": "3",
-        "practical": "2",
+        "semester": 3,
+        "credits": 7,
+        "theoretical": 3,
+        "practical": 2,
         "preRequisites": "CSE1142"
       },
     {
       "courseCode": "ECON2004",
-      "semester": "3",
-      "credits": "4",
-      "theoretical": "2",
-      "practical": "0",
+      "semester": 3,
+      "credits": 4,
+      "theoretical": 2,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "EE2031",
-      "semester": "3",
-      "credits": "5",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 3,
+      "credits": 5,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "PHYS1102"
     },
     {
       "courseCode": "MATH2055",
-      "semester": "3",
-      "credits": "4",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 3,
+      "credits": 4,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "MATH1001"
     },
     {
       "courseCode": "MATH2059",
-      "semester": "3",
-      "credits": "4",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 3,
+      "credits": 4,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "MATH1001"
     },
     {
       "courseCode": "CSE2246",
-      "semester": "4",
-      "credits": "6",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 4,
+      "credits": 6,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": "CSE2025"
     },
     {
       "courseCode": "CSE2138",
-      "semester": "4",
-      "credits": "7",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 4,
+      "credits": 7,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE2260",
-      "semester": "4",
-      "credits": "4",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 4,
+      "credits": 4,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": ""
     },
     {
       "courseCode": "EE2032",
-      "semester": "4",
-      "credits": "5",
-      "theoretical": "2",
-      "practical": "2",
+      "semester": 4,
+      "credits": 5,
+      "theoretical": 2,
+      "practical": 2,
       "preRequisites": ""
     },
     {
       "courseCode": "STAT2253",
-      "semester": "4",
-      "credits": "5",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 4,
+      "credits": 5,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE3000",
-      "semester": "4.5",
-      "credits": "10",
-      "theoretical": "0",
-      "practical": "0",
+      "semester": 4.5,
+      "credits": 10,
+      "theoretical": 0,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE3215",
-      "semester": "5",
-      "credits": "6",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 5,
+      "credits": 6,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE3033",
-      "semester": "5",
-      "credits": "7",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 5,
+      "credits": 7,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": "CSE2025"
     },
     {
       "courseCode": "CSE3055",
-      "semester": "5",
-      "credits": "7",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 5,
+      "credits": 7,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": "CSE2025"
     },
     {
       "courseCode": "CSE3063",
-      "semester": "5",
-      "credits": "5",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 5,
+      "credits": 5,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "CSE1142"
     },
     {
       "courseCode": "IE3081",
-      "semester": "5",
-      "credits": "4",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 5,
+      "credits": 4,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "STAT2053"
     },
     {
       "courseCode": "CSE3038",
-      "semester": "6",
-      "credits": "7",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 6,
+      "credits": 7,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": "CSE2138"
     },
     {
       "courseCode": "CSE3044",
-      "semester": "6",
-      "credits": "7",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 6,
+      "credits": 7,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": "CSE3055"
     },
     {
       "courseCode": "CSE3048",
-      "semester": "6",
-      "credits": "5",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 6,
+      "credits": 5,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "MATH2055"
     },
     {
       "courseCode": "CSE3264",
-      "semester": "6",
-      "credits": "5",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 6,
+      "credits": 5,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "CSE2023"
     },
     {
       "courseCode": "IE3235",
-      "semester": "6",
-      "credits": "4",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 6,
+      "credits": 4,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": "MATH2056"
     },
     {
       "courseCode": "COM2202",
-      "semester": "6",
-      "credits": "2",
-      "theoretical": "2",
-      "practical": "0",
+      "semester": 6,
+      "credits": 2,
+      "theoretical": 2,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE4000",
-      "semester": "6.5",
-      "credits": "10",
-      "theoretical": "0",
-      "practical": "0",
+      "semester": 6.5,
+      "credits": 10,
+      "theoretical": 0,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE4074",
-      "semester": "7",
-      "credits": "5",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 7,
+      "credits": 5,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE4219",
-      "semester": "7",
-      "credits": "6",
-      "theoretical": "3",
-      "practical": "2",
+      "semester": 7,
+      "credits": 6,
+      "theoretical": 3,
+      "practical": 2,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE4297",
-      "semester": "7",
-      "credits": "5",
-      "theoretical": "0",
-      "practical": "2",
+      "semester": 7,
+      "credits": 5,
+      "theoretical": 0,
+      "practical": 2,
       "preRequisites": ""
     },
     {
       "courseCode": "ISG121",
-      "semester": "7",
-      "credits": "2",
-      "theoretical": "2",
-      "practical": "0",
+      "semester": 7,
+      "credits": 2,
+      "theoretical": 2,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE4288",
-      "semester": "7",
-      "credits": "5",
-      "theoretical": "3",
-      "practical": "0",
+      "semester": 7,
+      "credits": 5,
+      "theoretical": 3,
+      "practical": 0,
       "preRequisites": ""
     },
     {
       "courseCode": "CSE4298",
-      "semester": "8",
-      "credits": "5",
-      "theoretical": "0",
-      "practical": "2",
+      "semester": 8,
+      "credits": 5,
+      "theoretical": 0,
+      "practical": 2,
       "preRequisites": "CSE4297"
     },
     {
       "courseCode": "ISG122",
-      "semester": "8",
-      "credits": "2",
-      "theoretical": "2",
-      "practical": "0",
+      "semester": 8,
+      "credits": 2,
+      "theoretical": 2,
+      "practical": 0,
       "preRequisites": ""
     }
   ],
-  "ElectiveCourses": [
-    {
 
+  "nonTechnicalSemesters": [2, 7, 8],
+  "nonTechnicalCredits": 3,
+  "nonTechnicalTheoretical": 2,
+  "nonTechnicalPractical": 0,
+  "NonTechnicalPreRequisites": "",
+  "NonTechnicalElectiveCourses":
+  [
+    {
+      "courseCode": "BUS1003"
+    },
+    {
+      "courseCode": "BUS1004"
+    },
+    {
+      "courseCode": "BUS2005"
+    },
+    {
+      "courseCode": "CAS1001"
+    }
+  ],
+
+  "technicalSemesters": [7, 8, 8, 8],
+  "technicalCredits": 5,
+  "technicalTheoretical": 3,
+  "technicalPractical": 0,
+  "technicalElectiveCourses":
+  [
+    {
+      "courseCode": "CSE4026",
+      "preRequisites": ""
+    },
+    {
+      "courseCode": "CSE4032",
+      "preRequisites": ""
+    },
+    {
+      "courseCode": "CSE4034",
+      "preRequisites": "CSE3033"
+    }
+  ],
+
+  "facultyTechnicalSemesters": [8],
+  "facultyTechnicalCredits": 5,
+  "facultyTechnicalTheoretical": 3,
+  "facultyTechnicalPractical": 0,
+  "facultyTechnicalPreRequisites": "",
+  "facultyTechnicalElectiveCourses":
+  [
+    {
+      "courseCode": "BIOE4072"
+    },
+    {
+      "courseCode": "CHE4060"
+    },
+    {
+      "courseCode": "CHE4068"
+    },
+    {
+      "courseCode": "CHE4080"
     }
   ]
-  }
+}
 

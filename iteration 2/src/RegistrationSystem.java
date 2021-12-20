@@ -190,12 +190,12 @@ public class RegistrationSystem {
         try {
             JSONParser parser = new JSONParser();
             JSONObject input = (JSONObject) parser.parse(new FileReader("input.json"));
-            double prob = Double.parseDouble((String)input.get("PassProbability"));
-            int quota = Integer.parseInt((String)input.get("Quota")); // Quota for each course is the same for the 1st iteration
+            double prob =  ((Number)input.get("PassProbability")).doubleValue();
+            int quota = (int)(long) input.get("Quota"); // Quota for each course is the same for the 1st iteration
             setPassProbability(prob);
-            int advisorCount = Integer.parseInt((String)input.get("Advisors"));
+            int advisorCount = (int)(long)input.get("Advisors");
             setAdvisorCount(advisorCount);
-            int studentCount = Integer.parseInt((String)input.get("Students"));
+            int studentCount = (int)(long)input.get("Students");
             setStudentCount(studentCount);
             String semester = (String)input.get("CurrentSemester");
             setSemester(semester);
@@ -205,10 +205,10 @@ public class RegistrationSystem {
             for(Object c: inputCourses) {
                 JSONObject course = (JSONObject) c;
                 String courseCode = (String) course.get("courseCode");
-                float courseSemester = Float.parseFloat((String)course.get("semester"));
-                int credits = Integer.parseInt((String) course.get("credits"));
-                int theoretical = Integer.parseInt((String) course.get("theoretical"));
-                int practical = Integer.parseInt((String) course.get("practical"));
+                float courseSemester = ((Number)course.get("semester")).floatValue();
+                int credits = (int)(long)course.get("credits");
+                int theoretical = (int)(long)course.get("theoretical");
+                int practical = (int)(long) course.get("practical");
                 String preRequisite = (String) course.get("preRequisites");
 
 
@@ -216,7 +216,6 @@ public class RegistrationSystem {
                         practical, findCourse(preRequisite));
                 courses.add(newCourse); //Initialize each course and add it to the courses list
                 courseSections.add(new CourseSection(newCourse, this));
-
             }
 
         }
