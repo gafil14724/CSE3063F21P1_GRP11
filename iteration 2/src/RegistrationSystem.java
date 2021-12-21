@@ -1,3 +1,4 @@
+import jdk.swing.interop.SwingInterOpUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -8,6 +9,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class RegistrationSystem {
 
@@ -18,6 +20,10 @@ public class RegistrationSystem {
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Advisor> advisors = new ArrayList<>();
     private ArrayList<Course> courses = new ArrayList<>();
+    private ArrayList<Course> mandatoryCourses = new ArrayList<>();
+    private ArrayList<Course> nontechElectiveCourses = new ArrayList<>();
+    private ArrayList<Course> techElectiveCourses = new ArrayList<>();
+    private ArrayList<Course> facultyElectiveCourses = new ArrayList<>();
     private ArrayList<CourseSection> courseSections = new ArrayList<>();
     private double passProbability;
     private int studentCount;
@@ -43,6 +49,12 @@ public class RegistrationSystem {
         addPastCourses();
         requestCourses();
         printRegistrationProcess();
+
+        /*for (Course c: courses) {
+            System.out.println(c.getCourseCode());
+        }*/
+
+
       //  printStatistics();
        // registrationProcessOutput();
         //statisticsOutput();
@@ -83,7 +95,8 @@ public class RegistrationSystem {
 
     private void printRegistrationProcess() {
         for (Student s : students) {
-            System.out.println("==========\nRegistration process for: " + s.getStudentId().getStudentId() + " " + s.getSemesterNumber());
+            System.out.println("==========\nRegistration process for: " + s.getStudentId().getStudentId() + " " + s.getSemesterNumber() +
+                    " " + getNumOfPastElectives(s, ElectiveType.NONTECHNICAL));
             System.out.println(s.getBuffer());
             System.out.println("==============\n\n");
         }
@@ -134,6 +147,35 @@ public class RegistrationSystem {
             s.setAdvisor(advisors.get(index));
             s.setBuffer("Advisor: " + advisors.get(index).getFirstName() + " " + advisors.get(index).getLastName() + "\n");
         }
+    }
+
+    /**Takes a Student and an ElectiveType and returns the
+     * number of past elective courses according to student's
+     * current semester number*/
+    public int getNumOfPastElectives(Student student, ElectiveType electiveType) {
+        int stuSemester = student.getSemesterNumber();
+
+        ArrayList<Integer> electiveSemesters = new ArrayList<>();
+        switch (electiveType) {
+            case FACULTY:
+                electiveSemesters = ((ElectiveCourse)facultyElectiveCourses.get(0)).getSemesters(); break;
+            case NONTECHNICAL:
+                electiveSemesters = ((ElectiveCourse)nontechElectiveCourses.get(0)).getSemesters(); break;
+            case TECHNICAL:
+                electiveSemesters = ((ElectiveCourse)techElectiveCourses.get(0)).getSemesters(); break;
+            default:
+                System.out.println("Incorrect elective type!!");
+                System.exit(-1);
+        }
+
+        int counter = 0;
+        for (Integer i: electiveSemesters) {
+            if (i < stuSemester) {
+                counter++;
+            }
+        }
+
+        return counter;
     }
 
 
@@ -215,6 +257,7 @@ public class RegistrationSystem {
                 Course newCourse = new MandatoryCourse(courseCode,  courseSemester,  quota, credits, theoretical,
                         practical, preRequisite);
                 courses.add(newCourse);
+                mandatoryCourses.add(newCourse);
             }
 
             //Read nontechnical courses
@@ -237,7 +280,55 @@ public class RegistrationSystem {
                 Course newNonTechElective = new ElectiveCourse(courseCode, quota, nonTechCredits, nonTechTheoretical,
                         nonTechPractical, nonTechPreRequisite, "nontechnical", nonTechSemNums);
                 courses.add(newNonTechElective);
+                nontechElectiveCourses.add(newNonTechElective);
             }
+
+            //Read Technical Elective Courses
+            JSONArray technicalSemesters = (JSONArray) input.get("technicalSemesters");
+            ArrayList<Integer> techSemNums = new ArrayList<>();
+            for (int i = 0; i< technicalSemesters.size(); i++) {
+                techSemNums.add((int)(long)technicalSemesters.get(i));
+            }
+            int techCredits = (int) (long) input.get("technicalCredits");
+            int techTheoretical = (int) (long) input.get("technicalTheoretical");
+            int techPractical = (int) (long) input.get("technicalPractical");
+
+            JSONArray techCourses = (JSONArray) input.get("technicalElectiveCourses");
+            for (Object c: techCourses) {
+                JSONObject course = (JSONObject) c;
+                String courseCode = (String) course.get("courseCode");
+                String techPreReqStr = (String) course.get("preRequisites");
+                Course techPreRequisite = findCourse(techPreReqStr);
+
+                Course newTechElective = new ElectiveCourse(courseCode, quota, techCredits, techTheoretical,
+                            techPractical, techPreRequisite, "technical", techSemNums);
+                courses.add(newTechElective);
+                techElectiveCourses.add(newTechElective);
+            }
+
+            //Read Faculty Technical Electives
+            JSONArray facTechnicalSemesters = (JSONArray) input.get("facultyTechnicalSemesters");
+            ArrayList<Integer> facTechSemNums = new ArrayList<>();
+            for (int i = 0; i< facTechnicalSemesters.size(); i++) {
+                facTechSemNums.add((int)(long)facTechnicalSemesters.get(i));
+            }
+            int facTechCredits = (int) (long) input.get("facultyTechnicalCredits");
+            int facTechTheoretical = (int) (long) input.get("facultyTechnicalTheoretical");
+            int facTechPractical = (int) (long) input.get("facultyTechnicalPractical");
+            String facTechPreReqString = (String) input.get("facultyTechnicalPreRequisites");
+            Course facTechPreRequisite = findCourse(facTechPreReqString);
+
+            JSONArray facTechCourses = (JSONArray) input.get("facultyTechnicalElectiveCourses");
+            for (Object c: facTechCourses) {
+                JSONObject course = (JSONObject) c;
+                String courseCode = (String) course.get("courseCode");
+
+                Course newFacTechElective = new ElectiveCourse(courseCode, quota, facTechCredits, facTechTheoretical,
+                        facTechPractical, facTechPreRequisite, "faculty", facTechSemNums);
+                courses.add(newFacTechElective);
+                facultyElectiveCourses.add(newFacTechElective);
+            }
+
         }
         catch (IOException e) {
             e.printStackTrace();
