@@ -57,6 +57,17 @@ public class Transcript {
 
         grades.add(new Grade(course, grade));
         student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
+        if (course instanceof ElectiveCourse) {
+            ElectiveCourse electiveCourse = (ElectiveCourse) course;
+            switch (electiveCourse.getElectiveType()) {
+                case NONTECHNICAL:
+                    student.setBuffer("(NTE/UE)"); break;
+                case TECHNICAL:
+                    student.setBuffer("(TE)"); break;
+                case FACULTY:
+                    student.setBuffer("(FTE)"); break;
+            }
+        }
     }
 
     public void addFailedCourse(Course course) {
@@ -70,6 +81,18 @@ public class Transcript {
 
         grades.add(new Grade(course, grade));
         student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
+
+        if (course instanceof ElectiveCourse) {
+            ElectiveCourse electiveCourse = (ElectiveCourse) course;
+            switch (electiveCourse.getElectiveType()) {
+                case NONTECHNICAL:
+                    student.setBuffer("(NTE/UE)"); break;
+                case TECHNICAL:
+                    student.setBuffer("(TE)"); break;
+                case FACULTY:
+                    student.setBuffer("(FTE)"); break;
+            }
+        }
 
     }
 

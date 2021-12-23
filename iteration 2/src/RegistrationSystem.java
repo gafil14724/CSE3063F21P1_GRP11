@@ -1,3 +1,4 @@
+import com.sun.source.tree.ArrayAccessTree;
 import jdk.swing.interop.SwingInterOpUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -20,10 +21,10 @@ public class RegistrationSystem {
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Advisor> advisors = new ArrayList<>();
     private ArrayList<Course> courses = new ArrayList<>();
-    private ArrayList<Course> mandatoryCourses = new ArrayList<>();
-    private ArrayList<Course> nontechElectiveCourses = new ArrayList<>();
-    private ArrayList<Course> techElectiveCourses = new ArrayList<>();
-    private ArrayList<Course> facultyElectiveCourses = new ArrayList<>();
+    private ArrayList<MandatoryCourse> mandatoryCourses = new ArrayList<>();
+    private ArrayList<ElectiveCourse> nontechElectiveCourses = new ArrayList<>();
+    private ArrayList<ElectiveCourse> techElectiveCourses = new ArrayList<>();
+    private ArrayList<ElectiveCourse> facultyElectiveCourses = new ArrayList<>();
     private ArrayList<CourseSection> courseSections = new ArrayList<>();
     private double passProbability;
     private int studentCount;
@@ -179,17 +180,51 @@ public class RegistrationSystem {
     }
 
 
+    /**Takes a list of past courses, a student and an elective type
+     * and adds elective courses to the past course list accordingly*/
+    private void addPastElectives(ArrayList<Course> pastCourses, Student student, ElectiveType electiveType) {
+
+        int pastCount = getNumOfPastElectives(student, electiveType);
+        ArrayList<ElectiveCourse> electiveCourseList = new ArrayList<>();
+        switch (electiveType) {
+            case NONTECHNICAL:
+                electiveCourseList = nontechElectiveCourses;
+                break;
+            case FACULTY:
+                electiveCourseList = facultyElectiveCourses;
+                break;
+            case TECHNICAL:
+                electiveCourseList = techElectiveCourses;
+                break;
+        }
+
+        for (int i = 0; i < pastCount; i++) { //Add non technical electives to the past courses list
+            int index = (int) (Math.random() * electiveCourseList.size());
+            Course elective = electiveCourseList.get(index);
+            if (!pastCourses.contains(elective)) {// if this elective course wasn't in the pastcourse list
+                pastCourses.add(elective);
+            }
+            else { //decrease i by 1 to have another random elective in case of choosing the same random elective
+                i--;
+            }
+        }
+    }
+
+
     private void addPastCourses() {
         for (Student s : students) {
             ArrayList<Course> pastCourses = new ArrayList<>();
 
-            for (Course c : courses) { //For each course, add it to past courses list if its semester is less than student's
-                if (c instanceof MandatoryCourse) {
-                    if (((MandatoryCourse) c).getSemesterNumber() < s.getSemesterNumber()) { //If course's semester is less than student's
+            for (MandatoryCourse c : mandatoryCourses) { //For each course, add it to past courses list if its semester is less than student's
+                if (c.getSemesterNumber() < s.getSemesterNumber()) { //If course's semester is less than student's
                         pastCourses.add(c);
-                    }
                 }
             }
+
+            addPastElectives(pastCourses, s, ElectiveType.NONTECHNICAL); //add nontechnical electives to the pastcourses list
+            addPastElectives(pastCourses, s, ElectiveType.TECHNICAL);
+            addPastElectives(pastCourses, s, ElectiveType.FACULTY);
+
 
             s.setBuffer("Past Courses: ");
             for (Course c : pastCourses) { // Student pass the passed courses with a certain probability (passProbability)
@@ -227,7 +262,8 @@ public class RegistrationSystem {
 
     }
 
-
+    /**Reads the input file and creates courses according to the
+     * input file*/
     private void readInput() {
         try {
             JSONParser parser = new JSONParser();
@@ -257,7 +293,7 @@ public class RegistrationSystem {
                 Course newCourse = new MandatoryCourse(courseCode,  courseSemester,  quota, credits, theoretical,
                         practical, preRequisite);
                 courses.add(newCourse);
-                mandatoryCourses.add(newCourse);
+                mandatoryCourses.add((MandatoryCourse) newCourse);
             }
 
             //Read nontechnical courses
@@ -280,7 +316,7 @@ public class RegistrationSystem {
                 Course newNonTechElective = new ElectiveCourse(courseCode, quota, nonTechCredits, nonTechTheoretical,
                         nonTechPractical, nonTechPreRequisite, "nontechnical", nonTechSemNums);
                 courses.add(newNonTechElective);
-                nontechElectiveCourses.add(newNonTechElective);
+                nontechElectiveCourses.add((ElectiveCourse) newNonTechElective);
             }
 
             //Read Technical Elective Courses
@@ -303,7 +339,7 @@ public class RegistrationSystem {
                 Course newTechElective = new ElectiveCourse(courseCode, quota, techCredits, techTheoretical,
                             techPractical, techPreRequisite, "technical", techSemNums);
                 courses.add(newTechElective);
-                techElectiveCourses.add(newTechElective);
+                techElectiveCourses.add((ElectiveCourse) newTechElective);
             }
 
             //Read Faculty Technical Electives
@@ -326,7 +362,7 @@ public class RegistrationSystem {
                 Course newFacTechElective = new ElectiveCourse(courseCode, quota, facTechCredits, facTechTheoretical,
                         facTechPractical, facTechPreRequisite, "faculty", facTechSemNums);
                 courses.add(newFacTechElective);
-                facultyElectiveCourses.add(newFacTechElective);
+                facultyElectiveCourses.add((ElectiveCourse) newFacTechElective);
             }
 
         }
@@ -339,7 +375,7 @@ public class RegistrationSystem {
 
     }
 
-    public void setSemester(String semester) {
+    private void setSemester(String semester) {
         switch (semester.toLowerCase()) {
             case "spring":
                 this.semester = Semester.SPRING; break;
