@@ -12,6 +12,7 @@ public class ElectiveCourse extends Course {
         super(courseCode, quota, credits, theoretical, practical, preRequisite);
         setElectiveType(electiveType);
         this.semesters = semesters;
+        super.getRegistrationSystem().getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
     }
 
     public void setElectiveType(String electiveType) {

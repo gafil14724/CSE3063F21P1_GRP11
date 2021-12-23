@@ -8,6 +8,11 @@ public class Grade {
         this.course = course;
     }
 
+    /**Returns true if int grade is greater than or equal to 50*/
+    public boolean isPassed() {
+        return intGrade >= 50;
+    }
+
     /**Calculates letter grade from
      * int grade and returns a string
      * */

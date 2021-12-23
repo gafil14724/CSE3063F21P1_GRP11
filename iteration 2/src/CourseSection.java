@@ -14,13 +14,12 @@ public class CourseSection {
 
     public CourseSection(Course course) {
         this.course = course;
-        this.registrationSystem = RegistrationSystem.getInstance();
-
         setSectionHour();
-        courseProgram = new boolean[Schedule.HOURS][Schedule.DAYS];
+        this.registrationSystem = RegistrationSystem.getInstance();
         students = new ArrayList<>();
-        setCourseProgram();
         setFull();
+        courseProgram = new boolean[Schedule.HOURS][Schedule.DAYS];
+        setCourseProgram();
     }
 
     /**Sets the courseProgram by adding all the lecture
@@ -29,7 +28,6 @@ public class CourseSection {
         for (int i = 0; i < sectionHour; i++) {
             int randomHour = (int)(Math.random() * Schedule.HOURS);
             int randomDay = (int)(Math.random() * Schedule.DAYS);
-
 
             //If course program is empty for that hour and same semester course has no lectures in that hour
             if (!courseProgram[randomHour][randomDay] && !CollidesWithSameSemester(randomHour, randomDay)) {
@@ -41,18 +39,24 @@ public class CourseSection {
     }
 
     private boolean CollidesWithSameSemester(int randomHour, int randomDay) {
-        boolean collisionWithSameSemester = false;
-        for (CourseSection c : registrationSystem.getCourseSections()) {
-            if (course instanceof MandatoryCourse && c.getCourse() instanceof MandatoryCourse) {
-                if (((MandatoryCourse)c.getCourse()).getSemesterNumber() == ((MandatoryCourse) course).getSemesterNumber()){
-                    if (c.getCourseProgram()[randomHour][randomDay]) {
-                        collisionWithSameSemester = true;
-                        break;
-                    }
-                }
+        if (!(course instanceof MandatoryCourse)) {
+            return false;
+        }
+
+        ArrayList<CourseSection> mandatoryCourseSections = new ArrayList<>();
+        for (CourseSection cs: registrationSystem.getCourseSections()) {
+            if (cs.getCourse() instanceof MandatoryCourse) {
+                mandatoryCourseSections.add(cs);
             }
         }
-        return collisionWithSameSemester;
+
+        for (CourseSection cs: mandatoryCourseSections) {
+            if (((MandatoryCourse) course).getSemesterNumber() == ((MandatoryCourse)cs.getCourse()).getSemesterNumber() &&
+                    cs.getCourseProgram()[randomHour][randomDay]) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void addStudent(Student student) {

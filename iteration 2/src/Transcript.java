@@ -12,7 +12,7 @@ public class Transcript {
     public int getCompletedCredits() {
         int credits = 0;
         for (Grade g: grades) {
-            if (g.getIntGrade() >= 50) { // If grade is greater or equal to 50
+            if (g.isPassed()) { // If grade is greater or equal to 50
                 credits += g.getCourse().getCredits();
             }
         }
@@ -29,6 +29,16 @@ public class Transcript {
         return passedCourses;
     }
 
+    public ArrayList<Course> getTakenCourses() {
+        ArrayList<Course> takenCourses = new ArrayList<>();
+
+        for (Grade g: grades) {
+            takenCourses.add(g.getCourse());
+        }
+
+        return takenCourses;
+    }
+
     /**Takes a course as argument and checks if student
      * has passed that course by iterating over student's
      * grades*/
@@ -38,12 +48,8 @@ public class Transcript {
         }
 
         ArrayList<Course> passedCourses = getPassedCourses();
-        for (Course c : passedCourses) {
-            if (course == c) {
-                return true;
-            }
-        }
-        return false;
+
+        return passedCourses.contains(course);
     }
 
     public void addPassedCourse(Course course) { //Adds a passed course with a random grade that is greater than 50

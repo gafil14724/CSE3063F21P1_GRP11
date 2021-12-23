@@ -19,7 +19,7 @@ public abstract class Course {
         this.practical = practical;
         this.preRequisite = preRequisite;
         registrationSystem = RegistrationSystem.getInstance(); // Singleton Controller class
-        registrationSystem.getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
+
     }
 
 
@@ -50,5 +50,9 @@ public abstract class Course {
 
     public int getPractical() {
         return practical;
+    }
+
+    public RegistrationSystem getRegistrationSystem() {
+        return registrationSystem;
     }
 }

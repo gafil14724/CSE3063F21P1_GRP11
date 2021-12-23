@@ -43,6 +43,10 @@ public class Student {
         return semesterNumber;
     }
 
+    public int getCompletedCredits() {
+        return transcript.getCompletedCredits();
+    }
+
     public void addToCurrentCourses(CourseSection courseSection) {
         schedule.addToProgram(courseSection);
         getCurrentCourses().add(courseSection.getCourse());

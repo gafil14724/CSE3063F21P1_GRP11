@@ -56,6 +56,22 @@ public class RegistrationSystem {
         }*/
 
 
+        /*for (CourseSection cs: courseSections) {
+            if (!(cs.getCourse() instanceof MandatoryCourse)) {
+                break;
+            }
+            System.out.println(cs.getCourse().getCourseCode() + " " + ((MandatoryCourse) cs.getCourse()).getSemesterNumber());
+            for (int i = 0; i< Schedule.HOURS; i++) {
+                for (int j = 0; j < Schedule.DAYS; j++) {
+                    System.out.print(cs.getCourseProgram()[i][j] + " ");
+                }
+                System.out.println();
+            }
+        }*/
+
+
+
+
       //  printStatistics();
        // registrationProcessOutput();
         //statisticsOutput();
@@ -182,7 +198,10 @@ public class RegistrationSystem {
 
     /**Takes a list of past courses, a student and an elective type
      * and adds elective courses to the past course list accordingly*/
-    private void addPastElectives(ArrayList<Course> pastCourses, Student student, ElectiveType electiveType) {
+    private void addPastElectives( Student student, ElectiveType electiveType) {
+        if (electiveType == ElectiveType.TECHNICAL && student.getCompletedCredits() < 155) {
+            return; // Return without doing anything if student completed credits is less than 155 for TE courses
+        }
 
         int pastCount = getNumOfPastElectives(student, electiveType);
         ArrayList<ElectiveCourse> electiveCourseList = new ArrayList<>();
@@ -200,9 +219,9 @@ public class RegistrationSystem {
 
         for (int i = 0; i < pastCount; i++) { //Add non technical electives to the past courses list
             int index = (int) (Math.random() * electiveCourseList.size());
-            Course elective = electiveCourseList.get(index);
-            if (!pastCourses.contains(elective)) {// if this elective course wasn't in the pastcourse list
-                pastCourses.add(elective);
+            ElectiveCourse elective = electiveCourseList.get(index);
+            if (!student.hasPassedCourse(elective)) {// if student hasn't passed this course
+                addPastCourse(student, elective);
             }
             else { //decrease i by 1 to have another random elective in case of choosing the same random elective
                 i--;
@@ -210,33 +229,38 @@ public class RegistrationSystem {
         }
     }
 
+    private void addPastCourse(Student student, Course course) {
+        if (Math.random() < passProbability && student.hasPassedCourse(course.getPreRequisite())) {
+            student.getTranscript().addPassedCourse(course);
+        }
+        else {
+            student.getTranscript().addFailedCourse(course);
+        }
+    }
 
-    private void addPastCourses() {
-        for (Student s : students) {
-            ArrayList<Course> pastCourses = new ArrayList<>();
+    private void addPastMandatory(Student s) {
 
-            for (MandatoryCourse c : mandatoryCourses) { //For each course, add it to past courses list if its semester is less than student's
-                if (c.getSemesterNumber() < s.getSemesterNumber()) { //If course's semester is less than student's
-                        pastCourses.add(c);
-                }
+        for (MandatoryCourse c : mandatoryCourses) { //For each course, add it to past courses list if its semester is less than student's
+            if (s.getCompletedCredits() < 165 && c.getCourseCode() == "CSE4297") {//If mandatory is the final project, and credits is <165 continue
+                continue;
             }
 
-            addPastElectives(pastCourses, s, ElectiveType.NONTECHNICAL); //add nontechnical electives to the pastcourses list
-            addPastElectives(pastCourses, s, ElectiveType.TECHNICAL);
-            addPastElectives(pastCourses, s, ElectiveType.FACULTY);
-
-
-            s.setBuffer("Past Courses: ");
-            for (Course c : pastCourses) { // Student pass the passed courses with a certain probability (passProbability)
-                    if (Math.random() < passProbability && s.hasPassedCourse(c.getPreRequisite())) {
-                        s.getTranscript().addPassedCourse(c);
-                    }
-                    else {
-                        s.getTranscript().addFailedCourse(c);
-                    }
+            if (c.getSemesterNumber() < s.getSemesterNumber()) { //If course's semester is less than student's
+                addPastCourse(s, c);
             }
         }
+    }
 
+    /**Adds past courses for each student by calling their methods*/
+    private void addPastCourses() {
+        for (Student s : students) {
+            s.setBuffer("Past Courses: ");
+
+            addPastMandatory(s);
+            addPastElectives(s, ElectiveType.NONTECHNICAL); //add nontechnical electives to the pastcourses list
+            addPastElectives(s, ElectiveType.TECHNICAL);
+            addPastElectives(s, ElectiveType.FACULTY);
+        }
     }
 
 

@@ -7,6 +7,7 @@ public class MandatoryCourse extends Course {
 
         super(courseCode, quota, credits, theoretical, practical, preRequisite);
         setSemester(semester);
+        super.getRegistrationSystem().getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
     }
 
     public void setSemester(float semester) {
