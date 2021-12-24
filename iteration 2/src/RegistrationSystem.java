@@ -74,7 +74,7 @@ public class RegistrationSystem {
     private void registrationProcessOutput() {
         for (Student s: students) {
             JSONObject studentJson = new JSONObject();
-            studentJson.put("Registration process: ", s.getBuffer());
+            studentJson.put("Registration process: ", s.getExecutionTrace());
             JSONArray jsonList = new JSONArray();
             jsonList.add(studentJson);
 
@@ -92,12 +92,19 @@ public class RegistrationSystem {
     private void printRegistrationProcess() {
         for (Student s : students) {
             System.out.println("==========\nRegistration process for: " + s.getFullName() +  ": " + s.getStudentId() +
-                    s.getSemesterNumber());
-            s.setBuffer("\n\nCurrent Courses: \n");
+               " " +    s.getSemesterNumber());
+            System.out.println("Advisor: " + s.getAdvisor().getFirstName() + " " + s.getAdvisor().getLastName() + "\n");
+
+         /*   System.out.println("Past Courses: ");
+            System.out.println(s.getTranscript().toString());
+
+
+*/          s.getExecutionTrace().append("\n\nCurrent Courses: \n");
             for (Course c: s.getCurrentCourses()) {
-                s.setBuffer(c.getCourseCode() + c.toString() + " ");
+                s.getExecutionTrace().append(c.toString() + ", ");
             }
-            System.out.println(s.getBuffer());
+            System.out.println(s.toString());
+            System.out.println(s.getExecutionTrace());
             System.out.println("==============\n\n");
         }
     }
@@ -141,7 +148,6 @@ public class RegistrationSystem {
         for (Student s: students) {
             int index = (int) (Math.random() * advisors.size()); //Random advisor's index to be appointed to the student
             s.setAdvisor(advisors.get(index));
-            s.setBuffer("Advisor: " + advisors.get(index).getFirstName() + " " + advisors.get(index).getLastName() + "\n");
         }
     }
 
@@ -222,10 +228,8 @@ public class RegistrationSystem {
     /**Adds past courses for each student by calling their methods*/
     private void addPastCourses() {
         for (Student s : students) {
-            s.setBuffer("Past Courses: ");
             addPastMandatory(s);
             addPastElectives(s);
-
         }
     }
 

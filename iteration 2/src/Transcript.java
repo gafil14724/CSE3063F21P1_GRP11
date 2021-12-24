@@ -53,45 +53,48 @@ public class Transcript {
     }
 
     public void addPassedCourse(Course course) { //Adds a passed course with a random grade that is greater than 50
-        int grade = 0;
-        if (course instanceof MandatoryCourse && ((MandatoryCourse) course).getSemester() == Semester.SUMMER) {
-            grade = 100; //Grade is 100 for summer courses (Internships)
-        }
-        else {
-            grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
-        }
+        int grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
 
         grades.add(new Grade(course, grade));
-        student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
-        if (course instanceof FinalProjectMandatoryCourse) {
-            student.setBuffer(" (Final Project)" );
-        }
+        /*student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
+        student.setBuffer(" " + course.toString());*/
 
-        if (course instanceof ElectiveCourse) {
-            student.setBuffer(" " + course.toString());
-        }
 
     }
 
     public void addFailedCourse(Course course) {
-        int grade;
-        if (course instanceof MandatoryCourse && ((MandatoryCourse) course).getSemester() == Semester.SUMMER) {
-            grade = 0; //For summer internships (Either FF or AA)
-        }
-        else {
-            grade = (int) (Math.random() * 50); //random grade between 0-49
-        }
+        int grade = (int) (Math.random() * 50); //random grade between 0-49
 
         grades.add(new Grade(course, grade));
-        student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
+        /*student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
+        student.setBuffer(" " + course.toString());*/
 
-        if (course instanceof FinalProjectMandatoryCourse) {
-            student.setBuffer(" (Final Project)" );
-        }
 
-        if (course instanceof ElectiveCourse) {
-            student.setBuffer(" " + course.toString());
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
+    }
+
+    public ArrayList<Grade> getGrades() {
+        return grades;
+    }
+
+    public void setGrades(ArrayList<Grade> grades) {
+        this.grades = grades;
+    }
+
+    public String toString() {
+        String pastCourses = "";
+
+        for (Grade g: grades) {
+            pastCourses +=  g.getCourse().toString() + ": " + g.getLetterGrade() + "\n";
         }
+        return pastCourses;
     }
 
 }

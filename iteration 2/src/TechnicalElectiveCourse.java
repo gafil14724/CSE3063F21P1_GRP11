@@ -24,6 +24,27 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
         return techCourses.get(index);
     }
 
+    public boolean isApprovableForStudent(Student student) {
+        return checkCreditCondition(student) && student.hasPassedCourse(preRequisite) &&
+                super.isApprovableForStudent(student);
+    }
+
+    @Override
+    public void rejectBehaviour(Student student) {
+
+        if (!checkCreditCondition(student)){
+            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
+                    " because Student completed credits is less than " + requiredCredits +
+                    " -> (" + student.getTranscript().getCompletedCredits() + ")");
+        }
+        else if (!student.hasPassedCourse(preRequisite)) {
+            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
+                    " because student failed prerequisite -> " + getPreRequisite().getCourseCode());
+        } else {
+            super.rejectBehaviour(student);
+        }
+    }
+
 
 
     public boolean checkCreditCondition(Student student) {
@@ -47,6 +68,6 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
     }
 
     public String toString() {
-        return "(TE)";
+        return super.toString() + "(TE)";
     }
 }

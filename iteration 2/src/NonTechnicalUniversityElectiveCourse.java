@@ -23,6 +23,6 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
 
 
     public String toString() {
-        return "(NTE/UE)";
+        return super.toString() + "(NTE/UE)";
     }
 }

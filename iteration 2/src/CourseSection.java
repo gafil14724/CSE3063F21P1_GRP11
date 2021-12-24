@@ -66,7 +66,7 @@ public class CourseSection {
             student.addToCurrentCourses(this);
             setFull();
         }else {
-            student.setBuffer("\nThe system didn't allow " + getCourseSectionCode() + " because " +
+            student.getExecutionTrace().append("\nThe system didn't allow " + course.toString() + " because " +
                     "course section is full. ("  +  students.size() + ")");
             quotaStatistics++;
         }

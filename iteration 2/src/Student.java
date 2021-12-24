@@ -13,7 +13,7 @@ public class Student {
     private Schedule schedule;
     private Transcript transcript;
     private RegistrationSystem registrationSystem;
-    private String buffer = "";
+    private StringBuilder executionTrace = new StringBuilder();
 
     public Student(String name, String surname, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
         this.name = name;
@@ -67,7 +67,7 @@ public class Student {
     }
 
 
-    private void requestCourse(CourseSection courseSection) {
+    public void requestCourse(CourseSection courseSection) {
          advisor.approveCourse(this, courseSection);
     }
 
@@ -77,20 +77,19 @@ public class Student {
 
     public void requestMandatoryCourses() {
         ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedCourseSections(this);
-        setBuffer("\n\nOffered Courses: \n");
+        executionTrace.append("Offered Courses: \n");
         for (CourseSection c : offeredCourses) {
-            setBuffer(c.getCourseSectionCode() + c.getCourse().toString() +  " ");
+            executionTrace.append(c.getCourse().toString() +  ", ");
         }
-        setBuffer("\n");
-        setBuffer("(" + registrationSystem.getNontechElectiveCourses().get(0).offeredElectiveCount(this) + " NTE), ");
-        setBuffer("(" + registrationSystem.getTechElectiveCourses().get(0).offeredElectiveCount(this) + " TE), ");
-        setBuffer("(" + registrationSystem.getFacultyElectiveCourses().get(0).offeredElectiveCount(this) + " FTE), ");
-        setBuffer("\n");
+        executionTrace.append("\n");
+        executionTrace.append("(" + registrationSystem.getNontechElectiveCourses().get(0).offeredElectiveCount(this) + " NTE), ");
+        executionTrace.append("(" + registrationSystem.getTechElectiveCourses().get(0).offeredElectiveCount(this) + " TE), ");
+        executionTrace.append("(" + registrationSystem.getFacultyElectiveCourses().get(0).offeredElectiveCount(this) + " FTE), ");
+        executionTrace.append("\n");
 
         for (CourseSection c: offeredCourses) {
             requestCourse(c);
         }
-
 
     }
 
@@ -102,12 +101,12 @@ public class Student {
         }
     }
 
-    public String getBuffer() {
-        return buffer;
+    public StringBuilder getExecutionTrace() {
+        return executionTrace;
     }
 
-    public void setBuffer(String buffer) {
-        this.buffer += buffer;
+    public void setExecutionTrace(StringBuilder executionTrace) {
+        this.executionTrace = executionTrace;
     }
 
 
@@ -165,6 +164,13 @@ public class Student {
 
     public Transcript getTranscript() {
         return transcript;
+    }
+
+    public String toString() {
+
+        String studentStr = "Past Courses: \n" + transcript.toString() + "\n";
+
+        return studentStr;
     }
 
 }

@@ -24,10 +24,10 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
     @Override
     public void rejectBehaviour(Student student) {
         if (!student.hasPassedCourse(getPreRequisite())) {
-            student.setBuffer("\nThe system didn't allow " + getCourseCode() + toString() +
+            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
                     " because student failed prerequisite -> " + getPreRequisite().getCourseCode());
         }else {
-            student.setBuffer("\nThe system didn't allow " + getCourseCode() + toString() +
+            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
             " because Student completed credits is less than 165 -> (" + student.getTranscript().getCompletedCredits() + ")");
         }
     }
@@ -41,6 +41,6 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
     }
 
     public String toString() {
-        return "(Final Project)";
+        return super.toString() + "(Final Project)";
     }
 }

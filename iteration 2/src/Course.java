@@ -29,6 +29,7 @@ public abstract class Course {
 
     public void rejectBehaviour(Student student) {
         if (student.getSchedule().isCollision(courseSection)) {
+
             courseSection.setCollisionStatistics(courseSection.getCollisionStatistics()+1);
         }
     }
@@ -69,5 +70,9 @@ public abstract class Course {
 
     public void setCourseSection(CourseSection courseSection) {
         this.courseSection = courseSection;
+    }
+
+    public String toString() {
+        return courseCode;
     }
 }

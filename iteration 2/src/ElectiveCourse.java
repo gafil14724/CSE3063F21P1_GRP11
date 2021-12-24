@@ -27,7 +27,7 @@ public abstract class ElectiveCourse extends Course {
 
     @Override
     public void rejectBehaviour(Student student) {
-        return;
+        student.requestCourse(getRandomElective().getCourseSection());
     }
 
     public int offeredElectiveCount(Student student) {

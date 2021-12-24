@@ -10,8 +10,8 @@ public class NormalMandatoryCourse extends MandatoryCourse{
     @Override
     public void rejectBehaviour(Student student) {
         if (!student.hasPassedCourse(getPreRequisite())) {
-            student.setBuffer("\nThe system didn't allow " + getCourseCode() +
-                    " because student failed prerequisite -> " + getPreRequisite().getCourseCode());
+            student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
+                    " because student failed prerequisite -> " + getPreRequisite().toString());
         }
     }
 }

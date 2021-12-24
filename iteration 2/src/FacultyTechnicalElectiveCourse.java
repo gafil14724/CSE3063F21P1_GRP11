@@ -13,6 +13,11 @@ public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
     }
 
     @Override
+    public void rejectBehaviour(Student student) {
+        return;
+    }
+
+    @Override
     public Course getRandomElective() {
         ArrayList<FacultyTechnicalElectiveCourse> facTechCourses = getRegistrationSystem().getFacultyElectiveCourses();
         int index = (int) (Math.random() * facTechCourses.size());
@@ -20,6 +25,6 @@ public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
     }
 
     public String toString() {
-        return "(FTE)";
+        return super.toString() + "(FTE)";
     }
 }

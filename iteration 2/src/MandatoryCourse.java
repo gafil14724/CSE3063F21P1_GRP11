@@ -71,7 +71,5 @@ public abstract class MandatoryCourse extends Course {
         this.preRequisite = preRequisite;
     }
 
-    public String toString() {
-        return "";
-    }
+
 }

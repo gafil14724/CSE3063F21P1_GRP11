@@ -47,12 +47,12 @@ public class Schedule {
         }
 
         if (collidedHours > 1) {
-            student.setBuffer("\nAdvisor didn't approve " + courseSection.getCourseSectionCode() +
-                  courseSection.getCourse().toString() +  " because of more than one hour collision with -> ");
+            student.getExecutionTrace().append("\nAdvisor didn't approve " + courseSection.getCourse().toString() +
+                    " because of more than one hour collision with -> ");
             for (CourseSection c: collidedSections) {
-                student.setBuffer(c.getCourseSectionCode() + " ");
+                student.getExecutionTrace().append(c.getCourse().toString() + " ");
             }
-            student.setBuffer(" in schedule");
+            student.getExecutionTrace().append(" in schedule");
         }
 
         return collidedHours > 1; // Return true if collided hours is greater than one, false otherwise.
