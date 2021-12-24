@@ -93,6 +93,10 @@ public class RegistrationSystem {
         for (Student s : students) {
             System.out.println("==========\nRegistration process for: " + s.getFullName() +  ": " + s.getStudentId() +
                     s.getSemesterNumber());
+            s.setBuffer("\n\nCurrent Courses: \n");
+            for (Course c: s.getCurrentCourses()) {
+                s.setBuffer(c.getCourseCode() + c.toString() + " ");
+            }
             System.out.println(s.getBuffer());
             System.out.println("==============\n\n");
         }
@@ -227,12 +231,10 @@ public class RegistrationSystem {
 
     private void requestCourses() {
         for (Student s: students) {
-            s.requestCourses();
+            s.requestMandatoryCourses();
+            s.requestElectiveCourses();
         }
     }
-
-
-
 
     public ArrayList<CourseSection> getOfferedCourseSections(Student student) {
         ArrayList<CourseSection> offeredCourseSections = new ArrayList<>();
@@ -243,8 +245,44 @@ public class RegistrationSystem {
                 }
             }
         }
-
         return offeredCourseSections;
+    }
+
+    public ArrayList<CourseSection> getOfferedElectiveCourseSections(Student student) {
+        int nteCount = nontechElectiveCourses.get(0).offeredElectiveCount(student);
+        int teCount = techElectiveCourses.get(0).offeredElectiveCount(student);
+        int fteCount = facultyElectiveCourses.get(0).offeredElectiveCount(student);
+
+        ArrayList<CourseSection> offeredCourses = new ArrayList<>();
+        for (int i = 0; i < nteCount; i++) {
+            CourseSection courseSection = nontechElectiveCourses.get(0).getRandomElective().getCourseSection();
+            if (!offeredCourses.contains(courseSection)) {
+                offeredCourses.add(courseSection);
+            }else {
+                i--;
+            }
+        }
+
+        for (int i = 0; i < teCount; i++) {
+            CourseSection courseSection = techElectiveCourses.get(0).getRandomElective().getCourseSection();
+            if (!offeredCourses.contains(courseSection)) {
+                offeredCourses.add(courseSection);
+            }else {
+                i--;
+            }
+        }
+
+        for (int i = 0; i < fteCount; i++) {
+            CourseSection courseSection = facultyElectiveCourses.get(0).getRandomElective().getCourseSection();
+            if (!offeredCourses.contains(courseSection)) {
+                offeredCourses.add(courseSection);
+            }else {
+                i--;
+            }
+        }
+
+
+        return offeredCourses;
     }
 
     /**Reads the input file and creates courses according to the

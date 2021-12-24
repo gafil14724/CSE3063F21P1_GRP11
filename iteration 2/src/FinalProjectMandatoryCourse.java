@@ -6,8 +6,6 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
                                        int theoretical, int practical, Course preRequisite, int requiredCredits) {
         super (courseCode, semester, quota, credits, theoretical, practical, preRequisite);
         this.requiredCredits = requiredCredits;
-        super.getRegistrationSystem().getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
-
     }
 
     @Override

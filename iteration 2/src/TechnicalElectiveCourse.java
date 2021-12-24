@@ -10,13 +10,18 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
         super(courseCode, quota, credits, theoretical, practical, semesters);
         this.requiredCredits = requiredCredits;
         this.preRequisite = preRequisite;
-        super.getRegistrationSystem().getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
-
     }
 
     @Override
     public boolean isElligiblePastCourse(Student student) {
         return student.hasPassedCourse(this.getPreRequisite()) && checkCreditCondition(student);
+    }
+
+    @Override
+    public Course getRandomElective() {
+        ArrayList<TechnicalElectiveCourse> techCourses = getRegistrationSystem().getTechElectiveCourses();
+        int index = (int) (Math.random() * techCourses.size());
+        return techCourses.get(index);
     }
 
 

@@ -75,7 +75,7 @@ public class Student {
         return transcript.hasPassedCourse(course);
     }
 
-    public void requestCourses() {
+    public void requestMandatoryCourses() {
         ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedCourseSections(this);
         setBuffer("\n\nOffered Courses: \n");
         for (CourseSection c : offeredCourses) {
@@ -91,9 +91,14 @@ public class Student {
             requestCourse(c);
         }
 
-        setBuffer("\n\nCurrent Courses: \n");
-        for (Course c: currentCourses) {
-            setBuffer(c.getCourseCode() + c.toString() + " ");
+
+    }
+
+    public void requestElectiveCourses() {
+        ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedElectiveCourseSections(this);
+
+        for (CourseSection c: offeredCourses) {
+            requestCourse(c);
         }
     }
 

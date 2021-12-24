@@ -36,10 +36,8 @@ public class Schedule {
         int collidedHours = 0; // total num of collided hours
         ArrayList<CourseSection> collidedSections = new ArrayList<>();
 
-
         for (int i = 0; i < HOURS; i++) {
             for (int j = 0; j < DAYS; j++) {
-
                 // If courseProgram and schedule has lectures in the same hour
                 if (courseProgram[i][j] && program[i][j] != null) {
                     collidedSections.add(program[i][j]);
@@ -50,7 +48,7 @@ public class Schedule {
 
         if (collidedHours > 1) {
             student.setBuffer("\nAdvisor didn't approve " + courseSection.getCourseSectionCode() +
-                    " because of more than one hour collision with -> ");
+                  courseSection.getCourse().toString() +  " because of more than one hour collision with -> ");
             for (CourseSection c: collidedSections) {
                 student.setBuffer(c.getCourseSectionCode() + " ");
             }

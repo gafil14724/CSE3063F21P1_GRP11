@@ -14,6 +14,12 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
         return true;
     }
 
+    @Override
+    public Course getRandomElective() {
+        ArrayList<NonTechnicalUniversityElectiveCourse> nonTechCourses = getRegistrationSystem().getNontechElectiveCourses();
+        int index = (int) (Math.random() * nonTechCourses.size());
+        return nonTechCourses.get(index);
+    }
 
 
     public String toString() {

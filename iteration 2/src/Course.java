@@ -5,6 +5,7 @@ public abstract class Course {
     private int credits;
     private int theoretical;
     private int practical;
+    private CourseSection courseSection;
     private RegistrationSystem registrationSystem;
 
 
@@ -21,9 +22,16 @@ public abstract class Course {
 
     public abstract boolean isElligiblePastCourse(Student student);
     public abstract boolean isOfferableForStudent(Student student);
-    public abstract boolean isApprovableForStudent(Student student);
 
-    public abstract void rejectBehaviour(Student student);
+    public  boolean isApprovableForStudent(Student student) {
+        return (!student.getAdvisor().checkCollision(student, courseSection));
+    }
+
+    public void rejectBehaviour(Student student) {
+        if (student.getSchedule().isCollision(courseSection)) {
+            courseSection.setCollisionStatistics(courseSection.getCollisionStatistics()+1);
+        }
+    }
 
 
     public int getSectionHours() { //Returns the total section hours by summing theoretical and practical hours
@@ -55,4 +63,11 @@ public abstract class Course {
         return registrationSystem;
     }
 
+    public CourseSection getCourseSection() {
+        return courseSection;
+    }
+
+    public void setCourseSection(CourseSection courseSection) {
+        this.courseSection = courseSection;
+    }
 }

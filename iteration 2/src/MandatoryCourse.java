@@ -11,6 +11,7 @@ public abstract class MandatoryCourse extends Course {
         setSemesterNumber(semester);
         this.preRequisite = preRequisite;
         setSemester();
+        setCourseSection(new CourseSection(this));
         //super.getRegistrationSystem().getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
     }
 
@@ -27,7 +28,7 @@ public abstract class MandatoryCourse extends Course {
 
 
     public boolean isApprovableForStudent(Student student) {
-        return  student.hasPassedCourse(this.preRequisite);
+        return  super.isApprovableForStudent(student) && student.hasPassedCourse(this.preRequisite);
     }
 
     public void setSemesterNumber(float semesterNumber) {

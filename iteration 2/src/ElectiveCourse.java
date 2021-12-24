@@ -12,6 +12,7 @@ public abstract class ElectiveCourse extends Course {
 
         super(courseCode, quota, credits, theoretical, practical);
         this.semesters = semesters;
+        setCourseSection(new CourseSection(this));
     }
 
     @Override
@@ -19,10 +20,10 @@ public abstract class ElectiveCourse extends Course {
         return false;
     }
 
-    @Override
+   /* @Override
     public boolean isApprovableForStudent(Student student) {
-        return false;
-    }
+        return super.isApprovableForStudent();
+    }*/
 
     @Override
     public void rejectBehaviour(Student student) {
@@ -33,6 +34,8 @@ public abstract class ElectiveCourse extends Course {
         int stuSemester = student.getSemesterNumber();
         return Collections.frequency(getSemesters(), stuSemester);
     }
+
+    public abstract Course getRandomElective();
 
 
     public ArrayList<Integer> getSemesters() {

@@ -20,6 +20,7 @@ public class CourseSection {
         setFull();
         courseProgram = new boolean[Schedule.HOURS][Schedule.DAYS];
         setCourseProgram();
+        registrationSystem.getCourseSections().add(this);
     }
 
     /**Sets the courseProgram by adding all the lecture

@@ -13,9 +13,6 @@ public class Advisor {
         if (!courseSection.getCourse().isApprovableForStudent(student)) {
             courseSection.getCourse().rejectBehaviour(student);
         }
-        else if (student.getSchedule().isCollision(courseSection)) { //Check for collision(same for every course)
-            courseSection.setCollisionStatistics(courseSection.getCollisionStatistics()+1);
-        }
         else {
             courseSection.addStudent(student);
         }
@@ -53,19 +50,11 @@ public class Advisor {
 
     }*/
 
-    /**Checks if the credit condition of the course is satisfied by the student.
-     * returns true if condition is satisfied*/
-    private boolean checkCredits(Student student, CourseSection courseSection) {
-        if (student.getTranscript().getCompletedCredits() >= 165) {
-            return true;
-        }
-        return false;
-    }
 
     /**Checks if the student schedule has a collision with the requested course
      * Section by invoking the collision check method inside student's schedule.
      * Returns true if there is more than one hour collision*/
-    private boolean checkCollision(Student student, CourseSection courseSection) {
+    public boolean checkCollision(Student student, CourseSection courseSection) {
         return student.getSchedule().isCollision(courseSection);
     }
 
