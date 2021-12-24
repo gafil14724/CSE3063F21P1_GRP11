@@ -27,6 +27,20 @@ public class Student {
         schedule = new Schedule(this);
     }
 
+    /**Takes a Student and an ElectiveType and returns the
+     * number of past elective courses according to student's
+     * current semester number*/
+    protected int getNumOfPastElectives(ArrayList<Integer> semesterNums) {
+        int count = 0;
+
+        for (Integer i: semesterNums) {
+            if (i < getSemesterNumber()) {
+                count++;
+            }
+        }
+        return count;
+    }
+
 
 
     public int getSemesterNumber() {
@@ -65,16 +79,21 @@ public class Student {
         ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedCourseSections(this);
         setBuffer("\n\nOffered Courses: \n");
         for (CourseSection c : offeredCourses) {
-            setBuffer(c.getCourseSectionCode() + " ");
+            setBuffer(c.getCourseSectionCode() + c.getCourse().toString() +  " ");
         }
         setBuffer("\n");
+        setBuffer("(" + registrationSystem.getNontechElectiveCourses().get(0).offeredElectiveCount(this) + " NTE), ");
+        setBuffer("(" + registrationSystem.getTechElectiveCourses().get(0).offeredElectiveCount(this) + " TE), ");
+        setBuffer("(" + registrationSystem.getFacultyElectiveCourses().get(0).offeredElectiveCount(this) + " FTE), ");
+        setBuffer("\n");
+
         for (CourseSection c: offeredCourses) {
             requestCourse(c);
         }
 
         setBuffer("\n\nCurrent Courses: \n");
         for (Course c: currentCourses) {
-            setBuffer(c.getCourseCode() + " ");
+            setBuffer(c.getCourseCode() + c.toString() + " ");
         }
     }
 
@@ -86,14 +105,18 @@ public class Student {
         this.buffer += buffer;
     }
 
+
     public String getName() {
         return name;
     }
 
 
-
     public String getSurname() {
         return surname;
+    }
+
+    public String getFullName() {
+        return getName() + " " + getSurname();
     }
 
 
@@ -103,8 +126,8 @@ public class Student {
     }
 
 
-    public StudentId getStudentId() {
-        return studentId;
+    public String getStudentId() {
+        return studentId.getStudentId();
     }
 
 

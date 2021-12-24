@@ -1,8 +1,8 @@
 {
-  "PassProbability": 1,
+  "PassProbability": 0.98,
   "Quota": 250,
   "Advisors": 10,
-  "Students": 10,
+  "Students": 107,
   "CurrentSemester": "spring",
   "MandatoryCourses": [
       {
@@ -335,14 +335,6 @@
       "preRequisites": ""
     },
     {
-      "courseCode": "CSE4297",
-      "semester": 7,
-      "credits": 5,
-      "theoretical": 0,
-      "practical": 2,
-      "preRequisites": ""
-    },
-    {
       "courseCode": "ISG121",
       "semester": 7,
       "credits": 2,
@@ -359,14 +351,6 @@
       "preRequisites": ""
     },
     {
-      "courseCode": "CSE4298",
-      "semester": 8,
-      "credits": 5,
-      "theoretical": 0,
-      "practical": 2,
-      "preRequisites": "CSE4297"
-    },
-    {
       "courseCode": "ISG122",
       "semester": 8,
       "credits": 2,
@@ -376,11 +360,31 @@
     }
   ],
 
+  "FinalProjectRequiredCredits": 165,
+  "FinalProjectMandatoryCourses":
+  [
+    {
+      "courseCode": "CSE4297",
+      "semester": 7,
+      "credits": 5,
+      "theoretical": 0,
+      "practical": 2,
+      "preRequisites": ""
+    },
+    {
+      "courseCode": "CSE4298",
+      "semester": 8,
+      "credits": 5,
+      "theoretical": 0,
+      "practical": 2,
+      "preRequisites": "CSE4297"
+    }
+  ],
+
   "nonTechnicalSemesters": [2, 7, 8],
   "nonTechnicalCredits": 3,
   "nonTechnicalTheoretical": 2,
   "nonTechnicalPractical": 0,
-  "nonTechnicalPreRequisites": "",
   "nonTechnicalElectiveCourses":
   [
     {
@@ -538,6 +542,7 @@
     }
   ],
 
+  "technicalRequiredCredits": 155,
   "technicalSemesters": [7, 8, 8, 8],
   "technicalCredits": 5,
   "technicalTheoretical": 3,
@@ -666,7 +671,6 @@
   "facultyTechnicalCredits": 5,
   "facultyTechnicalTheoretical": 3,
   "facultyTechnicalPractical": 0,
-  "facultyTechnicalPreRequisites": "",
   "facultyTechnicalElectiveCourses":
   [
     {

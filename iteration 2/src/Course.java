@@ -5,22 +5,25 @@ public abstract class Course {
     private int credits;
     private int theoretical;
     private int practical;
-    private Course preRequisite;
     private RegistrationSystem registrationSystem;
 
 
     protected Course(String courseCode, int quota,
-                   int credits, int theoretical, int practical, Course preRequisite) {
+                   int credits, int theoretical, int practical) {
 
         this.courseCode = courseCode;
         this.quota = quota;
         this.credits = credits;
         this.theoretical = theoretical;
         this.practical = practical;
-        this.preRequisite = preRequisite;
         registrationSystem = RegistrationSystem.getInstance(); // Singleton Controller class
-
     }
+
+    public abstract boolean isElligiblePastCourse(Student student);
+    public abstract boolean isOfferableForStudent(Student student);
+    public abstract boolean isApprovableForStudent(Student student);
+
+    public abstract void rejectBehaviour(Student student);
 
 
     public int getSectionHours() { //Returns the total section hours by summing theoretical and practical hours
@@ -40,10 +43,6 @@ public abstract class Course {
         return credits;
     }
 
-    public Course getPreRequisite() {
-        return preRequisite;
-    }
-
     public int getTheoretical() {
         return theoretical;
     }
@@ -55,4 +54,5 @@ public abstract class Course {
     public RegistrationSystem getRegistrationSystem() {
         return registrationSystem;
     }
+
 }

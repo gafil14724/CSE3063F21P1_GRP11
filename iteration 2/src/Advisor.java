@@ -10,9 +10,21 @@ public class Advisor {
     }
 
     public void approveCourse(Student student, CourseSection courseSection) {
-       /* if (!checkCredits(student, courseSection)) {
+        if (!courseSection.getCourse().isApprovableForStudent(student)) {
+            courseSection.getCourse().rejectBehaviour(student);
+        }
+        else if (student.getSchedule().isCollision(courseSection)) { //Check for collision(same for every course)
+            courseSection.setCollisionStatistics(courseSection.getCollisionStatistics()+1);
+        }
+        else {
+            courseSection.addStudent(student);
+        }
+
+
+
+        /*if (!checkCredits(student, courseSection)) {
             student.setBuffer("\nCredit condition isn't satisfied!!");
-        }else*/
+        }else
 
         if (!checkPrerequisite(student, courseSection)) {
             student.setBuffer("\nThe system didn't allow " + courseSection.getCourseSectionCode() +
@@ -27,19 +39,19 @@ public class Advisor {
         }
         else {
             courseSection.addStudent(student);
-        }
+        }*/
     }
 
     /**Checks if the prerequisite condition is satisfied by the student.
      * Returns true if prerequisite condition is met*/
-    private boolean checkPrerequisite(Student student, CourseSection courseSection) {
+   /* private boolean checkPrerequisite(Student student, CourseSection courseSection) {
         if (courseSection.getCourse().getPreRequisite() == null) {
             return true;
         }
 
         return (student.hasPassedCourse(courseSection.getCourse().getPreRequisite()));
 
-    }
+    }*/
 
     /**Checks if the credit condition of the course is satisfied by the student.
      * returns true if condition is satisfied*/

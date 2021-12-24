@@ -1,36 +1,45 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 
-public class ElectiveCourse extends Course {
+public abstract class ElectiveCourse extends Course {
 
-    private ElectiveType electiveType;
-    private ArrayList<Integer> semesters;
+
+    private ArrayList<Integer> semesters; //Elective courses have more than one semester
 
     public ElectiveCourse(String courseCode, int quota, int credits, int theoretical,
-                          int practical, Course preRequisite, String electiveType, ArrayList<Integer> semesters) {
+                          int practical, ArrayList<Integer> semesters) {
 
-        super(courseCode, quota, credits, theoretical, practical, preRequisite);
-        setElectiveType(electiveType);
+        super(courseCode, quota, credits, theoretical, practical);
         this.semesters = semesters;
-        super.getRegistrationSystem().getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
     }
 
-    public void setElectiveType(String electiveType) {
-        switch (electiveType.toLowerCase()) {
-            case "nontechnical": this.electiveType = ElectiveType.NONTECHNICAL; break;
-            case "technical": this.electiveType = ElectiveType.TECHNICAL; break;
-            case "faculty": this.electiveType = ElectiveType.FACULTY; break;
-            default:
-                System.out.println("Incorrect Elective Type For Elective Course!!!");
-                System.exit(-1);
-        }
+    @Override
+    public boolean isOfferableForStudent(Student student) {
+        return false;
     }
 
-    public ElectiveType getElectiveType() {
-        return electiveType;
+    @Override
+    public boolean isApprovableForStudent(Student student) {
+        return false;
     }
+
+    @Override
+    public void rejectBehaviour(Student student) {
+        return;
+    }
+
+    public int offeredElectiveCount(Student student) {
+        int stuSemester = student.getSemesterNumber();
+        return Collections.frequency(getSemesters(), stuSemester);
+    }
+
 
     public ArrayList<Integer> getSemesters() {
         return semesters;
+    }
+
+    public void setSemesters(ArrayList<Integer> semesters) {
+        this.semesters = semesters;
     }
 }

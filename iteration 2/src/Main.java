@@ -21,9 +21,9 @@ public class Main {
             Object nameObj = parser.parse(new FileReader("names.json"));
             JSONObject nameJson =  (JSONObject) nameObj;
             JSONArray name = (JSONArray) nameJson.get("names");
-            Iterator<String> iterator = name.iterator();
+            Iterator iterator = name.iterator();
             while (iterator.hasNext()) {
-                names.add(iterator.next());
+                names.add((String)iterator.next());
             }
         }catch (IOException e) {
             e.printStackTrace();
@@ -42,9 +42,9 @@ public class Main {
             Object surnameObj = parser.parse(new FileReader("surnames.json"));
             JSONObject surnameJson =  (JSONObject) surnameObj;
             JSONArray surname = (JSONArray) surnameJson.get("surnames");
-            Iterator<String> iterator2 = surname.iterator();
+            Iterator iterator2 = surname.iterator();
             while (iterator2.hasNext()) {
-                surnames.add(iterator2.next());
+                surnames.add((String) iterator2.next());
             }
         }
         catch (IOException e) {
