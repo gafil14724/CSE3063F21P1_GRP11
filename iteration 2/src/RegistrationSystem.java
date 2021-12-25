@@ -51,7 +51,7 @@ public class RegistrationSystem {
         requestCourses();
         printRegistrationProcess();
 
-      //  printStatistics();
+        printStatistics();
        // registrationProcessOutput();
         //statisticsOutput();
     }
@@ -109,20 +109,15 @@ public class RegistrationSystem {
         }
     }
 
-   /* private void printStatistics() {
-        for (CourseSection c : courseSections) {
-            if (((MandatoryCourse)c.getCourse()).getSemester() == semester) {
-                statisticsBuffer += "\n\n\n============\nStatistics for: " + c.getCourseSectionCode() + "\n";
-                statisticsBuffer += c.getCollisionStatistics() + " students couldn't register because of more than " +
-                        "one hour collision with other courses\n";
-                statisticsBuffer += c.getPrerequisiteStats() + " students couldn't register because of prerequisite " +
-                        "conditions\n";
-                statisticsBuffer += c.getQuotaStats() + " students couldn't register because of quota problem\n";
-                statisticsBuffer += "==============";
+    private void printStatistics() {
+        System.out.println("\n\n");
+        for (MandatoryCourse c: mandatoryCourses) {
+            if (c.getPrerequisiteStats() > 0) {
+                System.out.println(c.getPrerequisiteStats() + " Students couldn't register to " +
+                        c.toString() + " Because of a Prerequisite Problem");
             }
         }
-        System.out.println(statisticsBuffer);
-    }*/
+    }
 
 
 
