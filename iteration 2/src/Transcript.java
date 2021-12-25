@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Transcript {
 
     private Student student;
+    private ArrayList<Course> currentCourses = new ArrayList<>();
     private ArrayList<Grade> grades = new ArrayList<>();
 
     public Transcript(Student student) {
@@ -86,6 +87,14 @@ public class Transcript {
 
     public void setGrades(ArrayList<Grade> grades) {
         this.grades = grades;
+    }
+
+    public ArrayList<Course> getCurrentCourses() {
+        return currentCourses;
+    }
+
+    public void setCurrentCourses(ArrayList<Course> currentCourses) {
+        this.currentCourses = currentCourses;
     }
 
     public String toString() {

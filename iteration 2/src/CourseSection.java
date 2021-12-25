@@ -122,7 +122,6 @@ public class CourseSection {
     }
 
 
-
     public int getQuotaStatistics() {
         return quotaStatistics;
     }

@@ -7,7 +7,6 @@ public class Student {
     private String surname;
     private StudentId studentId;
     private int registrationOrder;
-    private ArrayList<Course> currentCourses;
     private int currentYear;
     private Advisor advisor;
     private Schedule schedule;
@@ -20,7 +19,6 @@ public class Student {
         this.surname = surname;
         this.currentYear = currentYear;
         this.registrationOrder = registrationOrder;
-        currentCourses = new ArrayList<>();
         studentId = new StudentId(currentYear, registrationOrder);
         this.registrationSystem = registrationSystem;
         transcript = new Transcript(this);
@@ -63,7 +61,7 @@ public class Student {
 
     public void addToCurrentCourses(CourseSection courseSection) {
         schedule.addToProgram(courseSection);
-        getCurrentCourses().add(courseSection.getCourse());
+        transcript.getCurrentCourses().add(courseSection.getCourse());
     }
 
 
@@ -110,6 +108,7 @@ public class Student {
     }
 
 
+
     public String getName() {
         return name;
     }
@@ -132,12 +131,6 @@ public class Student {
 
     public String getStudentId() {
         return studentId.getStudentId();
-    }
-
-
-
-    public ArrayList<Course> getCurrentCourses() {
-        return currentCourses;
     }
 
 

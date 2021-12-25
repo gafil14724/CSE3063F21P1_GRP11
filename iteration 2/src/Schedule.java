@@ -31,32 +31,22 @@ public class Schedule {
     /**Takes a course section as argument and compares it with
      * current schedule, if there is more than 1 hour collision between
      * courseProgram and current schedule returns true, otherwise false */
-    public boolean isCollision(CourseSection courseSection) {
+    public ArrayList<CourseSection> getCollidedHours(CourseSection courseSection) {
         boolean[][] courseProgram = courseSection.getCourseProgram();
-        int collidedHours = 0; // total num of collided hours
         ArrayList<CourseSection> collidedSections = new ArrayList<>();
-
         for (int i = 0; i < HOURS; i++) {
             for (int j = 0; j < DAYS; j++) {
                 // If courseProgram and schedule has lectures in the same hour
                 if (courseProgram[i][j] && program[i][j] != null) {
                     collidedSections.add(program[i][j]);
-                    collidedHours++;
                 }
             }
         }
+        return collidedSections; // Return true if collided hours is greater than one, false otherwise.
+    }
 
-        if (collidedHours > 1) {
-            student.getExecutionTrace().append("\nAdvisor didn't approve " + courseSection.getCourse().toString() +
-                    " because of more than one hour collision with -> ");
-            for (CourseSection c: collidedSections) {
-                student.getExecutionTrace().append(c.getCourse().toString() + " ");
-            }
-            student.getExecutionTrace().append(" in schedule");
-        }
-
-        return collidedHours > 1; // Return true if collided hours is greater than one, false otherwise.
-
+    public boolean isCollision(CourseSection courseSection) {
+        return getCollidedHours(courseSection).size() > 1;
     }
 
     public CourseSection[][] getProgram() {

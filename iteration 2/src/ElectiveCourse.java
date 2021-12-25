@@ -20,14 +20,16 @@ public abstract class ElectiveCourse extends Course {
         return false;
     }
 
-   /* @Override
-    public boolean isApprovableForStudent(Student student) {
-        return super.isApprovableForStudent();
-    }*/
 
     @Override
-    public void rejectBehaviour(Student student) {
-        student.requestCourse(getRandomElective().getCourseSection());
+    public boolean onRequested(Student student) {
+        if (!super.onRequested(student)) {
+            student.requestCourse(getRandomElective().getCourseSection());
+            return false;
+        }
+
+        getCourseSection().addStudent(student);
+        return true;
     }
 
     public int offeredElectiveCount(Student student) {

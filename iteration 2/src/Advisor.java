@@ -10,33 +10,7 @@ public class Advisor {
     }
 
     public void approveCourse(Student student, CourseSection courseSection) {
-        if (!courseSection.getCourse().isApprovableForStudent(student)) {
-            courseSection.getCourse().rejectBehaviour(student);
-        }
-        else {
-            courseSection.addStudent(student);
-        }
-
-
-
-        /*if (!checkCredits(student, courseSection)) {
-            student.setBuffer("\nCredit condition isn't satisfied!!");
-        }else
-
-        if (!checkPrerequisite(student, courseSection)) {
-            student.setBuffer("\nThe system didn't allow " + courseSection.getCourseSectionCode() +
-                    " because student failed prerequisite -> " + courseSection.getCourse().getPreRequisite().getCourseCode());
-            courseSection.setPrerequisiteStatistics(courseSection.getPrerequisiteStatistics() + 1);
-        }else if (checkCollision(student, courseSection)) {
-            courseSection.setCollisionStatistics(courseSection.getCollisionStatistics() + 1);
-        } else if (courseSection.getCourse().getCourseCode().equalsIgnoreCase("CSE4297") &&
-                    !checkCredits(student, courseSection))    {
-            student.setBuffer("\nThe system didn't allow " + courseSection.getCourseSectionCode() + " (Final Project)" +
-                    " because Student completed credits is less than 165 -> (" + student.getTranscript().getCompletedCredits() + ")");
-        }
-        else {
-            courseSection.addStudent(student);
-        }*/
+        courseSection.getCourse().onRequested(student);
     }
 
     /**Checks if the prerequisite condition is satisfied by the student.

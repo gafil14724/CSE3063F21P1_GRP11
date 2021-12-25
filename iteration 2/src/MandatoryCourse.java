@@ -27,8 +27,19 @@ public abstract class MandatoryCourse extends Course {
     }
 
 
-    public boolean isApprovableForStudent(Student student) {
-        return  super.isApprovableForStudent(student) && student.hasPassedCourse(this.preRequisite);
+
+    @Override
+    public boolean onRequested(Student student) {
+        super.onRequested(student);
+        if (!student.hasPassedCourse(preRequisite)) {
+            student.getExecutionTrace().append("\nThe system didn't allow " +  toString() +
+                    " because student failed prerequisite -> " + getPreRequisite().toString());
+            return false;
+        }
+
+        getCourseSection().addStudent(student);
+        return true;
+
     }
 
     public void setSemesterNumber(float semesterNumber) {

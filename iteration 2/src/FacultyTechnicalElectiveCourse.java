@@ -12,10 +12,6 @@ public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
         return true;
     }
 
-    @Override
-    public void rejectBehaviour(Student student) {
-        return;
-    }
 
     @Override
     public Course getRandomElective() {

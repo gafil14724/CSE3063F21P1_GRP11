@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
 
@@ -13,6 +12,11 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
     public boolean isElligiblePastCourse(Student student) {
         return true;
     }
+
+  /*  public void onRequested(Student student) {
+        super.onRequested(student);
+
+    }*/
 
     @Override
     public Course getRandomElective() {

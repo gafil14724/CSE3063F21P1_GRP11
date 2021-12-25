@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public abstract class Course {
 
     private String courseCode;
@@ -23,22 +25,25 @@ public abstract class Course {
     public abstract boolean isElligiblePastCourse(Student student);
     public abstract boolean isOfferableForStudent(Student student);
 
-    public  boolean isApprovableForStudent(Student student) {
-        return (!student.getAdvisor().checkCollision(student, courseSection));
-    }
 
-    public void rejectBehaviour(Student student) {
+    public boolean onRequested(Student student) {
+        ArrayList<CourseSection> collidedSections = student.getSchedule().getCollidedHours(courseSection);
         if (student.getSchedule().isCollision(courseSection)) {
-
+            student.getExecutionTrace().append("\nAdvisor didn't approve " + courseSection.getCourse().toString() +
+                    " because of more than one hour collision with -> ");
+            for (CourseSection c: collidedSections) {
+                student.getExecutionTrace().append(c.getCourse().toString() + " ");
+            }
+            student.getExecutionTrace().append(" in schedule");
             courseSection.setCollisionStatistics(courseSection.getCollisionStatistics()+1);
+            return false; //return false if there is a problem
         }
+        return true;
     }
-
 
     public int getSectionHours() { //Returns the total section hours by summing theoretical and practical hours
         return theoretical + practical;
     }
-
 
     public String getCourseCode() {
         return courseCode;

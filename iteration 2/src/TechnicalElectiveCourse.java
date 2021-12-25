@@ -24,25 +24,25 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
         return techCourses.get(index);
     }
 
-    public boolean isApprovableForStudent(Student student) {
-        return checkCreditCondition(student) && student.hasPassedCourse(preRequisite) &&
-                super.isApprovableForStudent(student);
-    }
+
 
     @Override
-    public void rejectBehaviour(Student student) {
+    public boolean onRequested(Student student) {
 
         if (!checkCreditCondition(student)){
-            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
+            student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                     " because Student completed credits is less than " + requiredCredits +
                     " -> (" + student.getTranscript().getCompletedCredits() + ")");
+            return false;
         }
         else if (!student.hasPassedCourse(preRequisite)) {
-            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
-                    " because student failed prerequisite -> " + getPreRequisite().getCourseCode());
-        } else {
-            super.rejectBehaviour(student);
+            student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
+                    " because student failed prerequisite -> " + getPreRequisite().toString());
+            student.requestCourse(getRandomElective().getCourseSection());
+            return false;
         }
+
+        return super.onRequested(student);
     }
 
 

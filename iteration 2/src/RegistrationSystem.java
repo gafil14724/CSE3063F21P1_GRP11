@@ -100,7 +100,7 @@ public class RegistrationSystem {
 
 
 */          s.getExecutionTrace().append("\n\nCurrent Courses: \n");
-            for (Course c: s.getCurrentCourses()) {
+            for (Course c: s.getTranscript().getCurrentCourses()) {
                 s.getExecutionTrace().append(c.toString() + ", ");
             }
             System.out.println(s.toString());

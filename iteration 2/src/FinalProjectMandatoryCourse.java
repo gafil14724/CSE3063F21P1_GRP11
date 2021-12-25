@@ -16,24 +16,25 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
     }
 
 
-    @Override
-    public boolean isApprovableForStudent(Student student) {
-        return super.isApprovableForStudent(student) && student.getCompletedCredits() >= requiredCredits;
-    }
 
     @Override
-    public void rejectBehaviour(Student student) {
-        if (!student.hasPassedCourse(getPreRequisite())) {
-            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
-                    " because student failed prerequisite -> " + getPreRequisite().getCourseCode());
-        }else {
-            student.getExecutionTrace().append("\nThe system didn't allow " + getCourseCode() + toString() +
-            " because Student completed credits is less than 165 -> (" + student.getTranscript().getCompletedCredits() + ")");
+    public boolean onRequested(Student student) {
+        if (!checkReqCredits(student)){
+            student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
+                     " because Student completed credits is less than " + requiredCredits +  "-> (" +
+                     student.getTranscript().getCompletedCredits() + ")");
+            return false;
         }
+
+        return super.onRequested(student);
     }
 
     public int getRequiredCredits() {
         return requiredCredits;
+    }
+
+    private boolean checkReqCredits(Student student) {
+        return student.getCompletedCredits() >= requiredCredits;
     }
 
     public void setRequiredCredits(int requiredCredits) {
