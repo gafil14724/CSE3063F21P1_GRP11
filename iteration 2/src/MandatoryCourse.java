@@ -1,23 +1,26 @@
+import java.util.ArrayList;
+
 public class MandatoryCourse extends Course {
 
     private float semesterNumber;
     Semester semester;
     private int prerequisiteStats;
-    private Course preRequisite; //Every mandatory course has a prerequisite course
+    private ArrayList<Course> preRequisites; //Every mandatory course has a prerequisite course
 
     public MandatoryCourse(String courseCode, float semester, int quota,
-                  int credits, int theoretical, int practical, Course preRequisite) {
+                  int credits, int theoretical, int practical, ArrayList<Course> preRequisites) {
 
         super(courseCode, quota, credits, theoretical, practical);
         setSemesterNumber(semester);
-        this.preRequisite = preRequisite;
+        this.preRequisites = preRequisites;
         setSemester();
         setCourseSection(new CourseSection(this));
     }
 
     @Override
     public boolean isElligiblePastCourse(Student student) {
-        return student.hasPassedCourse(this.getPreRequisite()) && student.getSemesterNumber() > this.getSemesterNumber();
+        return student.getTranscript().hasPassedCourses(this.getPreRequisites()) &&
+                student.getSemesterNumber() > this.getSemesterNumber();
     }
 
     @Override
@@ -30,9 +33,14 @@ public class MandatoryCourse extends Course {
 
     @Override
     public boolean onRequested(Student student) {
-        if (!student.hasPassedCourse(preRequisite)) {
+        if (!student.getTranscript().hasPassedCourses(preRequisites)) {
             student.getExecutionTrace().append("\nThe system didn't allow " +  toString() +
-                    " because student failed prerequisite -> " + getPreRequisite().toString());
+                    " because student failed prerequisites -> " );
+            for (Course c: preRequisites) {
+                if (!student.hasPassedCourse(c)) {
+                    student.getExecutionTrace().append(c.toString() + " ");
+                }
+            }
             setPrerequisiteStats();
             return false;
         }else if (!super.onRequested(student)) {
@@ -76,12 +84,12 @@ public class MandatoryCourse extends Course {
         return semester;
     }
 
-    public Course getPreRequisite() {
-        return preRequisite;
+    public ArrayList<Course> getPreRequisites() {
+        return preRequisites;
     }
 
-    public void setPreRequisite(Course preRequisite) {
-        this.preRequisite = preRequisite;
+    public void setPreRequisites(ArrayList<Course> preRequisites) {
+        this.preRequisites = preRequisites;
     }
 
     public int getPrerequisiteStats() {

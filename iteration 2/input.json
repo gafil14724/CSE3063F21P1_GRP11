@@ -1,5 +1,5 @@
 {
-  "PassProbability": 0.6,
+  "PassProbability": 0,
   "Quota": 100,
   "Advisors": 10,
   "Students": 107,
@@ -11,7 +11,7 @@
         "credits": 2,
         "theoretical": 2,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "MBG1201",
@@ -19,7 +19,7 @@
         "credits": 5,
         "theoretical": 2,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "CSE1200",
@@ -27,7 +27,7 @@
         "credits": 4,
         "theoretical": 3,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "CSE1241",
@@ -35,7 +35,7 @@
         "credits": 6,
         "theoretical": 3,
         "practical": 2,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "MATH1001",
@@ -43,7 +43,7 @@
         "credits": 6,
         "theoretical": 4,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "PHYS1101",
@@ -51,7 +51,7 @@
         "credits": 4,
         "theoretical": 3,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "PHYS1103",
@@ -59,7 +59,7 @@
         "credits": 2,
         "theoretical": 0,
         "practical": 2,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "TRD121",
@@ -67,7 +67,7 @@
         "credits": 2,
         "theoretical": 2,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "ATA122",
@@ -75,7 +75,7 @@
         "credits": 2,
         "theoretical": 2,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "CSE1242",
@@ -83,7 +83,7 @@
         "credits": 6,
         "theoretical": 3,
         "practical": 2,
-        "preRequisites": "CSE1241"
+        "preRequisites": ["CSE1241"]
 
       },
       {
@@ -92,7 +92,7 @@
         "credits": 6,
         "theoretical": 4,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "MATH2256",
@@ -100,7 +100,7 @@
         "credits": 5,
         "theoretical": 3,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "PHYS1102",
@@ -108,7 +108,7 @@
         "credits": 4,
         "theoretical": 3,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "PHYS1104",
@@ -116,7 +116,7 @@
         "credits": 2,
         "theoretical": 0,
         "practical": 2,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "TRD122",
@@ -124,7 +124,7 @@
         "credits": 2,
         "theoretical": 2,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "CSE2023",
@@ -132,7 +132,7 @@
         "credits": 6,
         "theoretical": 3,
         "practical": 0,
-        "preRequisites": ""
+        "preRequisites": [""]
       },
       {
         "courseCode": "CSE2225",
@@ -140,7 +140,7 @@
         "credits": 7,
         "theoretical": 3,
         "practical": 2,
-        "preRequisites": "CSE1242"
+        "preRequisites": ["CSE1242"]
       },
     {
       "courseCode": "ECON2004",
@@ -148,7 +148,7 @@
       "credits": 4,
       "theoretical": 2,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "EE2031",
@@ -156,7 +156,7 @@
       "credits": 5,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "PHYS1102"
+      "preRequisites": ["PHYS1102"]
     },
     {
       "courseCode": "MATH2055",
@@ -164,7 +164,7 @@
       "credits": 4,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "MATH2059",
@@ -172,7 +172,7 @@
       "credits": 4,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "MATH1001"
+      "preRequisites": ["MATH1001"]
     },
     {
       "courseCode": "CSE2246",
@@ -180,7 +180,7 @@
       "credits": 6,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": "CSE2025"
+      "preRequisites": ["CSE2025"]
     },
     {
       "courseCode": "CSE2138",
@@ -188,7 +188,7 @@
       "credits": 7,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE2260",
@@ -196,7 +196,7 @@
       "credits": 4,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": "CSE1242"
+      "preRequisites": ["CSE1242"]
     },
     {
       "courseCode": "EE2032",
@@ -204,7 +204,7 @@
       "credits": 5,
       "theoretical": 2,
       "practical": 2,
-      "preRequisites": "EE2031"
+      "preRequisites": ["EE2031"]
     },
     {
       "courseCode": "STAT2253",
@@ -212,7 +212,7 @@
       "credits": 5,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE3000",
@@ -220,7 +220,7 @@
       "credits": 10,
       "theoretical": 0,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE3215",
@@ -228,7 +228,7 @@
       "credits": 6,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE3033",
@@ -236,7 +236,7 @@
       "credits": 7,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": "CSE2225"
+      "preRequisites": ["CSE2225"]
     },
     {
       "courseCode": "CSE3055",
@@ -244,7 +244,7 @@
       "credits": 7,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": "CSE2225"
+      "preRequisites": ["CSE2225"]
     },
     {
       "courseCode": "CSE3063",
@@ -252,7 +252,7 @@
       "credits": 5,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "CSE1242"
+      "preRequisites": ["CSE1242"]
     },
     {
       "courseCode": "IE3081",
@@ -260,7 +260,7 @@
       "credits": 4,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "STAT2253"
+      "preRequisites": ["STAT2253"]
     },
     {
       "courseCode": "CSE3038",
@@ -268,7 +268,7 @@
       "credits": 7,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": "CSE2138"
+      "preRequisites": ["CSE2138", "CSE3215"]
     },
     {
       "courseCode": "CSE3044",
@@ -276,7 +276,7 @@
       "credits": 7,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": "CSE3055"
+      "preRequisites": ["CSE3055"]
     },
     {
       "courseCode": "CSE3048",
@@ -284,7 +284,7 @@
       "credits": 5,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "MATH2055"
+      "preRequisites": ["MATH2055"]
     },
     {
       "courseCode": "CSE3264",
@@ -292,7 +292,7 @@
       "credits": 5,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "CSE2023"
+      "preRequisites": ["CSE2023"]
     },
     {
       "courseCode": "IE3235",
@@ -300,7 +300,7 @@
       "credits": 4,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "MATH2256"
+      "preRequisites": ["MATH2256"]
     },
     {
       "courseCode": "COM2202",
@@ -308,7 +308,7 @@
       "credits": 2,
       "theoretical": 2,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4000",
@@ -316,7 +316,7 @@
       "credits": 10,
       "theoretical": 0,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4074",
@@ -324,7 +324,7 @@
       "credits": 5,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4219",
@@ -332,7 +332,7 @@
       "credits": 6,
       "theoretical": 3,
       "practical": 2,
-      "preRequisites": "CSE3038"
+      "preRequisites": ["CSE3038"]
     },
     {
       "courseCode": "ISG121",
@@ -340,7 +340,7 @@
       "credits": 2,
       "theoretical": 2,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4288",
@@ -348,7 +348,7 @@
       "credits": 5,
       "theoretical": 3,
       "practical": 0,
-      "preRequisites": "STAT2253"
+      "preRequisites": ["MATH2256", "STAT2253"]
     },
     {
       "courseCode": "ISG122",
@@ -356,7 +356,7 @@
       "credits": 2,
       "theoretical": 2,
       "practical": 0,
-      "preRequisites": ""
+      "preRequisites": [""]
     }
   ],
 
@@ -369,7 +369,7 @@
       "credits": 5,
       "theoretical": 0,
       "practical": 2,
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4298",
@@ -377,7 +377,7 @@
       "credits": 5,
       "theoretical": 0,
       "practical": 2,
-      "preRequisites": "CSE4297"
+      "preRequisites": ["CSE4297"]
     }
   ],
 
@@ -551,119 +551,119 @@
   [
     {
       "courseCode": "CSE4026",
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4032",
-      "preRequisites": ""
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4034",
-      "preRequisites": "CSE3033"
+      "preRequisites": ["CSE3033"]
     },
     {
       "courseCode": "CSE4038",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4040",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4044",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4053",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4056",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4057",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4058",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4059",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4061",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4062",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4063",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4065",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4066",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4067",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4070",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4075",
-      "preRequisites": "CSE4074" 
+      "preRequisites": ["CSE4074"]
     },
     {
       "courseCode": "CSE4082",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4083",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4084",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4085",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4086",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4217",
-      "preRequisites": "CSE3038" 
+      "preRequisites": ["CSE3038"]
     },
     {
       "courseCode": "CSE4093",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4094",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4095",
-      "preRequisites": "" 
+      "preRequisites": [""]
     },
     {
       "courseCode": "CSE4096",
-      "preRequisites": "" 
+      "preRequisites": [""]
     }
   ],
 

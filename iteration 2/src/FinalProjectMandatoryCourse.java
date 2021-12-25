@@ -1,11 +1,13 @@
+import java.util.ArrayList;
+
 public class FinalProjectMandatoryCourse extends MandatoryCourse {
 
     private int requiredCredits;
     private int creditStats;
 
     public FinalProjectMandatoryCourse(String courseCode, float semester, int quota, int credits,
-                                       int theoretical, int practical, Course preRequisite, int requiredCredits) {
-        super (courseCode, semester, quota, credits, theoretical, practical, preRequisite);
+                                       int theoretical, int practical, ArrayList<Course> preRequisites, int requiredCredits) {
+        super (courseCode, semester, quota, credits, theoretical, practical, preRequisites);
         this.requiredCredits = requiredCredits;
     }
 

@@ -319,12 +319,16 @@ public class RegistrationSystem {
                 int credits = (int)(long)course.get("credits");
                 int theoretical = (int)(long)course.get("theoretical");
                 int practical = (int)(long) course.get("practical");
-                String preRequisiteString = (String) course.get("preRequisites");
-                Course preRequisite = findCourse(preRequisiteString);
-
+                /*String preRequisiteString = (String) course.get("preRequisites");
+                Course preRequisite = findCourse(preRequisiteString);*/
+                ArrayList<Course> preRequisiteCourses = new ArrayList<>();
+                JSONArray preRequisites = (JSONArray) course.get("preRequisites");
+                for (Object p: preRequisites) {
+                    preRequisiteCourses.add(findCourse((String)p));
+                }
 
                 MandatoryCourse newCourse = new MandatoryCourse(courseCode,  courseSemester,  quota, credits, theoretical,
-                        practical, preRequisite);
+                        practical, preRequisiteCourses);
                 courses.add(newCourse);
                 mandatoryCourses.add(newCourse);
             }
@@ -339,11 +343,16 @@ public class RegistrationSystem {
                 int credits = (int)(long)course.get("credits");
                 int theoretical = (int)(long)course.get("theoretical");
                 int practical = (int)(long) course.get("practical");
-                String preRequisiteString = (String) course.get("preRequisites");
-                Course preRequisite = findCourse(preRequisiteString);
+                /*String preRequisiteString = (String) course.get("preRequisites");
+                Course preRequisite = findCourse(preRequisiteString);*/
+                ArrayList<Course> preRequisiteCourses = new ArrayList<>();
+                JSONArray preRequisites = (JSONArray) course.get("preRequisites");
+                for (Object p: preRequisites) {
+                    preRequisiteCourses.add(findCourse((String)p));
+                }
 
                 MandatoryCourse newCourse = new FinalProjectMandatoryCourse(courseCode,  courseSemester,  quota, credits,
-                        theoretical, practical, preRequisite, finalProjectReqCredit);
+                        theoretical, practical, preRequisiteCourses, finalProjectReqCredit);
                 courses.add(newCourse);
                 mandatoryCourses.add(newCourse);
             }
@@ -384,11 +393,16 @@ public class RegistrationSystem {
             for (Object c: techCourses) {
                 JSONObject course = (JSONObject) c;
                 String courseCode = (String) course.get("courseCode");
-                String techPreReqStr = (String) course.get("preRequisites");
-                Course techPreRequisite = findCourse(techPreReqStr);
+               /* String techPreReqStr = (String) course.get("preRequisites");
+                Course techPreRequisite = findCourse(techPreReqStr);*/
+                ArrayList<Course> preRequisiteCourses = new ArrayList<>();
+                JSONArray preRequisites = (JSONArray) course.get("preRequisites");
+                for (Object p: preRequisites) {
+                    preRequisiteCourses.add(findCourse((String)p));
+                }
 
                 TechnicalElectiveCourse newTechElective = new TechnicalElectiveCourse( courseCode, quota, techCredits, techTheoretical,
-                        techPractical,techElectiveSemesters,techReqCredits, techPreRequisite);
+                        techPractical,techElectiveSemesters,techReqCredits, preRequisiteCourses);
                // courses.add(newTechElective);
                 techElectiveCourses.add(newTechElective);
             }
@@ -465,7 +479,7 @@ public class RegistrationSystem {
 
     /**Returns the course in courses list by its course code*/
     private  Course findCourse(String courseCode) {
-        for (Course c: courses) {
+        for (Course c: mandatoryCourses) {
             if (c.getCourseCode().equals(courseCode)) {
                 return c;
             }

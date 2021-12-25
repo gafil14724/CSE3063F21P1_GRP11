@@ -5,19 +5,19 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
 
     private int requiredCredits;
     private int creditStats;
-    private Course preRequisite;
+    private ArrayList<Course> preRequisites;
     private int preRequisiteStats;
 
-    public TechnicalElectiveCourse(String courseCode, int quota, int credits, int theoretical,
-                                   int practical, ArrayList<Integer> semesters, int requiredCredits, Course preRequisite) {
+    public TechnicalElectiveCourse(String courseCode, int quota, int credits, int theoretical, int practical,
+                                   ArrayList<Integer> semesters, int requiredCredits, ArrayList<Course> preRequisites) {
         super(courseCode, quota, credits, theoretical, practical, semesters);
         this.requiredCredits = requiredCredits;
-        this.preRequisite = preRequisite;
+        this.preRequisites = preRequisites;
     }
 
     @Override
     public boolean isElligiblePastCourse(Student student) {
-        return student.hasPassedCourse(this.getPreRequisite()) && checkCreditCondition(student);
+        return student.getTranscript().hasPassedCourses(this.getPreRequisites()) && checkCreditCondition(student);
     }
 
     @Override
@@ -33,17 +33,6 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
             student.requestCourseSection(c.getCourseSection());
         }
 
-      /*  ArrayList<TechnicalElectiveCourse> randElectives = new ArrayList<>();
-        for (TechnicalElectiveCourse c:  getRegistrationSystem().getTechElectiveCourses()) {
-            if (c != this) {
-                randElectives.add(c);
-            }
-        }
-        if (randElectives.size() == 0 ) {
-            return null;
-        }
-        int index = (int) (Math.random() * randElectives.size());
-        return randElectives.get(index);*/
     }
 
     @Override
@@ -57,7 +46,6 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
 
     @Override
     public boolean onRequested(Student student) {
-
         if (!checkCreditCondition(student)){
             student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                     " because Student completed credits is less than " + requiredCredits +
@@ -65,12 +53,21 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
             setCreditStats();
             return false;
         }
-        else if (!student.hasPassedCourse(preRequisite)) {
-            student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
-                    " because student failed prerequisite -> " + getPreRequisite().toString());
+        if (!student.getTranscript().hasPassedCourses(preRequisites)) {
+            student.getExecutionTrace().append("\nThe system didn't allow " +  toString() +
+                    " because student failed prerequisites -> " );
+            for (Course c: preRequisites) {
+                if (!student.hasPassedCourse(c)) {
+                    student.getExecutionTrace().append(c.toString() + " ");
+                }
+            }
+            setPreRequisiteStats();
+                return false;
+           /* student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
+                    " because student failed prerequisite -> " + getPreRequisites().toString());
             student.requestCourseSection(getRandomElective().getCourseSection());
             setPreRequisiteStats();
-            return false;
+            return false;*/
         }
 
         return super.onRequested(student);
@@ -90,12 +87,12 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
         this.requiredCredits = requiredCredits;
     }
 
-    public Course getPreRequisite() {
-        return preRequisite;
+    public ArrayList<Course> getPreRequisites() {
+        return preRequisites;
     }
 
-    public void setPreRequisite(Course preRequisite) {
-        this.preRequisite = preRequisite;
+    public void setPreRequisites(ArrayList<Course> preRequisites) {
+        this.preRequisites = preRequisites;
     }
 
     public int getCreditStats() {

@@ -53,6 +53,16 @@ public class Transcript {
         return passedCourses.contains(course);
     }
 
+    public boolean hasPassedCourses(ArrayList<Course> courses) {
+        for (Course c: courses) {
+            if (!hasPassedCourse(c)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
     public void addPassedCourse(Course course) { //Adds a passed course with a random grade that is greater than 50
         int grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
 
