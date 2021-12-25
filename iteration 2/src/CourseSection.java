@@ -66,7 +66,6 @@ public class CourseSection {
         }else {
             student.getExecutionTrace().append("\nThe system didn't allow " + course.toString() + " because " +
                     "course section is full. ("  +  students.size() + ")");
-            getCourse().setQuotaStats();
             return false;
         }
 

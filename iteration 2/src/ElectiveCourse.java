@@ -23,7 +23,7 @@ public abstract class ElectiveCourse extends Course {
     @Override
     public boolean onRequested(Student student) {
         if (!super.onRequested(student)) { //If there is a collision
-            student.requestCourseSection(getRandomElective().getCourseSection());
+            whenRejectedForQuota(student);
             return false;
         }
 

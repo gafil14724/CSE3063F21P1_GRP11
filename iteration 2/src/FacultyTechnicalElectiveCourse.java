@@ -21,7 +21,9 @@ public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
             return;
         }
 
-        ArrayList<FacultyTechnicalElectiveCourse> facTechCourses = getRegistrationSystem().getFacultyElectiveCourses();
+        ArrayList<FacultyTechnicalElectiveCourse> facTechCourses = new ArrayList<>(getRegistrationSystem().
+                getFacultyElectiveCourses());
+
         facTechCourses.remove(this);//Remove this object from the list
         Collections.shuffle(facTechCourses);// shuffle the list
         for (Course c: facTechCourses) { //For each course, request one by one
@@ -31,7 +33,9 @@ public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
 
     @Override
     public Course getRandomElective() {
-        ArrayList<FacultyTechnicalElectiveCourse> electiveCourses = getRegistrationSystem().getFacultyElectiveCourses();
+        ArrayList<FacultyTechnicalElectiveCourse> electiveCourses = new ArrayList<>(getRegistrationSystem().
+                getFacultyElectiveCourses());
+        electiveCourses.remove(this);
         int index = (int) (Math.random() * electiveCourses.size());
         return electiveCourses.get(index);
     }

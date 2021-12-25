@@ -1,9 +1,11 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class FinalProjectMandatoryCourse extends MandatoryCourse {
 
     private int requiredCredits;
-    private int creditStats;
+    private Set<Student> nonRequestedCredit = new HashSet<>();
 
     public FinalProjectMandatoryCourse(String courseCode, float semester, int quota, int credits,
                                        int theoretical, int practical, ArrayList<Course> preRequisites, int requiredCredits) {
@@ -25,7 +27,7 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
             student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                      " because Student completed credits is less than " + requiredCredits +  "-> (" +
                      student.getTranscript().getCompletedCredits() + ")");
-            setCreditStats();
+            getNonRegisteredCredit().add(student);
             return false;
         }
 
@@ -44,12 +46,12 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
         this.requiredCredits = requiredCredits;
     }
 
-    public int getCreditStats() {
-        return creditStats;
+    public Set<Student> getNonRegisteredCredit() {
+        return nonRequestedCredit;
     }
 
-    public void setCreditStats() {
-        creditStats++;
+    public void setNonRequestedCredit(Set<Student> nonRequestedCredit) {
+        this.nonRequestedCredit = nonRequestedCredit;
     }
 
     public String toString() {

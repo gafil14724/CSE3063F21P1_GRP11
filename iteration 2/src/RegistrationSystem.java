@@ -7,6 +7,8 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class RegistrationSystem {
 
@@ -18,11 +20,10 @@ public class RegistrationSystem {
     private ArrayList<Advisor> advisors = new ArrayList<>();
     private ArrayList<Course> courses = new ArrayList<>();
     private ArrayList<MandatoryCourse> mandatoryCourses = new ArrayList<>();
-    //private ArrayList<FinalProjectMandatoryCourse> finalProjectMandatoryCourses = new ArrayList<>();
+    private ArrayList<FinalProjectMandatoryCourse> finalProjectMandatoryCourses = new ArrayList<>();
     private ArrayList<NonTechnicalUniversityElectiveCourse> nontechElectiveCourses = new ArrayList<>();
     private ArrayList<TechnicalElectiveCourse> techElectiveCourses = new ArrayList<>();
     private ArrayList<FacultyTechnicalElectiveCourse> facultyElectiveCourses = new ArrayList<>();
-    //private ArrayList<CourseSection> courseSections = new ArrayList<>();
     private double passProbability;
     private int studentCount;
     private int advisorCount;
@@ -50,8 +51,8 @@ public class RegistrationSystem {
         addPastCourses();
         requestCourses();
         printRegistrationProcess();
-
         printStatistics();
+
        // registrationProcessOutput();
         //statisticsOutput();
     }
@@ -92,7 +93,7 @@ public class RegistrationSystem {
     private void printRegistrationProcess() {
         for (Student s : students) {
             System.out.println("==========\nRegistration process for: " + s.getFullName() +  ": " + s.getStudentId() +
-               " " +    s.getSemesterNumber());
+               " \nSemester Number: " +    s.getSemesterNumber() + "\nCompleted Credits: " + s.getCompletedCredits());
             System.out.println("Advisor: " + s.getAdvisor().getFirstName() + " " + s.getAdvisor().getLastName() + "\n");
 
          /*   System.out.println("Past Courses: ");
@@ -109,14 +110,61 @@ public class RegistrationSystem {
         }
     }
 
-    private void printStatistics() {
-        System.out.println("\n\n");
+    private void printMandatoryStatistics() {
         for (MandatoryCourse c: mandatoryCourses) {
-            if (c.getPrerequisiteStats() > 0) {
-                System.out.println(c.getPrerequisiteStats() + " Students couldn't register to " +
-                        c.toString() + " Because of a Prerequisite Problem");
+            if (c.getNonRegisteredCollision().size() > 0) {
+                System.out.print(c.getNonRegisteredCollision().size() + " Students couldn't register to " +
+                        c.toString() + " Because of a collision problem: (");
+                c.getNonRegisteredCollision().forEach(s -> System.out.print(s.getStudentId() + " "));
+                System.out.println(")");
+            }
+
+            if (c.getNonRegisteredQuota().size() > 0) {
+                System.out.println(c.getNonRegisteredQuota() + " students couldn't register to " +
+                        c.toString() + " because of quota problem: (");
+                c.getNonRegisteredQuota().forEach(s -> System.out.print(s.getStudentId() + " "));
+                System.out.println(")");
+            }
+
+            if (c.getNonRegisteredPrereq().size() > 0) {
+                System.out.print(c.getNonRegisteredPrereq().size() + " Students couldn't register to " +
+                        c.toString() + " Because of a Prerequisite Problem: (");
+                c.getNonRegisteredPrereq().forEach(s -> System.out.print(s.getStudentId() + " "));
+                System.out.println(")");
+            }
+
+
+        }
+    }
+
+    private void printFinalProjectStatistics() {
+        for (FinalProjectMandatoryCourse c: finalProjectMandatoryCourses) {
+            if (c.getNonRegisteredCredit().size() > 0) {
+                System.out.print(c.getNonRegisteredCredit().size() + " Students couldn't register to " +
+                        c.toString() + " Because of credit problem: (");
+                c.getNonRegisteredCredit().forEach(s -> System.out.print(s.getStudentId() + " "));
+                System.out.println(")");
             }
         }
+    }
+
+    private void printElectiveStatistics() {
+        Set<Student> teStudents = new HashSet<>();
+        for (TechnicalElectiveCourse te: techElectiveCourses) {
+            teStudents.addAll(te.getUnregisteredStudents());
+        }
+        System.out.print(teStudents.size() + " Student couldn't register to a Technical Elective " +
+                "(TE) this semester: (");
+
+        teStudents.forEach(s -> System.out.print(s.getStudentId() + ", "));
+        System.out.println(")");
+    }
+
+    private void printStatistics() {
+        System.out.println("\n\n");
+        printMandatoryStatistics();
+        printFinalProjectStatistics();
+        printElectiveStatistics();
     }
 
 
@@ -212,7 +260,7 @@ public class RegistrationSystem {
     }
 
     private void addPastMandatory(Student s) {
-        for (Course c : courses) { //For each course, add it to past courses list if its semester is less than student's
+        for (Course c : mandatoryCourses) { //For each course, add it to past courses list if its semester is less than student's
             if (c.isElligiblePastCourse(s)) { //If course's semester is less than student's
                 addPastCourse(s, c);
             }
@@ -338,18 +386,17 @@ public class RegistrationSystem {
                 int credits = (int)(long)course.get("credits");
                 int theoretical = (int)(long)course.get("theoretical");
                 int practical = (int)(long) course.get("practical");
-                /*String preRequisiteString = (String) course.get("preRequisites");
-                Course preRequisite = findCourse(preRequisiteString);*/
                 ArrayList<Course> preRequisiteCourses = new ArrayList<>();
                 JSONArray preRequisites = (JSONArray) course.get("preRequisites");
                 for (Object p: preRequisites) {
                     preRequisiteCourses.add(findCourse((String)p));
                 }
 
-                MandatoryCourse newCourse = new FinalProjectMandatoryCourse(courseCode,  courseSemester,  quota, credits,
+                FinalProjectMandatoryCourse newCourse = new FinalProjectMandatoryCourse(courseCode,  courseSemester,  quota, credits,
                         theoretical, practical, preRequisiteCourses, finalProjectReqCredit);
                 courses.add(newCourse);
                 mandatoryCourses.add(newCourse);
+                finalProjectMandatoryCourses.add(newCourse);
             }
 
 
@@ -370,7 +417,7 @@ public class RegistrationSystem {
 
                 NonTechnicalUniversityElectiveCourse newNonTechElective = new NonTechnicalUniversityElectiveCourse(courseCode, quota,
                         nonTechCredits, nonTechTheoretical, nonTechPractical, nonTechElectiveSemesters);
-             //   courses.add(newNonTechElective);
+                courses.add(newNonTechElective);
                 nontechElectiveCourses.add(newNonTechElective);
             }
 
@@ -388,8 +435,6 @@ public class RegistrationSystem {
             for (Object c: techCourses) {
                 JSONObject course = (JSONObject) c;
                 String courseCode = (String) course.get("courseCode");
-               /* String techPreReqStr = (String) course.get("preRequisites");
-                Course techPreRequisite = findCourse(techPreReqStr);*/
                 ArrayList<Course> preRequisiteCourses = new ArrayList<>();
                 JSONArray preRequisites = (JSONArray) course.get("preRequisites");
                 for (Object p: preRequisites) {
@@ -398,7 +443,7 @@ public class RegistrationSystem {
 
                 TechnicalElectiveCourse newTechElective = new TechnicalElectiveCourse( courseCode, quota, techCredits, techTheoretical,
                         techPractical,techElectiveSemesters,techReqCredits, preRequisiteCourses);
-               // courses.add(newTechElective);
+                courses.add(newTechElective);
                 techElectiveCourses.add(newTechElective);
             }
 
@@ -419,7 +464,7 @@ public class RegistrationSystem {
 
                 FacultyTechnicalElectiveCourse newFacTechElective = new FacultyTechnicalElectiveCourse(courseCode, quota, facTechCredits,
                         facTechTheoretical, facTechPractical, facTechElectiveSemesters);
-               // courses.add(newFacTechElective);
+                courses.add(newFacTechElective);
                 facultyElectiveCourses.add(newFacTechElective);
             }
         }

@@ -1,10 +1,14 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class MandatoryCourse extends Course {
 
     private float semesterNumber;
     Semester semester;
-    private int prerequisiteStats;
+    private Set<Student> nonRegisteredQuota = new HashSet<>();
+    private Set<Student> nonRegisteredCollision = new HashSet<>();
+    private Set<Student> nonRegisteredPrereq = new HashSet<>();//Students that couldn't register because of prerequisite condition
     private ArrayList<Course> preRequisites; //Every mandatory course has a prerequisite course
 
     public MandatoryCourse(String courseCode, float semester, int quota,
@@ -41,13 +45,18 @@ public class MandatoryCourse extends Course {
                     student.getExecutionTrace().append(c.toString() + " ");
                 }
             }
-            setPrerequisiteStats();
-            return false;
-        }else if (!super.onRequested(student)) {
+            nonRegisteredPrereq.add(student);
             return false;
         }
 
-        getCourseSection().addStudent(student);
+        if (!super.onRequested(student)) { //If there is collision
+            nonRegisteredCollision.add(student);
+            return false;
+        }
+
+        if (!getCourseSection().addStudent(student)) {//If there is quota problem
+            nonRegisteredQuota.add(student);
+        }
         return true;
 
     }
@@ -92,13 +101,27 @@ public class MandatoryCourse extends Course {
         this.preRequisites = preRequisites;
     }
 
-    public int getPrerequisiteStats() {
-        return prerequisiteStats;
+    public Set<Student> getNonRegisteredPrereq() {
+        return nonRegisteredPrereq;
     }
 
-    public void setPrerequisiteStats() {
-        prerequisiteStats++;
+    public Set<Student> getNonRegisteredQuota() {
+        return nonRegisteredQuota;
     }
 
+    public void setNonRegisteredQuota(Set<Student> nonRegisteredQuota) {
+        this.nonRegisteredQuota = nonRegisteredQuota;
+    }
 
+    public Set<Student> getNonRegisteredCollision() {
+        return nonRegisteredCollision;
+    }
+
+    public void setNonRegisteredCollision(Set<Student> nonRegisteredCollision) {
+        this.nonRegisteredCollision = nonRegisteredCollision;
+    }
+
+    public void setNonRegisteredPrereq(Set<Student> nonRegisteredPrereq) {
+        this.nonRegisteredPrereq = nonRegisteredPrereq;
+    }
 }

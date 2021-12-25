@@ -1,5 +1,7 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 public class TechnicalElectiveCourse extends ElectiveCourse{
 
@@ -7,6 +9,7 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
     private int creditStats;
     private ArrayList<Course> preRequisites;
     private int preRequisiteStats;
+    private Set<Student> unregisteredStudents = new HashSet<>();
 
     public TechnicalElectiveCourse(String courseCode, int quota, int credits, int theoretical, int practical,
                                    ArrayList<Integer> semesters, int requiredCredits, ArrayList<Course> preRequisites) {
@@ -26,18 +29,19 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
             student.requestCourseSection(getRandomElective().getCourseSection());
             return;
         }
-        ArrayList<TechnicalElectiveCourse> techCourses = getRegistrationSystem().getTechElectiveCourses();
+        ArrayList<TechnicalElectiveCourse> techCourses = new ArrayList<>(getRegistrationSystem().getTechElectiveCourses());
         techCourses.remove(this);
         Collections.shuffle(techCourses);
         for (Course c: techCourses) {
             student.requestCourseSection(c.getCourseSection());
         }
-
     }
 
     @Override
     public Course getRandomElective() {
-        ArrayList<TechnicalElectiveCourse> electiveCourses = getRegistrationSystem().getTechElectiveCourses();
+        ArrayList<TechnicalElectiveCourse> electiveCourses = new ArrayList<>(getRegistrationSystem().
+                getTechElectiveCourses());
+        electiveCourses.remove(this);
         int index = (int) (Math.random() * electiveCourses.size());
         return electiveCourses.get(index);
     }
@@ -51,6 +55,7 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
                     " because Student completed credits is less than " + requiredCredits +
                     " -> (" + student.getTranscript().getCompletedCredits() + ")");
             setCreditStats();
+            unregisteredStudents.add(student);
             return false;
         }
         if (!student.getTranscript().hasPassedCourses(preRequisites)) {
@@ -63,11 +68,6 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
             }
             setPreRequisiteStats();
                 return false;
-           /* student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
-                    " because student failed prerequisite -> " + getPreRequisites().toString());
-            student.requestCourseSection(getRandomElective().getCourseSection());
-            setPreRequisiteStats();
-            return false;*/
         }
 
         return super.onRequested(student);
@@ -109,6 +109,15 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
 
     public void setPreRequisiteStats() {
         preRequisiteStats++;
+    }
+
+
+    public Set<Student> getUnregisteredStudents() {
+        return unregisteredStudents;
+    }
+
+    public void setUnregisteredStudents(Set<Student> unregisteredStudents) {
+        this.unregisteredStudents = unregisteredStudents;
     }
 
     public String toString() {
