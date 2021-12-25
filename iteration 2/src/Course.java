@@ -7,6 +7,8 @@ public abstract class Course {
     private int credits;
     private int theoretical;
     private int practical;
+    private int collisionStats;
+    private int quotaStats;
     private CourseSection courseSection;
     private RegistrationSystem registrationSystem;
 
@@ -35,7 +37,7 @@ public abstract class Course {
                 student.getExecutionTrace().append(c.getCourse().toString() + " ");
             }
             student.getExecutionTrace().append(" in schedule");
-            courseSection.setCollisionStatistics(courseSection.getCollisionStatistics()+1);
+            setCollisionStats();
             return false; //return false if there is a problem
         }
         return true;
@@ -71,6 +73,22 @@ public abstract class Course {
 
     public CourseSection getCourseSection() {
         return courseSection;
+    }
+
+    public int getCollisionStats() {
+        return collisionStats;
+    }
+
+    public void setCollisionStats() {
+        this.collisionStats++;
+    }
+
+    public int getQuotaStats() {
+        return quotaStats;
+    }
+
+    public void setQuotaStats() {
+        quotaStats++;
     }
 
     public void setCourseSection(CourseSection courseSection) {

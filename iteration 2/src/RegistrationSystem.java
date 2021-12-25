@@ -17,12 +17,12 @@ public class RegistrationSystem {
     private ArrayList<Student> students = new ArrayList<>();
     private ArrayList<Advisor> advisors = new ArrayList<>();
     private ArrayList<Course> courses = new ArrayList<>();
-    private ArrayList<NormalMandatoryCourse> normalMandatoryCourses = new ArrayList<>();
-    private ArrayList<FinalProjectMandatoryCourse> finalProjectMandatoryCourses = new ArrayList<>();
+    private ArrayList<MandatoryCourse> mandatoryCourses = new ArrayList<>();
+    //private ArrayList<FinalProjectMandatoryCourse> finalProjectMandatoryCourses = new ArrayList<>();
     private ArrayList<NonTechnicalUniversityElectiveCourse> nontechElectiveCourses = new ArrayList<>();
     private ArrayList<TechnicalElectiveCourse> techElectiveCourses = new ArrayList<>();
     private ArrayList<FacultyTechnicalElectiveCourse> facultyElectiveCourses = new ArrayList<>();
-    private ArrayList<CourseSection> courseSections = new ArrayList<>();
+    //private ArrayList<CourseSection> courseSections = new ArrayList<>();
     private double passProbability;
     private int studentCount;
     private int advisorCount;
@@ -109,20 +109,20 @@ public class RegistrationSystem {
         }
     }
 
-    private void printStatistics() {
+   /* private void printStatistics() {
         for (CourseSection c : courseSections) {
             if (((MandatoryCourse)c.getCourse()).getSemester() == semester) {
                 statisticsBuffer += "\n\n\n============\nStatistics for: " + c.getCourseSectionCode() + "\n";
                 statisticsBuffer += c.getCollisionStatistics() + " students couldn't register because of more than " +
                         "one hour collision with other courses\n";
-                statisticsBuffer += c.getPrerequisiteStatistics() + " students couldn't register because of prerequisite " +
+                statisticsBuffer += c.getPrerequisiteStats() + " students couldn't register because of prerequisite " +
                         "conditions\n";
-                statisticsBuffer += c.getQuotaStatistics() + " students couldn't register because of quota problem\n";
+                statisticsBuffer += c.getQuotaStats() + " students couldn't register because of quota problem\n";
                 statisticsBuffer += "==============";
             }
         }
         System.out.println(statisticsBuffer);
-    }
+    }*/
 
 
 
@@ -242,13 +242,19 @@ public class RegistrationSystem {
 
     public ArrayList<CourseSection> getOfferedCourseSections(Student student) {
         ArrayList<CourseSection> offeredCourseSections = new ArrayList<>();
-        for (CourseSection c: courseSections) {
+        for (MandatoryCourse c: mandatoryCourses) {
+            if (c.isOfferableForStudent(student)) {
+                offeredCourseSections.add(c.getCourseSection());
+            }
+        }
+
+        /* for (CourseSection c: courseSections) {
             if (c.getCourse() instanceof MandatoryCourse) {
                 if (c.getCourse().isOfferableForStudent(student)) {
                     offeredCourseSections.add(c);
                 }
             }
-        }
+        }*/
         return offeredCourseSections;
     }
 
@@ -320,7 +326,7 @@ public class RegistrationSystem {
                 NormalMandatoryCourse newCourse = new NormalMandatoryCourse(courseCode,  courseSemester,  quota, credits, theoretical,
                         practical, preRequisite);
                 courses.add(newCourse);
-                normalMandatoryCourses.add(newCourse);
+                mandatoryCourses.add(newCourse);
             }
 
             //Read finalProjectMandatory courses
@@ -336,10 +342,10 @@ public class RegistrationSystem {
                 String preRequisiteString = (String) course.get("preRequisites");
                 Course preRequisite = findCourse(preRequisiteString);
 
-                Course newCourse = new FinalProjectMandatoryCourse(courseCode,  courseSemester,  quota, credits,
+                MandatoryCourse newCourse = new FinalProjectMandatoryCourse(courseCode,  courseSemester,  quota, credits,
                         theoretical, practical, preRequisite, finalProjectReqCredit);
                 courses.add(newCourse);
-
+                mandatoryCourses.add(newCourse);
             }
 
 
@@ -407,7 +413,6 @@ public class RegistrationSystem {
                // courses.add(newFacTechElective);
                 facultyElectiveCourses.add(newFacTechElective);
             }
-
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -470,9 +475,9 @@ public class RegistrationSystem {
         this.advisorCount = advisorCount;
     }
 
-    public ArrayList<CourseSection> getCourseSections() {
+    /*public ArrayList<CourseSection> getCourseSections() {
         return courseSections;
-    }
+    }*/
 
     public ArrayList<Course> getCourses() {
         return courses;
@@ -494,13 +499,13 @@ public class RegistrationSystem {
         return advisors;
     }
 
-    public ArrayList<NormalMandatoryCourse> getNormalMandatoryCourses() {
-        return normalMandatoryCourses;
+    public ArrayList<MandatoryCourse> getMandatoryCourses() {
+        return mandatoryCourses;
     }
 
-    public ArrayList<FinalProjectMandatoryCourse> getFinalProjectMandatoryCourses() {
+   /* public ArrayList<FinalProjectMandatoryCourse> getFinalProjectMandatoryCourses() {
         return finalProjectMandatoryCourses;
-    }
+    }*/
 
     public ArrayList<NonTechnicalUniversityElectiveCourse> getNontechElectiveCourses() {
         return nontechElectiveCourses;

@@ -3,7 +3,9 @@ import java.util.ArrayList;
 public class TechnicalElectiveCourse extends ElectiveCourse{
 
     private int requiredCredits;
+    private int creditStats;
     private Course preRequisite;
+    private int preRequisiteStats;
 
     public TechnicalElectiveCourse(String courseCode, int quota, int credits, int theoretical,
                                    int practical, ArrayList<Integer> semesters, int requiredCredits, Course preRequisite) {
@@ -33,12 +35,14 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
             student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                     " because Student completed credits is less than " + requiredCredits +
                     " -> (" + student.getTranscript().getCompletedCredits() + ")");
+            setCreditStats();
             return false;
         }
         else if (!student.hasPassedCourse(preRequisite)) {
             student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                     " because student failed prerequisite -> " + getPreRequisite().toString());
             student.requestCourse(getRandomElective().getCourseSection());
+            setPreRequisiteStats();
             return false;
         }
 
@@ -65,6 +69,22 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
 
     public void setPreRequisite(Course preRequisite) {
         this.preRequisite = preRequisite;
+    }
+
+    public int getCreditStats() {
+        return creditStats;
+    }
+
+    public void setCreditStats() {
+        creditStats++;
+    }
+
+    public int getPreRequisiteStats() {
+        return preRequisiteStats;
+    }
+
+    public void setPreRequisiteStats() {
+        preRequisiteStats++;
     }
 
     public String toString() {

@@ -2,6 +2,7 @@ public abstract class MandatoryCourse extends Course {
 
     private float semesterNumber;
     Semester semester;
+    private int prerequisiteStats;
     private Course preRequisite; //Every mandatory course has a prerequisite course
 
     public MandatoryCourse(String courseCode, float semester, int quota,
@@ -12,7 +13,6 @@ public abstract class MandatoryCourse extends Course {
         this.preRequisite = preRequisite;
         setSemester();
         setCourseSection(new CourseSection(this));
-        //super.getRegistrationSystem().getCourseSections().add(new CourseSection(this)); //Add new courseSection based on this course to RegSystem
     }
 
     @Override
@@ -34,6 +34,7 @@ public abstract class MandatoryCourse extends Course {
         if (!student.hasPassedCourse(preRequisite)) {
             student.getExecutionTrace().append("\nThe system didn't allow " +  toString() +
                     " because student failed prerequisite -> " + getPreRequisite().toString());
+            setPrerequisiteStats();
             return false;
         }
 
@@ -80,6 +81,14 @@ public abstract class MandatoryCourse extends Course {
 
     public void setPreRequisite(Course preRequisite) {
         this.preRequisite = preRequisite;
+    }
+
+    public int getPrerequisiteStats() {
+        return prerequisiteStats;
+    }
+
+    public void setPrerequisiteStats() {
+        prerequisiteStats++;
     }
 
 

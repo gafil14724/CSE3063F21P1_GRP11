@@ -19,7 +19,7 @@ public class Student {
         this.surname = surname;
         this.currentYear = currentYear;
         this.registrationOrder = registrationOrder;
-        studentId = new StudentId(currentYear, registrationOrder);
+        studentId = new StudentId(this);
         this.registrationSystem = registrationSystem;
         transcript = new Transcript(this);
         schedule = new Schedule(this);

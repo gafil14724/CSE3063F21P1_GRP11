@@ -5,9 +5,9 @@ public class StudentId {
     private int registrationOrder;
 
 
-    public StudentId(int year, int registrationOrder) {
-        this.year = year;
-        this.registrationOrder = registrationOrder;
+    public StudentId(Student student) {
+        this.year = student.getCurrentYear();
+        this.registrationOrder = student.getRegistrationOrder();
     }
 
     public String getStudentId() {

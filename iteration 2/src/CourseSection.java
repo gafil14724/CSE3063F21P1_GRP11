@@ -8,9 +8,9 @@ public class CourseSection {
     private int sectionHour;
     ArrayList<Student> students;
     private boolean[][] courseProgram;
-    private int quotaStatistics;
-    private int prerequisiteStatistics;
-    private int collisionStatistics;
+
+
+
 
     public CourseSection(Course course) {
         this.course = course;
@@ -20,7 +20,7 @@ public class CourseSection {
         setFull();
         courseProgram = new boolean[Schedule.HOURS][Schedule.DAYS];
         setCourseProgram();
-        registrationSystem.getCourseSections().add(this);
+        //registrationSystem.getCourseSections().add(this);
     }
 
     /**Sets the courseProgram by adding all the lecture
@@ -45,18 +45,18 @@ public class CourseSection {
         }
 
         ArrayList<CourseSection> mandatoryCourseSections = new ArrayList<>();
-        for (CourseSection cs: registrationSystem.getCourseSections()) {
-            if (cs.getCourse() instanceof MandatoryCourse) {
-                mandatoryCourseSections.add(cs);
-            }
+        for (MandatoryCourse c: registrationSystem.getMandatoryCourses()) {
+            mandatoryCourseSections.add(c.getCourseSection());
         }
 
-        for (CourseSection cs: mandatoryCourseSections) {
-            if (((MandatoryCourse) course).getSemesterNumber() == ((MandatoryCourse)cs.getCourse()).getSemesterNumber() &&
-                    cs.getCourseProgram()[randomHour][randomDay]) {
+
+        for (MandatoryCourse c: registrationSystem.getMandatoryCourses()) {
+            if (((MandatoryCourse) course).getSemesterNumber() == c.getSemesterNumber() &&
+                    c.getCourseSection().getCourseProgram()[randomHour][randomDay]) {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -68,7 +68,7 @@ public class CourseSection {
         }else {
             student.getExecutionTrace().append("\nThe system didn't allow " + course.toString() + " because " +
                     "course section is full. ("  +  students.size() + ")");
-            quotaStatistics++;
+            getCourse().setQuotaStats();
         }
 
     }
@@ -97,13 +97,7 @@ public class CourseSection {
         full = students.size() == getQuota();
     }
 
-    public int getCollisionStatistics() {
-        return collisionStatistics;
-    }
 
-    public void setCollisionStatistics(int collisionStatistics) {
-        this.collisionStatistics = collisionStatistics;
-    }
 
     public int getSectionHour() {
         return sectionHour;
@@ -122,21 +116,9 @@ public class CourseSection {
     }
 
 
-    public int getQuotaStatistics() {
-        return quotaStatistics;
-    }
 
-    public void setQuotaStatistics(int quotaStatistics) {
-        this.quotaStatistics = quotaStatistics;
-    }
 
-    public int getPrerequisiteStatistics() {
-        return prerequisiteStatistics;
-    }
 
-    public void setPrerequisiteStatistics(int prerequisiteStatistics) {
-        this.prerequisiteStatistics = prerequisiteStatistics;
-    }
 
     public boolean[][] getCourseProgram() {
         return courseProgram;

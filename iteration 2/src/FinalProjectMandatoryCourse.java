@@ -1,6 +1,7 @@
 public class FinalProjectMandatoryCourse extends MandatoryCourse {
 
     private int requiredCredits;
+    private int creditStats;
 
     public FinalProjectMandatoryCourse(String courseCode, float semester, int quota, int credits,
                                        int theoretical, int practical, Course preRequisite, int requiredCredits) {
@@ -16,13 +17,13 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
     }
 
 
-
     @Override
     public boolean onRequested(Student student) {
         if (!checkReqCredits(student)){
             student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                      " because Student completed credits is less than " + requiredCredits +  "-> (" +
                      student.getTranscript().getCompletedCredits() + ")");
+            setCreditStats();
             return false;
         }
 
@@ -39,6 +40,14 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
 
     public void setRequiredCredits(int requiredCredits) {
         this.requiredCredits = requiredCredits;
+    }
+
+    public int getCreditStats() {
+        return creditStats;
+    }
+
+    public void setCreditStats() {
+        creditStats++;
     }
 
     public String toString() {
