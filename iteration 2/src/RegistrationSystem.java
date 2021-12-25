@@ -323,7 +323,7 @@ public class RegistrationSystem {
                 Course preRequisite = findCourse(preRequisiteString);
 
 
-                NormalMandatoryCourse newCourse = new NormalMandatoryCourse(courseCode,  courseSemester,  quota, credits, theoretical,
+                MandatoryCourse newCourse = new MandatoryCourse(courseCode,  courseSemester,  quota, credits, theoretical,
                         practical, preRequisite);
                 courses.add(newCourse);
                 mandatoryCourses.add(newCourse);

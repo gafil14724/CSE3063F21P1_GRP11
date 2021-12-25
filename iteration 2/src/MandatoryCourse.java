@@ -1,4 +1,4 @@
-public abstract class MandatoryCourse extends Course {
+public class MandatoryCourse extends Course {
 
     private float semesterNumber;
     Semester semester;
