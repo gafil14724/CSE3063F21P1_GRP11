@@ -423,6 +423,33 @@ public class RegistrationSystem {
 
     }
 
+    public boolean isThereEmptyNonTechSection() {
+        for (Course c: nontechElectiveCourses) {
+            if (!c.getCourseSection().isFull()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isThereEmptyTechSection() {
+        for (Course c: techElectiveCourses) {
+            if (!c.getCourseSection().isFull()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean isThereEmptyFacTechSection() {
+        for (Course c: facultyElectiveCourses) {
+            if (!c.getCourseSection().isFull()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     private void setSemester(String semester) {
         switch (semester.toLowerCase()) {
             case "spring":

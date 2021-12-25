@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
 
@@ -14,10 +15,25 @@ public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
 
 
     @Override
-    public Course getRandomElective() {
+    public void whenRejectedForQuota(Student student) {
+        if (getRegistrationSystem().isThereEmptyFacTechSection()) {
+            student.requestCourseSection(getRandomElective().getCourseSection());
+            return;
+        }
+
         ArrayList<FacultyTechnicalElectiveCourse> facTechCourses = getRegistrationSystem().getFacultyElectiveCourses();
-        int index = (int) (Math.random() * facTechCourses.size());
-        return facTechCourses.get(index);
+        facTechCourses.remove(this);//Remove this object from the list
+        Collections.shuffle(facTechCourses);// shuffle the list
+        for (Course c: facTechCourses) { //For each course, request one by one
+            student.requestCourseSection(c.getCourseSection());
+        }
+    }
+
+    @Override
+    public Course getRandomElective() {
+        ArrayList<FacultyTechnicalElectiveCourse> electiveCourses = getRegistrationSystem().getFacultyElectiveCourses();
+        int index = (int) (Math.random() * electiveCourses.size());
+        return electiveCourses.get(index);
     }
 
     public String toString() {

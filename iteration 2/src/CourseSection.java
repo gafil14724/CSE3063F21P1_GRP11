@@ -9,9 +9,6 @@ public class CourseSection {
     ArrayList<Student> students;
     private boolean[][] courseProgram;
 
-
-
-
     public CourseSection(Course course) {
         this.course = course;
         setSectionHour();
@@ -44,11 +41,11 @@ public class CourseSection {
             return false;
         }
 
-        ArrayList<CourseSection> mandatoryCourseSections = new ArrayList<>();
+       /* ArrayList<CourseSection> mandatoryCourseSections = new ArrayList<>();
         for (MandatoryCourse c: registrationSystem.getMandatoryCourses()) {
             mandatoryCourseSections.add(c.getCourseSection());
         }
-
+*/
 
         for (MandatoryCourse c: registrationSystem.getMandatoryCourses()) {
             if (((MandatoryCourse) course).getSemesterNumber() == c.getSemesterNumber() &&
@@ -60,15 +57,17 @@ public class CourseSection {
         return false;
     }
 
-    public void addStudent(Student student) {
+    public boolean addStudent(Student student) {
         if (!full) {
             students.add(student);
             student.addToCurrentCourses(this);
             setFull();
+            return true;
         }else {
             student.getExecutionTrace().append("\nThe system didn't allow " + course.toString() + " because " +
                     "course section is full. ("  +  students.size() + ")");
             getCourse().setQuotaStats();
+            return false;
         }
 
     }

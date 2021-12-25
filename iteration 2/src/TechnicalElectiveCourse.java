@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TechnicalElectiveCourse extends ElectiveCourse{
 
@@ -20,10 +21,36 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
     }
 
     @Override
-    public Course getRandomElective() {
+    public void whenRejectedForQuota(Student student) {
+        if (getRegistrationSystem().isThereEmptyTechSection()) {
+            student.requestCourseSection(getRandomElective().getCourseSection());
+            return;
+        }
         ArrayList<TechnicalElectiveCourse> techCourses = getRegistrationSystem().getTechElectiveCourses();
-        int index = (int) (Math.random() * techCourses.size());
-        return techCourses.get(index);
+        techCourses.remove(this);
+        Collections.shuffle(techCourses);
+        for (Course c: techCourses) {
+            student.requestCourseSection(c.getCourseSection());
+        }
+
+      /*  ArrayList<TechnicalElectiveCourse> randElectives = new ArrayList<>();
+        for (TechnicalElectiveCourse c:  getRegistrationSystem().getTechElectiveCourses()) {
+            if (c != this) {
+                randElectives.add(c);
+            }
+        }
+        if (randElectives.size() == 0 ) {
+            return null;
+        }
+        int index = (int) (Math.random() * randElectives.size());
+        return randElectives.get(index);*/
+    }
+
+    @Override
+    public Course getRandomElective() {
+        ArrayList<TechnicalElectiveCourse> electiveCourses = getRegistrationSystem().getTechElectiveCourses();
+        int index = (int) (Math.random() * electiveCourses.size());
+        return electiveCourses.get(index);
     }
 
 
@@ -41,7 +68,7 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
         else if (!student.hasPassedCourse(preRequisite)) {
             student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                     " because student failed prerequisite -> " + getPreRequisite().toString());
-            student.requestCourse(getRandomElective().getCourseSection());
+            student.requestCourseSection(getRandomElective().getCourseSection());
             setPreRequisiteStats();
             return false;
         }

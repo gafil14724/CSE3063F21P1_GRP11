@@ -22,12 +22,16 @@ public abstract class ElectiveCourse extends Course {
 
     @Override
     public boolean onRequested(Student student) {
-        if (!super.onRequested(student)) {
-            student.requestCourse(getRandomElective().getCourseSection());
+        if (!super.onRequested(student)) { //If there is a collision
+            student.requestCourseSection(getRandomElective().getCourseSection());
             return false;
         }
 
-        getCourseSection().addStudent(student);
+        if (!getCourseSection().addStudent(student)) { //If Quota is full for elective
+            whenRejectedForQuota(student);
+            return false;
+        }
+
         return true;
     }
 
@@ -36,6 +40,7 @@ public abstract class ElectiveCourse extends Course {
         return Collections.frequency(getSemesters(), stuSemester);
     }
 
+    public abstract void whenRejectedForQuota(Student student);
     public abstract Course getRandomElective();
 
 

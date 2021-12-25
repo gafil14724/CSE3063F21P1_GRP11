@@ -65,7 +65,7 @@ public class Student {
     }
 
 
-    public void requestCourse(CourseSection courseSection) {
+    public void requestCourseSection(CourseSection courseSection) {
          advisor.approveCourse(this, courseSection);
     }
 
@@ -86,7 +86,7 @@ public class Student {
         executionTrace.append("\n");
 
         for (CourseSection c: offeredCourses) {
-            requestCourse(c);
+            requestCourseSection(c);
         }
 
     }
@@ -95,7 +95,7 @@ public class Student {
         ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedElectiveCourseSections(this);
 
         for (CourseSection c: offeredCourses) {
-            requestCourse(c);
+            requestCourseSection(c);
         }
     }
 

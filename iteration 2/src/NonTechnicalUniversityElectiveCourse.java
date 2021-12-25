@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
 
@@ -18,13 +19,28 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
 
     }*/
 
+
     @Override
-    public Course getRandomElective() {
+    public void whenRejectedForQuota(Student student) {
+        if (getRegistrationSystem().isThereEmptyTechSection()) {
+            student.requestCourseSection(getRandomElective().getCourseSection());
+            return;
+        }
+
         ArrayList<NonTechnicalUniversityElectiveCourse> nonTechCourses = getRegistrationSystem().getNontechElectiveCourses();
-        int index = (int) (Math.random() * nonTechCourses.size());
-        return nonTechCourses.get(index);
+        nonTechCourses.remove(this);//Remove this object from the list
+        Collections.shuffle(nonTechCourses);// shuffle the list
+        for (Course c: nonTechCourses) { //For each course, request one by one
+            student.requestCourseSection(c.getCourseSection());
+        }
     }
 
+    @Override
+    public Course getRandomElective() {
+        ArrayList<NonTechnicalUniversityElectiveCourse> electiveCourses = getRegistrationSystem().getNontechElectiveCourses();
+        int index = (int) (Math.random() * electiveCourses.size());
+        return electiveCourses.get(index);
+    }
 
     public String toString() {
         return super.toString() + "(NTE/UE)";

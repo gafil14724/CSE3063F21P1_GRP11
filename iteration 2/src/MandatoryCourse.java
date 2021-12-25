@@ -30,11 +30,12 @@ public abstract class MandatoryCourse extends Course {
 
     @Override
     public boolean onRequested(Student student) {
-        super.onRequested(student);
         if (!student.hasPassedCourse(preRequisite)) {
             student.getExecutionTrace().append("\nThe system didn't allow " +  toString() +
                     " because student failed prerequisite -> " + getPreRequisite().toString());
             setPrerequisiteStats();
+            return false;
+        }else if (!super.onRequested(student)) {
             return false;
         }
 
