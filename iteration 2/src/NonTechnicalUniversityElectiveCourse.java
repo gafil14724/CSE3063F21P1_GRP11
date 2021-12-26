@@ -16,10 +16,6 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
         return true;
     }
 
-  /*  public void onRequested(Student student) {
-        super.onRequested(student);
-
-    }*/
 
 
     @Override

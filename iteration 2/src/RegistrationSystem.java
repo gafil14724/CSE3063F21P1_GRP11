@@ -128,20 +128,6 @@ public class RegistrationSystem {
 
     }
 
-    /*private void statisticsOutput() {
-        JSONObject statJson = new JSONObject();
-        statJson.put("Overall Statistics", statisticsBuffer);
-        JSONArray statList = new JSONArray();
-        statList.add(statJson);
-
-        try (FileWriter file = new FileWriter(new File(    "Statistics.json"))) {
-            file.write(statList.toJSONString());
-            file.flush();
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }*/
 
     private void statisticsOutput() {
         org.json.JSONObject statJson = new org.json.JSONObject();
@@ -713,9 +699,6 @@ public class RegistrationSystem {
         return courses;
     }
 
-    public static RegistrationSystem getRegistrationSystem() {
-        return registrationSystem;
-    }
 
     public int[] getTotalStudents() {
         return totalStudents;

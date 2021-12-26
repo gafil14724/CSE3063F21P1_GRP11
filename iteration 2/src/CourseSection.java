@@ -6,7 +6,7 @@ public class CourseSection {
     private RegistrationSystem registrationSystem;
     private boolean full;
     private int sectionHour;
-    ArrayList<Student> students;
+    private ArrayList<Student> students;
     private boolean[][] courseProgram;
 
     public CourseSection(Course course) {
