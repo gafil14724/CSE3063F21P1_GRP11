@@ -1,9 +1,14 @@
 {
-  "PassProbability": 0.9,
-  "Quota": 1500,
+  "PassProbability": 1,
+  "Quota": 150,
   "Advisors": 10,
   "Students": 70,
-  "CurrentSemester": "spring",
+  "1stYearStudents": 100,
+  "2ndYearStudents": 100,
+  "3rdYearStudents": 100,
+  "4thYearStudents": 100,
+  "CurrentSemester": "fall",
+  "RegenerateStudents": false,
   "MandatoryCourses": [
       {
         "courseCode": "ATA121",

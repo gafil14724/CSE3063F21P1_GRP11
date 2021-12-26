@@ -8,17 +8,21 @@ public class Student {
     private StudentId studentId;
     private int registrationOrder;
     private int currentYear;
+    private int semesterNumber;
     private Advisor advisor;
     private Schedule schedule;
     private Transcript transcript;
     private RegistrationSystem registrationSystem;
     private StringBuilder executionTrace = new StringBuilder();
 
-    public Student(String name, String surname, String studentId, RegistrationSystem registrationSystem) {
+    public Student(String name, String surname, String studentId, RegistrationSystem registrationSystem, int semesterNumber) {
         this.name = name;
         this.surname = surname;
         this.studentId = new StudentId(studentId, this);
         this.registrationSystem = registrationSystem;
+        transcript = new Transcript(this);
+        schedule = new Schedule(this);
+        this.semesterNumber = semesterNumber;
     }
 
     public Student(String name, String surname, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
@@ -28,6 +32,7 @@ public class Student {
         this.registrationOrder = registrationOrder;
         studentId = new StudentId(this);
         this.registrationSystem = registrationSystem;
+        setSemesterNumber();
         transcript = new Transcript(this);
         schedule = new Schedule(this);
     }
@@ -46,20 +51,25 @@ public class Student {
         return count;
     }
 
-
-
     public int getSemesterNumber() {
-        int semesterNumber = 0;
+        return semesterNumber;
+    }
+
+    public void setSemesterNumber(int semesterNumber) {
+        this.semesterNumber = semesterNumber;
+    }
+
+
+    public void setSemesterNumber() {
         switch (registrationSystem.getSemester()) {
             case FALL:
-                semesterNumber = currentYear * 2 - 1; break;
+                this.semesterNumber = currentYear * 2 - 1; break;
             case SPRING:
-                semesterNumber = currentYear * 2; break;
+                this.semesterNumber = currentYear * 2; break;
             default:
                 System.out.println("Incorrect Semester for registration System!!");
                 System.exit(-1);
         }
-        return semesterNumber;
     }
 
     public int getCompletedCredits() {

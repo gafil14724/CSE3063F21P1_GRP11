@@ -14,6 +14,7 @@ public class RegistrationSystem {
 
     private static RegistrationSystem registrationSystem = null;
 
+    private boolean isRegenerate;
     private Semester semester;
     private int[] totalStudents = new int[4]; //Total students for each year(used in student id class)
     private ArrayList<Student> students = new ArrayList<>();
@@ -45,15 +46,116 @@ public class RegistrationSystem {
 
     public void startTheSimulation() {
         readInput();
-        initializeAdvisors();
-        initializeStudents();
-        appointAdvisors();
-        addPastCourses();
+        regenerateCheck();
         requestCourses();
         printRegistrationProcess();
         printStatistics();
         registrationProcessOutput();
         //statisticsOutput();
+
+
+      /*  for (Student s: students) {
+            ArrayList<Grade> grades = s.getTranscript().getGrades();
+            System.out.println(s.getStudentId());
+            int count = 0;
+            for (Grade g: grades) {
+                if (g.isPassed()) {
+                    System.out.print(g.getCourse().toString() + " " + g.getCourse().getCredits());
+                    System.out.println();
+                    count +=  g.getCourse().getCredits();
+                }
+            }
+            System.out.println("Credits: " + count);
+            System.out.println("=====================\n\n\n");
+        }*/
+    }
+
+    private void regenerateCheck() {
+        if (isRegenerate) {
+            readStudents();
+        }else {
+            initializeAdvisors();
+            initializeStudents();
+            appointAdvisors();
+            addPastCourses();
+        }
+
+
+    }
+
+    private void readStudents() {
+        File folder = new File("Students/");
+        File[] listOfFiles = folder.listFiles();
+
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                try {
+                    JSONParser parser = new JSONParser();
+                    JSONObject input = (JSONObject) parser.parse(new FileReader("Students/" + file.getName()));
+
+                    String fName = (String)input.get("StudentName");
+                    String lName = (String)input.get("StudentSurname");
+                    String studentId = (String)input.get("StudentId");
+                    String advisorFName = (String)input.get("AdvisorName");
+                    String advisorLName = (String)input.get("AdvisorSurname");
+                    int semesterNum = (int) (long) input.get("SemesterNumber");
+
+                    Advisor newAdvisor = new Advisor(advisorFName, advisorLName);
+                    advisors.add(newAdvisor);
+                    Student newStudent = new Student(fName, lName, studentId, this, 2);
+                    newStudent.setAdvisor(newAdvisor);
+
+                    if (newStudent.getTranscript().getCompletedCredits() == 258 || ((getSemester() == Semester.FALL && semesterNum % 2 == 1) || (getSemester() == Semester.SPRING && semesterNum % 2 == 0))) {
+                        newStudent.setSemesterNumber(semesterNum);
+                    }else {
+                        newStudent.setSemesterNumber(++semesterNum);
+                    }
+                    students.add(newStudent);
+
+
+                    JSONArray pastCourses = (JSONArray) input.get("Past Courses");
+                    ArrayList<Grade> grades = new ArrayList<>();
+                    for (Object c: pastCourses) {
+                        JSONObject grade = (JSONObject) c;
+                        String courseCode = (String) grade.get("Course");
+                        Course course = findCourse(courseCode);
+                        int intGrade = (int)(long)grade.get("intGrade");
+                        grades.add(new Grade(course, intGrade));
+                    }
+
+
+                    newStudent.getTranscript().setGrades(grades);
+
+
+
+                    JSONArray currentCourses = (JSONArray) input.get("Current Courses");
+                    ArrayList<Course> stuCurrCourses = new ArrayList<>();
+                    for (int i = 0; i< currentCourses.size(); i++) {
+                        //techElectiveSemesters.add((int)(long)technicalSemesters.get(i));
+                        stuCurrCourses.add(findCourse((String) currentCourses.get(i)));
+                    }
+
+                    stuCurrCourses.forEach(c -> addPastCourse(newStudent, c));
+
+                    /*JSONArray inputCourses = (JSONArray) input.get("MandatoryCourses");
+                    for(Object c: inputCourses) { //Read mandatory courses and initialize
+                        JSONObject course = (JSONObject) c;
+                        String courseCode = (String) course.get("courseCode");
+                        float courseSemester = ((Number)course.get("semester")).floatValue();
+                        int credits = (int)(long)course.get("credits");
+                        int theoretical = (int)(long)course.get("theoretical");
+                        int practical = (int)(long) course.get("practical");*/
+
+
+                }
+                catch (IOException e) {
+                    e.printStackTrace();
+                }catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
     }
 
     private void statisticsOutput() {
@@ -79,6 +181,45 @@ public class RegistrationSystem {
             studentJson.put("StudentName", s.getName());
             studentJson.put("StudentSurname", s.getSurname());
             studentJson.put("StudentId", s.getStudentId());
+            studentJson.put("SemesterNumber", s.getSemesterNumber());
+            studentJson.put("CompletedCredits", s.getTranscript().getCompletedCredits());
+           /* studentJson.put("CurrentYear", s.getCurrentYear());
+            studentJson.put("CurrentSemester", s.getSemesterNumber());*/
+
+
+            ArrayList<Grade> stuGrades = s.getTranscript().getGrades();
+
+            JSONArray pastCourses = new JSONArray();
+            for (Grade g: stuGrades) {
+                JSONObject grades = new JSONObject();
+                grades.put("Course", g.getCourse().getCourseCode());
+                grades.put("LetterGrade", g.getLetterGrade());
+                grades.put("intGrade", g.getIntGrade());
+                pastCourses.add(grades);
+            }
+            studentJson.put("Past Courses", pastCourses);
+
+            JSONArray currentCourses = new JSONArray();
+            ArrayList<Course> stuCurrentCourses = s.getTranscript().getCurrentCourses();
+
+            for (Course c: stuCurrentCourses) {
+                currentCourses.add(c.getCourseCode());
+            }
+
+            studentJson.put("Current Courses", currentCourses);
+
+            JSONArray messages = new JSONArray();
+            String[] executionMessages = s.getExecutionTrace().toString().split("\\n");
+            for (String st: executionMessages) {
+                messages.add(st);
+            }
+            studentJson.put("Execution Trace", messages);
+
+
+            studentJson.put("AdvisorName", s.getAdvisor().getFirstName());
+            studentJson.put("AdvisorSurname", s.getAdvisor().getLastName());
+
+
             /*JSONArray jsonList = new JSONArray();
             jsonList.add(studentJson);*/
 
@@ -353,6 +494,8 @@ public class RegistrationSystem {
             setStudentCount(studentCount);
             String semester = (String)input.get("CurrentSemester");
             setSemester(semester);
+            isRegenerate = (boolean) input.get("RegenerateStudents");
+            System.out.println(isRegenerate);
 
             JSONArray inputCourses = (JSONArray) input.get("MandatoryCourses");
             for(Object c: inputCourses) { //Read mandatory courses and initialize
@@ -519,7 +662,7 @@ public class RegistrationSystem {
 
     /**Returns the course in courses list by its course code*/
     private  Course findCourse(String courseCode) {
-        for (Course c: mandatoryCourses) {
+        for (Course c: courses) {
             if (c.getCourseCode().equals(courseCode)) {
                 return c;
             }
