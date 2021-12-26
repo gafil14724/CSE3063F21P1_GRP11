@@ -51,7 +51,6 @@ public class RegistrationSystem {
         printStatistics();
         registrationProcessOutput();
         //statisticsOutput();
-
     }
 
     private void regenerateCheck() {

@@ -83,7 +83,7 @@ public class Student {
 
 
     public void requestCourseSection(CourseSection courseSection) {
-         advisor.approveCourse(this, courseSection);
+         advisor.approveCourseSection(this, courseSection);
     }
 
     public boolean hasPassedCourse(Course course) {
@@ -91,9 +91,9 @@ public class Student {
     }
 
     public void requestMandatoryCourses() {
-        ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedCourseSections(this);
+        ArrayList<CourseSection> offeredCourseSections = registrationSystem.getOfferedCourseSections(this);
         executionTrace.append("Offered Courses: \n");
-        for (CourseSection c : offeredCourses) {
+        for (CourseSection c : offeredCourseSections) {
             executionTrace.append(c.getCourse().toString() +  ", ");
         }
         executionTrace.append("\n");
@@ -102,7 +102,7 @@ public class Student {
         executionTrace.append("(" + registrationSystem.getFacultyElectiveCourses().get(0).offeredElectiveCount(this) + " FTE), ");
         executionTrace.append("\n");
 
-        for (CourseSection c: offeredCourses) {
+        for (CourseSection c: offeredCourseSections) {
             requestCourseSection(c);
         }
 

@@ -26,6 +26,7 @@ public abstract class Course {
     public abstract boolean isOfferableForStudent(Student student);
 
 
+    /**Checks for collision first when requested for all of the courses*/
     public boolean onRequested(Student student) {
         ArrayList<CourseSection> collidedSections = student.getSchedule().getCollidedHours(courseSection);
         if (student.getSchedule().isCollision(courseSection)) {

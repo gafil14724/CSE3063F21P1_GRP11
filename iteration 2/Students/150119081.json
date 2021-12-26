@@ -9,101 +9,102 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "MBG1201, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "ATA121, CSE1200, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow MBG1201 because course section is full. (100)",
+        "The system didn't allow ATA121 because course section is full. (100)",
+        "The system didn't allow CSE1200 because course section is full. (100)",
         "",
         "Current Courses: ",
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "ŞULE",
+    "AdvisorName": "EMEL",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 58,
+            "intGrade": 9,
             "Course": "ATA121",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 35,
-            "Course": "MBG1201",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 66,
+            "intGrade": 60,
+            "Course": "MBG1201",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 8,
             "Course": "CSE1200",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 71,
-            "Course": "CSE1241",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 97,
-            "Course": "MATH1001",
-            "LetterGrade": "AA"
+            "LetterGrade": "FF"
         },
         {
             "intGrade": 53,
-            "Course": "PHYS1101",
+            "Course": "CSE1241",
             "LetterGrade": "DD"
         },
         {
             "intGrade": 77,
-            "Course": "PHYS1103",
+            "Course": "MATH1001",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 71,
-            "Course": "TRD121",
+            "intGrade": 74,
+            "Course": "PHYS1101",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 53,
-            "Course": "ATA122",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 92,
-            "Course": "CSE1242",
+            "intGrade": 91,
+            "Course": "PHYS1103",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 78,
-            "Course": "MATH1002",
-            "LetterGrade": "CB"
+            "intGrade": 87,
+            "Course": "TRD121",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 82,
+            "Course": "ATA122",
+            "LetterGrade": "BB"
         },
         {
             "intGrade": 79,
-            "Course": "MATH2256",
+            "Course": "CSE1242",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 100,
+            "intGrade": 88,
+            "Course": "MATH1002",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 61,
+            "Course": "MATH2256",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 72,
             "Course": "PHYS1102",
-            "LetterGrade": "AA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 50,
+            "intGrade": 72,
             "Course": "PHYS1104",
-            "LetterGrade": "DD"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 15,
+            "intGrade": 85,
             "Course": "TRD122",
-            "LetterGrade": "FF"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 52,
-            "Course": "NTE1002",
-            "LetterGrade": "DD"
+            "intGrade": 95,
+            "Course": "OB3043",
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "EMEL",
-    "StudentSurname": "YEŞİLDAĞER",
-    "CompletedCredits": 54,
+    "StudentName": "REŞAT",
+    "StudentSurname": "AZAK",
+    "CompletedCredits": 55,
     "StudentId": "150119081",
-    "AdvisorSurname": "YILDIRIM"
+    "AdvisorSurname": "NASIROĞLU"
 }

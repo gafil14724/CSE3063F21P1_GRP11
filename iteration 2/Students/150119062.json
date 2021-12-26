@@ -9,35 +9,36 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "PHYS1103, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow PHYS1103 because course section is full. (100)",
         "",
         "Current Courses: ",
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "ZEHRA BETÜL",
+    "AdvisorName": "SONAY",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 58,
+            "intGrade": 50,
             "Course": "ATA121",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 89,
+            "Course": "MBG1201",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 55,
+            "Course": "CSE1200",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 74,
-            "Course": "MBG1201",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 69,
-            "Course": "CSE1200",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 66,
+            "intGrade": 54,
             "Course": "CSE1241",
-            "LetterGrade": "CC"
+            "LetterGrade": "DD"
         },
         {
             "intGrade": 51,
@@ -45,64 +46,64 @@
             "LetterGrade": "DD"
         },
         {
-            "intGrade": 74,
+            "intGrade": 90,
             "Course": "PHYS1101",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 63,
-            "Course": "PHYS1103",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 51,
-            "Course": "TRD121",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 34,
-            "Course": "ATA122",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 69,
-            "Course": "CSE1242",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 66,
-            "Course": "MATH1002",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 93,
-            "Course": "MATH2256",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 83,
+            "intGrade": 39,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 64,
+            "Course": "TRD121",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 62,
+            "Course": "ATA122",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 81,
+            "Course": "CSE1242",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 56,
+            "Course": "MATH1002",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 47,
+            "Course": "MATH2256",
+            "LetterGrade": "FD"
+        },
+        {
+            "intGrade": 80,
             "Course": "PHYS1102",
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 80,
+            "intGrade": 7,
             "Course": "PHYS1104",
-            "LetterGrade": "BB"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 52,
+            "intGrade": 33,
             "Course": "TRD122",
-            "LetterGrade": "DD"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 52,
-            "Course": "NTE1016",
-            "LetterGrade": "DD"
+            "intGrade": 55,
+            "Course": "CAS2004",
+            "LetterGrade": "DC"
         }
     ],
-    "StudentName": "GÖKHAN",
-    "StudentSurname": "ARSLAN",
-    "CompletedCredits": 59,
+    "StudentName": "AYKAN",
+    "StudentSurname": "YILMAZ ÇİFTDOĞAN",
+    "CompletedCredits": 50,
     "StudentId": "150119062",
-    "AdvisorSurname": "GÖKSEL"
+    "AdvisorSurname": "GÜMÜŞAY"
 }

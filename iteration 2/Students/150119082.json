@@ -4,106 +4,108 @@
         "CSE2225",
         "ECON2004",
         "EE2031",
-        "MATH2055",
-        "MATH2059"
+        "MATH2055"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "TRD121, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "CSE1200, MATH1001, TRD121, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE1200 because course section is full. (100)",
+        "The system didn't allow MATH1001 because course section is full. (100)",
         "The system didn't allow TRD121 because course section is full. (100)",
+        "The system didn't allow MATH2059 because student failed prerequisites -> MATH1001 ",
         "",
         "Current Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, "
     ],
-    "AdvisorName": "DİLEK",
+    "AdvisorName": "TİMUR",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 79,
+            "intGrade": 69,
             "Course": "ATA121",
-            "LetterGrade": "CB"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 63,
+            "intGrade": 67,
             "Course": "MBG1201",
-            "LetterGrade": "DC"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 99,
+            "intGrade": 36,
             "Course": "CSE1200",
-            "LetterGrade": "AA"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 97,
+            "intGrade": 90,
             "Course": "CSE1241",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 86,
+            "intGrade": 11,
             "Course": "MATH1001",
-            "LetterGrade": "BA"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 59,
+            "intGrade": 57,
             "Course": "PHYS1101",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 65,
+            "intGrade": 87,
             "Course": "PHYS1103",
-            "LetterGrade": "CC"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 43,
+            "intGrade": 11,
             "Course": "TRD121",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 34,
+            "intGrade": 72,
             "Course": "ATA122",
-            "LetterGrade": "FF"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 55,
+            "intGrade": 63,
             "Course": "CSE1242",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 77,
+            "intGrade": 57,
             "Course": "MATH1002",
-            "LetterGrade": "CB"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 93,
+            "intGrade": 27,
             "Course": "MATH2256",
-            "LetterGrade": "AA"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 98,
+            "intGrade": 91,
             "Course": "PHYS1102",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 86,
+            "intGrade": 2,
             "Course": "PHYS1104",
-            "LetterGrade": "BA"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 85,
+            "intGrade": 57,
             "Course": "TRD122",
-            "LetterGrade": "BA"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 58,
-            "Course": "MGT3082",
-            "LetterGrade": "DC"
+            "intGrade": 95,
+            "Course": "HSS3002",
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "HARUN",
-    "StudentSurname": "UZUN",
-    "CompletedCredits": 57,
+    "StudentName": "MEHMET REŞİT",
+    "StudentSurname": "ORHON",
+    "CompletedCredits": 42,
     "StudentId": "150119082",
-    "AdvisorSurname": "SAF"
+    "AdvisorSurname": "SİĞA"
 }

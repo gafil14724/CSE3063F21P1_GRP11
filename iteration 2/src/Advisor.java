@@ -9,7 +9,7 @@ public class Advisor {
         this.lastName = lastName;
     }
 
-    public void approveCourse(Student student, CourseSection courseSection) {
+    public void approveCourseSection(Student student, CourseSection courseSection) {
         courseSection.getCourse().onRequested(student);
     }
 

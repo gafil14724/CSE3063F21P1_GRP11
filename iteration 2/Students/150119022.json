@@ -9,100 +9,103 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "MBG1201, CSE1200, PHYS1103, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow MBG1201 because course section is full. (100)",
+        "The system didn't allow CSE1200 because course section is full. (100)",
+        "The system didn't allow PHYS1103 because course section is full. (100)",
         "",
         "Current Courses: ",
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "MEHMET GÖKÇE",
+    "AdvisorName": "YUSUF",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 62,
+            "intGrade": 95,
             "Course": "ATA121",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 71,
-            "Course": "MBG1201",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 97,
-            "Course": "CSE1200",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 81,
+            "intGrade": 42,
+            "Course": "MBG1201",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 40,
+            "Course": "CSE1200",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 78,
             "Course": "CSE1241",
-            "LetterGrade": "BB"
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 87,
+            "intGrade": 53,
             "Course": "MATH1001",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 74,
-            "Course": "PHYS1101",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 74,
-            "Course": "PHYS1103",
-            "LetterGrade": "CC"
+            "LetterGrade": "DD"
         },
         {
             "intGrade": 61,
-            "Course": "TRD121",
+            "Course": "PHYS1101",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 23,
+            "intGrade": 43,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 92,
+            "Course": "TRD121",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 27,
             "Course": "ATA122",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 72,
+            "intGrade": 96,
             "Course": "CSE1242",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 76,
-            "Course": "MATH1002",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 91,
-            "Course": "MATH2256",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 76,
+            "intGrade": 45,
+            "Course": "MATH1002",
+            "LetterGrade": "FD"
+        },
+        {
+            "intGrade": 62,
+            "Course": "MATH2256",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 78,
             "Course": "PHYS1102",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 73,
+            "intGrade": 97,
             "Course": "PHYS1104",
-            "LetterGrade": "CC"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 56,
+            "intGrade": 61,
             "Course": "TRD122",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 69,
-            "Course": "NTE1004",
+            "intGrade": 72,
+            "Course": "MRK3084",
             "LetterGrade": "CC"
         }
     ],
-    "StudentName": "KEZBAN",
-    "StudentSurname": "ÇİLDİR",
-    "CompletedCredits": 59,
+    "StudentName": "DUYGU",
+    "StudentSurname": "BIÇAKÇI",
+    "CompletedCredits": 42,
     "StudentId": "150119022",
-    "AdvisorSurname": "ALTUN"
+    "AdvisorSurname": "EŞKAZAN"
 }

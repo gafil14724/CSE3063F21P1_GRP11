@@ -1,7 +1,6 @@
 {
     "Current Courses": [
         "CSE2023",
-        "CSE2225",
         "ECON2004",
         "EE2031",
         "MATH2055",
@@ -12,32 +11,33 @@
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
         "",
         "Current Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "UTKU",
+    "AdvisorName": "YUSUF",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 79,
+            "intGrade": 58,
             "Course": "ATA121",
-            "LetterGrade": "CB"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 79,
+            "intGrade": 92,
             "Course": "MBG1201",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 93,
-            "Course": "CSE1200",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 72,
+            "intGrade": 61,
+            "Course": "CSE1200",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 51,
             "Course": "CSE1241",
-            "LetterGrade": "CC"
+            "LetterGrade": "DD"
         },
         {
             "intGrade": 82,
@@ -45,64 +45,64 @@
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 95,
+            "intGrade": 71,
             "Course": "PHYS1101",
-            "LetterGrade": "AA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 84,
+            "intGrade": 87,
             "Course": "PHYS1103",
-            "LetterGrade": "BB"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 94,
+            "intGrade": 74,
             "Course": "TRD121",
-            "LetterGrade": "AA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 0,
+            "intGrade": 25,
             "Course": "ATA122",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 94,
+            "intGrade": 45,
             "Course": "CSE1242",
-            "LetterGrade": "AA"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 57,
+            "intGrade": 77,
             "Course": "MATH1002",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 76,
-            "Course": "MATH2256",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 100,
+            "intGrade": 58,
+            "Course": "MATH2256",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 70,
             "Course": "PHYS1102",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 91,
+            "Course": "PHYS1104",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 3,
-            "Course": "PHYS1104",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 38,
+            "intGrade": 83,
             "Course": "TRD122",
-            "LetterGrade": "FF"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 12,
-            "Course": "NTE1015",
-            "LetterGrade": "FF"
+            "intGrade": 70,
+            "Course": "LAW2004",
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "NURDAN",
-    "StudentSurname": "AYDIN BADILLIOĞLU",
-    "CompletedCredits": 52,
+    "StudentName": "EMCED",
+    "StudentSurname": "TOPRAK",
+    "CompletedCredits": 53,
     "StudentId": "150119054",
-    "AdvisorSurname": "AVCIOĞLU"
+    "AdvisorSurname": "EŞKAZAN"
 }
