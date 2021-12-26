@@ -5,7 +5,7 @@ import java.util.Set;
 public class FinalProjectMandatoryCourse extends MandatoryCourse {
 
     private int requiredCredits;
-    private Set<Student> nonRequestedCredit = new HashSet<>();
+    private Set<Student> nonRegisteredCredit = new HashSet<>();
 
     public FinalProjectMandatoryCourse(String courseCode, float semester, int quota, int credits,
                                        int theoretical, int practical, ArrayList<Course> preRequisites, int requiredCredits) {
@@ -47,11 +47,11 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
     }
 
     public Set<Student> getNonRegisteredCredit() {
-        return nonRequestedCredit;
+        return nonRegisteredCredit;
     }
 
-    public void setNonRequestedCredit(Set<Student> nonRequestedCredit) {
-        this.nonRequestedCredit = nonRequestedCredit;
+    public void setNonRegisteredCredit(Set<Student> nonRegisteredCredit) {
+        this.nonRegisteredCredit = nonRegisteredCredit;
     }
 
     public String toString() {

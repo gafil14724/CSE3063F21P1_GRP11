@@ -40,7 +40,7 @@ public class Student {
     /**Takes a Student and an ElectiveType and returns the
      * number of past elective courses according to student's
      * current semester number*/
-    protected int getNumOfPastElectives(ArrayList<Integer> semesterNums) {
+    public int getNumOfPastElectives(ArrayList<Integer> semesterNums) {
         int count = 0;
 
         for (Integer i: semesterNums) {

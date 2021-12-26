@@ -1,50 +1,49 @@
 {
     "Current Courses": [
         "CSE2023",
-        "CSE2225",
         "ECON2004",
         "EE2031",
-        "MATH2055"
+        "MATH2055",
+        "MATH2059"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "MATH1001, TRD121, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "TRD121, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow MATH1001 because course section is full. (100)",
         "The system didn't allow TRD121 because course section is full. (100)",
-        "The system didn't allow MATH2059 because student failed prerequisites -> MATH1001 ",
+        "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
         "",
         "Current Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, "
+        "CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "LEMAN",
+    "AdvisorName": "TUĞBA",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 71,
+            "intGrade": 54,
             "Course": "ATA121",
-            "LetterGrade": "CC"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 77,
+            "intGrade": 85,
             "Course": "MBG1201",
-            "LetterGrade": "CB"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 62,
+            "intGrade": 54,
             "Course": "CSE1200",
-            "LetterGrade": "DC"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 96,
+            "intGrade": 99,
             "Course": "CSE1241",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 3,
+            "intGrade": 71,
             "Course": "MATH1001",
-            "LetterGrade": "FF"
+            "LetterGrade": "CC"
         },
         {
             "intGrade": 66,
@@ -52,59 +51,59 @@
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 95,
+            "intGrade": 52,
             "Course": "PHYS1103",
-            "LetterGrade": "AA"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 4,
+            "intGrade": 11,
             "Course": "TRD121",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 65,
+            "intGrade": 58,
             "Course": "ATA122",
-            "LetterGrade": "CC"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 83,
+            "intGrade": 31,
             "Course": "CSE1242",
-            "LetterGrade": "BB"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 97,
+            "intGrade": 37,
             "Course": "MATH1002",
-            "LetterGrade": "AA"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 66,
+            "intGrade": 72,
             "Course": "MATH2256",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 85,
+            "intGrade": 98,
             "Course": "PHYS1102",
-            "LetterGrade": "BA"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 31,
+            "intGrade": 44,
             "Course": "PHYS1104",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 71,
+            "intGrade": 97,
             "Course": "TRD122",
-            "LetterGrade": "CC"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 67,
-            "Course": "FNCE3003",
-            "LetterGrade": "CC"
+            "intGrade": 100,
+            "Course": "YDA1002",
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "SALİHA",
-    "StudentSurname": "TARLAN",
-    "CompletedCredits": 51,
+    "StudentName": "ABDULLAH",
+    "StudentSurname": "ÇETEMEN",
+    "CompletedCredits": 45,
     "StudentId": "150119017",
-    "AdvisorSurname": "ERDOĞAN"
+    "AdvisorSurname": "YENİDOĞAN"
 }

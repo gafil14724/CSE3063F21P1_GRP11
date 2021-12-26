@@ -1,30 +1,29 @@
 {
     "Current Courses": [
+        "EE2031",
         "CSE3215",
+        "CSE3033",
+        "CSE3055",
+        "CSE3063",
         "IE3081"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, CSE1241, CSE2225, CSE3215, CSE3033, CSE3055, CSE3063, IE3081, ",
+        "ECON2004, EE2031, CSE3215, CSE3033, CSE3055, CSE3063, IE3081, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow ATA121 because course section is full. (100)",
-        "The system didn't allow CSE1241 because course section is full. (100)",
-        "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
-        "The system didn't allow CSE3033 because student failed prerequisites -> CSE2225 ",
-        "The system didn't allow CSE3055 because student failed prerequisites -> CSE2225 ",
-        "The system didn't allow CSE3063 because student failed prerequisites -> CSE1242 ",
+        "The system didn't allow ECON2004 because course section is full. (100)",
         "",
         "Current Courses: ",
-        "CSE3215, IE3081, "
+        "EE2031, CSE3215, CSE3033, CSE3055, CSE3063, IE3081, "
     ],
-    "AdvisorName": "BARAN",
+    "AdvisorName": "OĞUZ KAĞAN",
     "SemesterNumber": 5,
     "Past Courses": [
         {
-            "intGrade": 36,
+            "intGrade": 86,
             "Course": "ATA121",
-            "LetterGrade": "FF"
+            "LetterGrade": "BA"
         },
         {
             "intGrade": 70,
@@ -32,49 +31,54 @@
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 56,
+            "intGrade": 51,
             "Course": "CSE1200",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 4,
-            "Course": "CSE1241",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 81,
-            "Course": "MATH1001",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 82,
-            "Course": "PHYS1101",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 92,
-            "Course": "PHYS1103",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 53,
-            "Course": "TRD121",
             "LetterGrade": "DD"
         },
         {
-            "intGrade": 64,
+            "intGrade": 57,
+            "Course": "CSE1241",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 78,
+            "Course": "MATH1001",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 92,
+            "Course": "PHYS1101",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 75,
+            "Course": "PHYS1103",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 80,
+            "Course": "TRD121",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 55,
             "Course": "ATA122",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 47,
-            "Course": "MATH1002",
-            "LetterGrade": "FD"
+            "intGrade": 62,
+            "Course": "CSE1242",
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 98,
+            "intGrade": 33,
+            "Course": "MATH1002",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 62,
             "Course": "MATH2256",
-            "LetterGrade": "AA"
+            "LetterGrade": "DC"
         },
         {
             "intGrade": 88,
@@ -82,74 +86,79 @@
             "LetterGrade": "BA"
         },
         {
-            "intGrade": 93,
+            "intGrade": 5,
             "Course": "PHYS1104",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 100,
+            "Course": "TRD122",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 53,
-            "Course": "TRD122",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 63,
+            "intGrade": 69,
             "Course": "CSE2023",
-            "LetterGrade": "DC"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 84,
+            "intGrade": 67,
+            "Course": "CSE2225",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 27,
             "Course": "ECON2004",
-            "LetterGrade": "BB"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 61,
+            "intGrade": 2,
             "Course": "EE2031",
-            "LetterGrade": "DC"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 63,
+            "intGrade": 64,
             "Course": "MATH2055",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 54,
+            "intGrade": 87,
             "Course": "MATH2059",
-            "LetterGrade": "DD"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 79,
+            "intGrade": 91,
             "Course": "CSE2246",
-            "LetterGrade": "CB"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 66,
+            "intGrade": 63,
             "Course": "CSE2138",
-            "LetterGrade": "CC"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 82,
-            "Course": "EE2032",
-            "LetterGrade": "BB"
+            "intGrade": 62,
+            "Course": "CSE2260",
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 75,
+            "intGrade": 78,
             "Course": "STAT2253",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 84,
+            "intGrade": 65,
             "Course": "CSE3000",
-            "LetterGrade": "BB"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 31,
-            "Course": "CAS2005",
-            "LetterGrade": "FF"
+            "intGrade": 74,
+            "Course": "BUS2005",
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "ENGİN",
-    "StudentSurname": "AYMAN",
-    "CompletedCredits": 94,
+    "StudentName": "HÜSEYİN KUNTER",
+    "StudentSurname": "ERGİNEL",
+    "CompletedCredits": 106,
     "StudentId": "150118074",
-    "AdvisorSurname": "GENÇPINAR"
+    "AdvisorSurname": "TOPAL"
 }

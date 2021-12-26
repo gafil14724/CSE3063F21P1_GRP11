@@ -5,7 +5,7 @@ import java.util.Set;
 public class MandatoryCourse extends Course {
 
     private float semesterNumber;
-    Semester semester;
+    private Semester semester;
     private Set<Student> nonRegisteredQuota = new HashSet<>();
     private Set<Student> nonRegisteredCollision = new HashSet<>();
     private Set<Student> nonRegisteredPrereq = new HashSet<>();//Students that couldn't register because of prerequisite condition

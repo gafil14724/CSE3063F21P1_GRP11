@@ -24,14 +24,6 @@ public class Advisor {
 
     }*/
 
-
-    /**Checks if the student schedule has a collision with the requested course
-     * Section by invoking the collision check method inside student's schedule.
-     * Returns true if there is more than one hour collision*/
-    public boolean checkCollision(Student student, CourseSection courseSection) {
-        return student.getSchedule().isCollision(courseSection);
-    }
-
     public String getFirstName () {
         return firstName;
     }

@@ -114,13 +114,8 @@ public class CourseSection {
     }
 
 
-
-
-
-
     public boolean[][] getCourseProgram() {
         return courseProgram;
     }
-
 
 }

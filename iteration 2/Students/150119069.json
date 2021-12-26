@@ -1,7 +1,6 @@
 {
     "Current Courses": [
         "CSE2023",
-        "CSE2225",
         "ECON2004",
         "EE2031",
         "MATH2055",
@@ -9,35 +8,37 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "ATA121, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow ATA121 because course section is full. (100)",
+        "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
         "",
         "Current Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "LEMAN",
+    "AdvisorName": "ÖZNUR",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 63,
+            "intGrade": 16,
             "Course": "ATA121",
-            "LetterGrade": "DC"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 77,
+            "intGrade": 75,
             "Course": "MBG1201",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 51,
+            "intGrade": 72,
             "Course": "CSE1200",
-            "LetterGrade": "DD"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 50,
+            "intGrade": 69,
             "Course": "CSE1241",
-            "LetterGrade": "DD"
+            "LetterGrade": "CC"
         },
         {
             "intGrade": 70,
@@ -45,64 +46,64 @@
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 57,
+            "intGrade": 65,
             "Course": "PHYS1101",
-            "LetterGrade": "DC"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 100,
+            "intGrade": 80,
             "Course": "PHYS1103",
-            "LetterGrade": "AA"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 93,
+            "intGrade": 97,
             "Course": "TRD121",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 51,
+            "intGrade": 91,
             "Course": "ATA122",
-            "LetterGrade": "DD"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 54,
+            "intGrade": 19,
             "Course": "CSE1242",
-            "LetterGrade": "DD"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 60,
+            "intGrade": 85,
             "Course": "MATH1002",
-            "LetterGrade": "DC"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 52,
+            "intGrade": 75,
             "Course": "MATH2256",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 100,
-            "Course": "PHYS1102",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 97,
-            "Course": "PHYS1104",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 79,
-            "Course": "TRD122",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 67,
-            "Course": "YDA2001",
-            "LetterGrade": "CC"
+            "intGrade": 53,
+            "Course": "PHYS1102",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 63,
+            "Course": "PHYS1104",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 55,
+            "Course": "TRD122",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 64,
+            "Course": "OB2040",
+            "LetterGrade": "DC"
         }
     ],
-    "StudentName": "ERKAN",
-    "StudentSurname": "AVCIOĞLU",
-    "CompletedCredits": 61,
+    "StudentName": "BURAK",
+    "StudentSurname": "HAVAS",
+    "CompletedCredits": 53,
     "StudentId": "150119069",
-    "AdvisorSurname": "ERDOĞAN"
+    "AdvisorSurname": "TANTEKİN"
 }
