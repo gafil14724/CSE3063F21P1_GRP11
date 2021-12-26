@@ -13,7 +13,6 @@ import java.util.Set;
 public class RegistrationSystem {
 
     private static RegistrationSystem registrationSystem = null;
-
     private boolean isRegenerate;
     private Semester semester;
     private int[] totalStudents = new int[4]; //Total students for each year(used in student id class)
