@@ -1,0 +1,107 @@
+{
+    "Current Courses": [
+        "ATA121",
+        "MBG1201",
+        "CSE1200",
+        "CSE1241",
+        "CSE2023",
+        "ECON2004",
+        "EE2031",
+        "MATH2055",
+        "MATH2059"
+    ],
+    "Execution Trace": [
+        "Offered Courses: ",
+        "ATA121, MBG1201, CSE1200, CSE1241, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "(0 NTE), (0 TE), (0 FTE), ",
+        "",
+        "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
+        "",
+        "Current Courses: ",
+        "ATA121, MBG1201, CSE1200, CSE1241, CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
+    ],
+    "AdvisorName": "SEDA",
+    "SemesterNumber": 3,
+    "Past Courses": [
+        {
+            "intGrade": 43,
+            "Course": "ATA121",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 10,
+            "Course": "MBG1201",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 22,
+            "Course": "CSE1200",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 44,
+            "Course": "CSE1241",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 94,
+            "Course": "MATH1001",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 93,
+            "Course": "PHYS1101",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 86,
+            "Course": "PHYS1103",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 63,
+            "Course": "TRD121",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 34,
+            "Course": "ATA122",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 56,
+            "Course": "MATH1002",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 92,
+            "Course": "MATH2256",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 56,
+            "Course": "PHYS1102",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 80,
+            "Course": "PHYS1104",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 78,
+            "Course": "TRD122",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 50,
+            "Course": "BUS1004",
+            "LetterGrade": "DD"
+        }
+    ],
+    "StudentName": "MEHMET CİHAT",
+    "StudentSurname": "ÖZİŞ",
+    "CompletedCredits": 36,
+    "StudentId": "150119051",
+    "AdvisorSurname": "ÇATAK"
+}

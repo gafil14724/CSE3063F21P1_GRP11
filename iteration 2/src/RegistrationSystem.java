@@ -53,21 +53,6 @@ public class RegistrationSystem {
         registrationProcessOutput();
         //statisticsOutput();
 
-
-      /*  for (Student s: students) {
-            ArrayList<Grade> grades = s.getTranscript().getGrades();
-            System.out.println(s.getStudentId());
-            int count = 0;
-            for (Grade g: grades) {
-                if (g.isPassed()) {
-                    System.out.print(g.getCourse().toString() + " " + g.getCourse().getCredits());
-                    System.out.println();
-                    count +=  g.getCourse().getCredits();
-                }
-            }
-            System.out.println("Credits: " + count);
-            System.out.println("=====================\n\n\n");
-        }*/
     }
 
     private void regenerateCheck() {
@@ -75,7 +60,7 @@ public class RegistrationSystem {
             readStudents();
         }else {
             initializeAdvisors();
-            initializeStudents();
+            //initializeStudents();
             appointAdvisors();
             addPastCourses();
         }
@@ -251,7 +236,7 @@ public class RegistrationSystem {
         }
     }
 
-    private void printMandatoryStatistics() {
+   private void printMandatoryStatistics() {
         for (MandatoryCourse c: mandatoryCourses) {
             if (c.getNonRegisteredCollision().size() > 0) {
                 System.out.print(c.getNonRegisteredCollision().size() + " Students couldn't register to " +
@@ -261,7 +246,7 @@ public class RegistrationSystem {
             }
 
             if (c.getNonRegisteredQuota().size() > 0) {
-                System.out.println(c.getNonRegisteredQuota() + " students couldn't register to " +
+                System.out.print(c.getNonRegisteredQuota().size() + " students couldn't register to " +
                         c.toString() + " because of quota problem: (");
                 c.getNonRegisteredQuota().forEach(s -> System.out.print(s.getStudentId() + " "));
                 System.out.println(")");
@@ -318,12 +303,29 @@ public class RegistrationSystem {
         }
     }
 
-    private void initializeStudents()  {
-        for (int i = 0; i < studentCount; i++) {
+    private void initializeStudents(int first, int second, int third, int fourth)  {
+        for (int i = 0; i < first; i++) {
             String name = Main.getNamesList().get((int) (Math.random() * Main.getNamesList().size() - 1));
             String surname = Main.getSurnamesList().get((int) (Math.random() * Main.getSurnamesList().size() - 1));
-            int year = (int)(Math.random() * 4) + 1;
-            students.add(new Student(name, surname, year, ++totalStudents[year - 1], this));
+            students.add(new Student(name, surname, 1, ++totalStudents[0], this));
+        }
+
+        for (int i = 0; i < second; i++) {
+            String name = Main.getNamesList().get((int) (Math.random() * Main.getNamesList().size() - 1));
+            String surname = Main.getSurnamesList().get((int) (Math.random() * Main.getSurnamesList().size() - 1));
+            students.add(new Student(name, surname, 2, ++totalStudents[1], this));
+        }
+
+        for (int i = 0; i < third; i++) {
+            String name = Main.getNamesList().get((int) (Math.random() * Main.getNamesList().size() - 1));
+            String surname = Main.getSurnamesList().get((int) (Math.random() * Main.getSurnamesList().size() - 1));
+            students.add(new Student(name, surname, 3, ++totalStudents[2], this));
+        }
+
+        for (int i = 0; i < fourth; i++) {
+            String name = Main.getNamesList().get((int) (Math.random() * Main.getNamesList().size() - 1));
+            String surname = Main.getSurnamesList().get((int) (Math.random() * Main.getSurnamesList().size() - 1));
+            students.add(new Student(name, surname, 4, ++totalStudents[3], this));
         }
     }
 
@@ -495,7 +497,11 @@ public class RegistrationSystem {
             String semester = (String)input.get("CurrentSemester");
             setSemester(semester);
             isRegenerate = (boolean) input.get("RegenerateStudents");
-            System.out.println(isRegenerate);
+            int first = (int) (long) input.get("1stYearStudents");
+            int second = (int) (long) input.get("2ndYearStudents");
+            int third = (int) (long) input.get("3rdYearStudents");
+            int fourth = (int) (long) input.get("4thYearStudents");
+            initializeStudents(first, second, third, fourth);
 
             JSONArray inputCourses = (JSONArray) input.get("MandatoryCourses");
             for(Object c: inputCourses) { //Read mandatory courses and initialize
