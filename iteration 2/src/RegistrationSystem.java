@@ -75,7 +75,7 @@ public class RegistrationSystem {
 
         new File("Students").mkdir();
         for (Student s: students) {
-            JSONObject studentJson = new JSONObject();
+            org.json.JSONObject studentJson = new org.json.JSONObject();
             studentJson.put("StudentName", s.getName());
             studentJson.put("StudentSurname", s.getSurname());
             studentJson.put("StudentId", s.getStudentId());
@@ -83,7 +83,7 @@ public class RegistrationSystem {
             jsonList.add(studentJson);*/
 
             try (FileWriter file = new FileWriter(new File( "Students/" + s.getStudentId() +  ".json"))) {
-                file.write(studentJson.toString());
+                file.write(studentJson.toString(4));
                 file.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -95,13 +95,11 @@ public class RegistrationSystem {
     private void printRegistrationProcess() {
         for (Student s : students) {
             System.out.println("==========\nRegistration process for: " + s.getFullName() +  ": " + s.getStudentId() +
-               " \nSemester Number: " +    s.getSemesterNumber() + "\nCompleted Credits: " + s.getCompletedCredits());
+                    " \nSemester Number: " +    s.getSemesterNumber() + "\nCompleted Credits: " + s.getCompletedCredits());
             System.out.println("Advisor: " + s.getAdvisor().getFirstName() + " " + s.getAdvisor().getLastName() + "\n");
 
          /*   System.out.println("Past Courses: ");
             System.out.println(s.getTranscript().toString());
-
-
 */          s.getExecutionTrace().append("\n\nCurrent Courses: \n");
             for (Course c: s.getTranscript().getCurrentCourses()) {
                 s.getExecutionTrace().append(c.toString() + ", ");

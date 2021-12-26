@@ -1,4 +1,5 @@
-import java.io.*;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -46,9 +47,9 @@ public class Main {
             }
         }
         catch (IOException e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }catch (ParseException e) {
-        e.printStackTrace();
+            e.printStackTrace();
         }
 
         return surnames;
