@@ -82,7 +82,7 @@ public class Student {
     }
 
 
-    public void requestCourseSection(CourseSection courseSection) {
+    private void requestCourseSection(CourseSection courseSection) {
          advisor.approveCourseSection(this, courseSection);
     }
 

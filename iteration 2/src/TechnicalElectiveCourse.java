@@ -26,14 +26,14 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
     @Override
     public void whenRejectedForQuota(Student student) {
         if (getRegistrationSystem().isThereEmptyTechSection()) {
-            student.requestCourseSection(getRandomElective().getCourseSection());
+            student.getAdvisor().approveCourseSection(student, getRandomElective().getCourseSection());
             return;
         }
         ArrayList<TechnicalElectiveCourse> techCourses = new ArrayList<>(getRegistrationSystem().getTechElectiveCourses());
         techCourses.remove(this);
         Collections.shuffle(techCourses);
         for (Course c: techCourses) {
-            student.requestCourseSection(c.getCourseSection());
+            student.getAdvisor().approveCourseSection(student, c.getCourseSection());
         }
     }
 

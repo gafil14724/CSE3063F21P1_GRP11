@@ -50,7 +50,7 @@ public class RegistrationSystem {
         printRegistrationProcess();
         printStatistics();
         registrationProcessOutput();
-        //statisticsOutput();
+        statisticsOutput();
     }
 
     private void regenerateCheck() {
@@ -58,12 +58,9 @@ public class RegistrationSystem {
             readStudents();
         }else {
             initializeAdvisors();
-            //initializeStudents();
             appointAdvisors();
             addPastCourses();
         }
-
-
     }
 
     private void readStudents() {
@@ -112,7 +109,6 @@ public class RegistrationSystem {
                     newStudent.getTranscript().setGrades(grades);
 
 
-
                     JSONArray currentCourses = (JSONArray) input.get("Current Courses");
                     ArrayList<Course> stuCurrCourses = new ArrayList<>();
                     for (int i = 0; i< currentCourses.size(); i++) {
@@ -121,16 +117,6 @@ public class RegistrationSystem {
                     }
 
                     stuCurrCourses.forEach(c -> addPastCourse(newStudent, c));
-
-                    /*JSONArray inputCourses = (JSONArray) input.get("MandatoryCourses");
-                    for(Object c: inputCourses) { //Read mandatory courses and initialize
-                        JSONObject course = (JSONObject) c;
-                        String courseCode = (String) course.get("courseCode");
-                        float courseSemester = ((Number)course.get("semester")).floatValue();
-                        int credits = (int)(long)course.get("credits");
-                        int theoretical = (int)(long)course.get("theoretical");
-                        int practical = (int)(long) course.get("practical");*/
-
 
                 }
                 catch (IOException e) {
@@ -143,7 +129,7 @@ public class RegistrationSystem {
 
     }
 
-    private void statisticsOutput() {
+    /*private void statisticsOutput() {
         JSONObject statJson = new JSONObject();
         statJson.put("Overall Statistics", statisticsBuffer);
         JSONArray statList = new JSONArray();
@@ -151,6 +137,20 @@ public class RegistrationSystem {
 
         try (FileWriter file = new FileWriter(new File(    "Statistics.json"))) {
             file.write(statList.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }*/
+
+    private void statisticsOutput() {
+        org.json.JSONObject statJson = new org.json.JSONObject();
+        String[] stats = statisticsBuffer.split("\n");
+        statJson.put("Overall Statistics", stats);
+
+        try (FileWriter file = new FileWriter(new File(    "Statistics.json"))) {
+            file.write(statJson.toString(4));
             file.flush();
 
         } catch (IOException e) {
@@ -168,8 +168,6 @@ public class RegistrationSystem {
             studentJson.put("StudentId", s.getStudentId());
             studentJson.put("SemesterNumber", s.getSemesterNumber());
             studentJson.put("CompletedCredits", s.getTranscript().getCompletedCredits());
-           /* studentJson.put("CurrentYear", s.getCurrentYear());
-            studentJson.put("CurrentSemester", s.getSemesterNumber());*/
 
 
             ArrayList<Grade> stuGrades = s.getTranscript().getGrades();
@@ -205,9 +203,6 @@ public class RegistrationSystem {
             studentJson.put("AdvisorSurname", s.getAdvisor().getLastName());
 
 
-            /*JSONArray jsonList = new JSONArray();
-            jsonList.add(studentJson);*/
-
             try (FileWriter file = new FileWriter(new File( "Students/" + s.getStudentId() +  ".json"))) {
                 file.write(studentJson.toString(4));
                 file.close();
@@ -224,9 +219,8 @@ public class RegistrationSystem {
                     " \nSemester Number: " +    s.getSemesterNumber() + "\nCompleted Credits: " + s.getCompletedCredits());
             System.out.println("Advisor: " + s.getAdvisor().getFirstName() + " " + s.getAdvisor().getLastName() + "\n");
 
-         /*   System.out.println("Past Courses: ");
-            System.out.println(s.getTranscript().toString());
-*/          s.getExecutionTrace().append("\n\nCurrent Courses: \n");
+
+          s.getExecutionTrace().append("\n\nCurrent Courses: \n");
             for (Course c: s.getTranscript().getCurrentCourses()) {
                 s.getExecutionTrace().append(c.toString() + ", ");
             }
@@ -243,6 +237,13 @@ public class RegistrationSystem {
                         c.toString() + " Because of a collision problem: (");
                 c.getNonRegisteredCollision().forEach(s -> System.out.print(s.getStudentId() + " "));
                 System.out.println(")");
+
+                statisticsBuffer += c.getNonRegisteredCollision().size() + " Students couldn't register to " +
+                        c.toString() + " Because of a collision problem: (";
+                for (Student s: c.getNonRegisteredCollision()) {
+                    statisticsBuffer += s.getStudentId() + " ";
+                }
+                statisticsBuffer += ")\n";
             }
 
             if (c.getNonRegisteredQuota().size() > 0) {
@@ -250,6 +251,13 @@ public class RegistrationSystem {
                         c.toString() + " because of quota problem: (");
                 c.getNonRegisteredQuota().forEach(s -> System.out.print(s.getStudentId() + " "));
                 System.out.println(")");
+
+                statisticsBuffer += c.getNonRegisteredQuota().size() + " Students couldn't register to " +
+                        c.toString() + " Because of a quota problem: (";
+                for (Student s: c.getNonRegisteredQuota()) {
+                    statisticsBuffer += s.getStudentId() + " ";
+                }
+                statisticsBuffer += ")\n";
             }
 
             if (c.getNonRegisteredPrereq().size() > 0) {
@@ -257,6 +265,13 @@ public class RegistrationSystem {
                         c.toString() + " Because of a Prerequisite Problem: (");
                 c.getNonRegisteredPrereq().forEach(s -> System.out.print(s.getStudentId() + " "));
                 System.out.println(")");
+
+                statisticsBuffer += c.getNonRegisteredPrereq().size() + " Students couldn't register to " +
+                        c.toString() + " Because of a Prerequisite problem: (";
+                for (Student s: c.getNonRegisteredPrereq()) {
+                    statisticsBuffer += s.getStudentId() + " ";
+                }
+                statisticsBuffer += ")\n";
             }
 
 
@@ -434,13 +449,6 @@ public class RegistrationSystem {
             }
         }
 
-        /* for (CourseSection c: courseSections) {
-            if (c.getCourse() instanceof MandatoryCourse) {
-                if (c.getCourse().isOfferableForStudent(student)) {
-                    offeredCourseSections.add(c);
-                }
-            }
-        }*/
         return offeredCourseSections;
     }
 
@@ -491,8 +499,6 @@ public class RegistrationSystem {
             setPassProbability(prob);
             int advisorCount = (int)(long)input.get("Advisors");
             setAdvisorCount(advisorCount);
-            int studentCount = (int)(long)input.get("Students");
-            //setStudentCount(studentCount);
             String semester = (String)input.get("CurrentSemester");
             setSemester(semester);
             isRegenerate = (boolean) input.get("RegenerateStudents");

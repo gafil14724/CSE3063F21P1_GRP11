@@ -3,6 +3,7 @@
         "CSE2023",
         "CSE2225",
         "ECON2004",
+        "EE2031",
         "MATH2055",
         "MATH2059"
     ],
@@ -11,98 +12,97 @@
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow EE2031 because student failed prerequisites -> PHYS1102 ",
         "",
         "Current Courses: ",
-        "CSE2023, CSE2225, ECON2004, MATH2055, MATH2059, "
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "ALİ RIZA",
+    "AdvisorName": "VELAT",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 59,
+            "intGrade": 58,
             "Course": "ATA121",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 94,
+            "intGrade": 68,
             "Course": "MBG1201",
-            "LetterGrade": "AA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 81,
+            "intGrade": 64,
             "Course": "CSE1200",
-            "LetterGrade": "BB"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 74,
+            "intGrade": 66,
             "Course": "CSE1241",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 94,
+            "intGrade": 82,
             "Course": "MATH1001",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 98,
-            "Course": "PHYS1101",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 95,
-            "Course": "PHYS1103",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 54,
-            "Course": "TRD121",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 79,
-            "Course": "ATA122",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 66,
-            "Course": "CSE1242",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 93,
-            "Course": "MATH1002",
-            "LetterGrade": "AA"
+            "LetterGrade": "BB"
         },
         {
             "intGrade": 74,
-            "Course": "MATH2256",
+            "Course": "PHYS1101",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 6,
-            "Course": "PHYS1102",
-            "LetterGrade": "FF"
+            "intGrade": 75,
+            "Course": "PHYS1103",
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 80,
+            "intGrade": 69,
+            "Course": "TRD121",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 72,
+            "Course": "ATA122",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 77,
+            "Course": "CSE1242",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 62,
+            "Course": "MATH1002",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 85,
+            "Course": "MATH2256",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 88,
+            "Course": "PHYS1102",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 81,
             "Course": "PHYS1104",
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 61,
+            "intGrade": 95,
             "Course": "TRD122",
-            "LetterGrade": "DC"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 68,
-            "Course": "HR1013",
-            "LetterGrade": "CC"
+            "intGrade": 99,
+            "Course": "NTE1013",
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "HABİL",
-    "StudentSurname": "ÇEVİK",
-    "CompletedCredits": 57,
+    "StudentName": "MEHMET",
+    "StudentSurname": "ŞEN",
+    "CompletedCredits": 61,
     "StudentId": "150119083",
-    "AdvisorSurname": "ATAY"
+    "AdvisorSurname": "GENÇDAL"
 }

@@ -25,7 +25,7 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
     @Override
     public void whenRejectedForQuota(Student student) {
         if (getRegistrationSystem().isThereEmptyTechSection()) {
-            student.requestCourseSection(getRandomElective().getCourseSection());
+            student.getAdvisor().approveCourseSection(student,getRandomElective().getCourseSection());
             return;
         }
 
@@ -34,7 +34,7 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
         nonTechCourses.remove(this);//Remove this object from the list
         Collections.shuffle(nonTechCourses);// shuffle the list
         for (Course c: nonTechCourses) { //For each course, request one by one
-            student.requestCourseSection(c.getCourseSection());
+            student.getAdvisor().approveCourseSection(student, c.getCourseSection());
         }
     }
 
