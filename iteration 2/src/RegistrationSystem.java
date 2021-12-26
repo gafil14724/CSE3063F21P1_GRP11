@@ -52,8 +52,7 @@ public class RegistrationSystem {
         requestCourses();
         printRegistrationProcess();
         printStatistics();
-
-       // registrationProcessOutput();
+        registrationProcessOutput();
         //statisticsOutput();
     }
 
@@ -73,16 +72,19 @@ public class RegistrationSystem {
     }
 
     private void registrationProcessOutput() {
+
+        new File("Students").mkdir();
         for (Student s: students) {
             JSONObject studentJson = new JSONObject();
-            studentJson.put("Registration process: ", s.getExecutionTrace());
-            JSONArray jsonList = new JSONArray();
-            jsonList.add(studentJson);
+            studentJson.put("StudentName", s.getName());
+            studentJson.put("StudentSurname", s.getSurname());
+            studentJson.put("StudentId", s.getStudentId());
+            /*JSONArray jsonList = new JSONArray();
+            jsonList.add(studentJson);*/
 
-            try (FileWriter file = new FileWriter(new File( s.getStudentId() +  ".json"))) {
-                file.write(jsonList.toJSONString());
-                file.flush();
-
+            try (FileWriter file = new FileWriter(new File( "Students/" + s.getStudentId() +  ".json"))) {
+                file.write(studentJson.toString());
+                file.close();
             } catch (IOException e) {
                 e.printStackTrace();
             }

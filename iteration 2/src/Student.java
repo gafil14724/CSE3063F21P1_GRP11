@@ -14,6 +14,13 @@ public class Student {
     private RegistrationSystem registrationSystem;
     private StringBuilder executionTrace = new StringBuilder();
 
+    public Student(String name, String surname, String studentId, RegistrationSystem registrationSystem) {
+        this.name = name;
+        this.surname = surname;
+        this.studentId = new StudentId(studentId, this);
+        this.registrationSystem = registrationSystem;
+    }
+
     public Student(String name, String surname, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
         this.name = name;
         this.surname = surname;
