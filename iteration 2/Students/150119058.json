@@ -9,100 +9,103 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "ATA121, CSE1200, PHYS1103, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow ATA121 because course section is full. (100)",
+        "The system didn't allow CSE1200 because course section is full. (100)",
+        "The system didn't allow PHYS1103 because course section is full. (100)",
         "",
         "Current Courses: ",
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "CEREN",
+    "AdvisorName": "DİLEK",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 100,
+            "intGrade": 22,
             "Course": "ATA121",
-            "LetterGrade": "AA"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 100,
+            "intGrade": 90,
             "Course": "MBG1201",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 98,
+            "intGrade": 47,
             "Course": "CSE1200",
-            "LetterGrade": "AA"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 64,
+            "intGrade": 74,
             "Course": "CSE1241",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 72,
+            "Course": "MATH1001",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 74,
+            "Course": "PHYS1101",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 30,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 59,
+            "Course": "TRD121",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 84,
-            "Course": "MATH1001",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 53,
-            "Course": "PHYS1101",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 100,
-            "Course": "PHYS1103",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 80,
-            "Course": "TRD121",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 17,
+            "intGrade": 73,
             "Course": "ATA122",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 85,
+            "Course": "CSE1242",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 61,
+            "Course": "MATH1002",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 29,
+            "Course": "MATH2256",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 54,
-            "Course": "CSE1242",
+            "intGrade": 52,
+            "Course": "PHYS1102",
             "LetterGrade": "DD"
         },
         {
-            "intGrade": 66,
-            "Course": "MATH1002",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 91,
-            "Course": "MATH2256",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 66,
-            "Course": "PHYS1102",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 20,
+            "intGrade": 50,
             "Course": "PHYS1104",
-            "LetterGrade": "FF"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 4,
+            "intGrade": 62,
             "Course": "TRD122",
-            "LetterGrade": "FF"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 66,
-            "Course": "MGT1021",
-            "LetterGrade": "CC"
+            "intGrade": 26,
+            "Course": "YDIS1002",
+            "LetterGrade": "FF"
         }
     ],
-    "StudentName": "MUHAMMED",
-    "StudentSurname": "MESCİ HAFTACI",
-    "CompletedCredits": 55,
+    "StudentName": "EMRE",
+    "StudentSurname": "KURT",
+    "CompletedCredits": 45,
     "StudentId": "150119058",
-    "AdvisorSurname": "DEMİRTAŞ"
+    "AdvisorSurname": "SAF"
 }

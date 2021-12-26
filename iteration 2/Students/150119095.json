@@ -1,7 +1,5 @@
 {
     "Current Courses": [
-        "MBG1201",
-        "CSE1241",
         "CSE2023",
         "ECON2004",
         "EE2031",
@@ -10,76 +8,82 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "MBG1201, CSE1241, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "PHYS1101, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow PHYS1101 because course section is full. (100)",
         "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
         "",
         "Current Courses: ",
-        "MBG1201, CSE1241, CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "MÜCAHİT",
+    "AdvisorName": "MEHMET GÖKÇE",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 89,
+            "intGrade": 86,
             "Course": "ATA121",
             "LetterGrade": "BA"
         },
         {
-            "intGrade": 41,
+            "intGrade": 55,
             "Course": "MBG1201",
-            "LetterGrade": "FF"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 74,
+            "intGrade": 93,
             "Course": "CSE1200",
-            "LetterGrade": "CC"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 6,
+            "intGrade": 83,
             "Course": "CSE1241",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 98,
-            "Course": "MATH1001",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 52,
-            "Course": "PHYS1101",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 94,
-            "Course": "PHYS1103",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 81,
-            "Course": "TRD121",
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 34,
-            "Course": "ATA122",
+            "intGrade": 86,
+            "Course": "MATH1001",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 18,
+            "Course": "PHYS1101",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 70,
+            "intGrade": 61,
+            "Course": "PHYS1103",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 55,
+            "Course": "TRD121",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 54,
+            "Course": "ATA122",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 15,
+            "Course": "CSE1242",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 41,
             "Course": "MATH1002",
-            "LetterGrade": "CC"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 100,
+            "intGrade": 51,
             "Course": "MATH2256",
-            "LetterGrade": "AA"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 68,
+            "intGrade": 87,
             "Course": "PHYS1102",
-            "LetterGrade": "CC"
+            "LetterGrade": "BA"
         },
         {
             "intGrade": 88,
@@ -87,19 +91,19 @@
             "LetterGrade": "BA"
         },
         {
-            "intGrade": 85,
+            "intGrade": 53,
             "Course": "TRD122",
-            "LetterGrade": "BA"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 65,
-            "Course": "YDA1001",
-            "LetterGrade": "CC"
+            "intGrade": 64,
+            "Course": "NTE1008",
+            "LetterGrade": "DC"
         }
     ],
-    "StudentName": "EMRAH",
-    "StudentSurname": "AKYOL",
-    "CompletedCredits": 42,
+    "StudentName": "SERKAN",
+    "StudentSurname": "KÖYCÜ",
+    "CompletedCredits": 45,
     "StudentId": "150119095",
-    "AdvisorSurname": "KURT"
+    "AdvisorSurname": "ALTUN"
 }

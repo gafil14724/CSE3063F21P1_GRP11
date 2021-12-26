@@ -3,6 +3,7 @@
         "CSE2023",
         "CSE2225",
         "ECON2004",
+        "EE2031",
         "MATH2055",
         "MATH2059"
     ],
@@ -11,98 +12,97 @@
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow EE2031 because student failed prerequisites -> PHYS1102 ",
         "",
         "Current Courses: ",
-        "CSE2023, CSE2225, ECON2004, MATH2055, MATH2059, "
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "NAZLI",
+    "AdvisorName": "UTKU",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 70,
+            "intGrade": 79,
             "Course": "ATA121",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 93,
-            "Course": "MBG1201",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 88,
-            "Course": "CSE1200",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 99,
-            "Course": "CSE1241",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 78,
-            "Course": "MATH1001",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 50,
-            "Course": "PHYS1101",
-            "LetterGrade": "DD"
+            "intGrade": 79,
+            "Course": "MBG1201",
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 63,
-            "Course": "PHYS1103",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 89,
-            "Course": "TRD121",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 98,
-            "Course": "ATA122",
+            "intGrade": 93,
+            "Course": "CSE1200",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 83,
-            "Course": "CSE1242",
+            "intGrade": 72,
+            "Course": "CSE1241",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 82,
+            "Course": "MATH1001",
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 37,
-            "Course": "MATH1002",
+            "intGrade": 95,
+            "Course": "PHYS1101",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 84,
+            "Course": "PHYS1103",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 94,
+            "Course": "TRD121",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 0,
+            "Course": "ATA122",
             "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 94,
+            "Course": "CSE1242",
+            "LetterGrade": "AA"
         },
         {
             "intGrade": 57,
-            "Course": "MATH2256",
+            "Course": "MATH1002",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 37,
-            "Course": "PHYS1102",
-            "LetterGrade": "FF"
+            "intGrade": 76,
+            "Course": "MATH2256",
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 39,
+            "intGrade": 100,
+            "Course": "PHYS1102",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 3,
             "Course": "PHYS1104",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 98,
+            "intGrade": 38,
             "Course": "TRD122",
-            "LetterGrade": "AA"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 36,
-            "Course": "NTE1013",
+            "intGrade": 12,
+            "Course": "NTE1015",
             "LetterGrade": "FF"
         }
     ],
-    "StudentName": "ELİF",
-    "StudentSurname": "AKDOĞAN",
-    "CompletedCredits": 46,
+    "StudentName": "NURDAN",
+    "StudentSurname": "AYDIN BADILLIOĞLU",
+    "CompletedCredits": 52,
     "StudentId": "150119054",
-    "AdvisorSurname": "AHISKALI"
+    "AdvisorSurname": "AVCIOĞLU"
 }

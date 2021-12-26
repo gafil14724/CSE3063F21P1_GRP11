@@ -1,6 +1,5 @@
 {
     "Current Courses": [
-        "PHYS1101",
         "CSE2023",
         "CSE2225",
         "ECON2004",
@@ -10,53 +9,54 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "PHYS1101, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "CSE1200, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE1200 because course section is full. (100)",
         "",
         "Current Courses: ",
-        "PHYS1101, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "SULTAN",
+    "AdvisorName": "DİLEK",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 52,
+            "intGrade": 99,
             "Course": "ATA121",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 56,
-            "Course": "MBG1201",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 77,
-            "Course": "CSE1200",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 52,
-            "Course": "CSE1241",
-            "LetterGrade": "DD"
+            "LetterGrade": "AA"
         },
         {
             "intGrade": 76,
-            "Course": "MATH1001",
+            "Course": "MBG1201",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 7,
-            "Course": "PHYS1101",
+            "intGrade": 19,
+            "Course": "CSE1200",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 61,
-            "Course": "PHYS1103",
-            "LetterGrade": "DC"
+            "intGrade": 99,
+            "Course": "CSE1241",
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 72,
+            "intGrade": 70,
+            "Course": "MATH1001",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 86,
+            "Course": "PHYS1101",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 53,
+            "Course": "PHYS1103",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 67,
             "Course": "TRD121",
             "LetterGrade": "CC"
         },
@@ -66,44 +66,44 @@
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 55,
+            "intGrade": 76,
             "Course": "CSE1242",
-            "LetterGrade": "DC"
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 39,
+            "intGrade": 90,
             "Course": "MATH1002",
-            "LetterGrade": "FF"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 71,
+            "intGrade": 92,
             "Course": "MATH2256",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 51,
-            "Course": "PHYS1102",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 96,
-            "Course": "PHYS1104",
             "LetterGrade": "AA"
         },
         {
             "intGrade": 84,
-            "Course": "TRD122",
+            "Course": "PHYS1102",
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 89,
-            "Course": "HR1013",
-            "LetterGrade": "BA"
+            "intGrade": 92,
+            "Course": "PHYS1104",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 90,
+            "Course": "TRD122",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 66,
+            "Course": "NTE1013",
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "SEVGÜL",
-    "StudentSurname": "SUCAK",
-    "CompletedCredits": 51,
+    "StudentName": "ÖZLEM",
+    "StudentSurname": "SARAL",
+    "CompletedCredits": 57,
     "StudentId": "150119047",
-    "AdvisorSurname": "EKİCİ"
+    "AdvisorSurname": "SAF"
 }

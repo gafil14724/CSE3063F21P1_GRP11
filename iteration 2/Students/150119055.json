@@ -1,8 +1,7 @@
 {
     "Current Courses": [
-        "ATA121",
-        "CSE1241",
         "CSE2023",
+        "CSE2225",
         "ECON2004",
         "EE2031",
         "MATH2055",
@@ -10,96 +9,101 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, CSE1241, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "PHYS1103, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
+        "The system didn't allow PHYS1103 because course section is full. (100)",
         "",
         "Current Courses: ",
-        "ATA121, CSE1241, CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "MÜCAHİT",
+    "AdvisorName": "MEHMET GÖKÇE",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 7,
+            "intGrade": 73,
             "Course": "ATA121",
-            "LetterGrade": "FF"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 70,
+            "intGrade": 65,
             "Course": "MBG1201",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 83,
+            "intGrade": 89,
             "Course": "CSE1200",
-            "LetterGrade": "BB"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 1,
+            "intGrade": 100,
             "Course": "CSE1241",
-            "LetterGrade": "FF"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 53,
+            "intGrade": 92,
             "Course": "MATH1001",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 99,
-            "Course": "PHYS1101",
             "LetterGrade": "AA"
         },
         {
             "intGrade": 52,
-            "Course": "PHYS1103",
+            "Course": "PHYS1101",
             "LetterGrade": "DD"
         },
         {
-            "intGrade": 83,
-            "Course": "TRD121",
-            "LetterGrade": "BB"
+            "intGrade": 30,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
         },
         {
             "intGrade": 52,
-            "Course": "ATA122",
+            "Course": "TRD121",
             "LetterGrade": "DD"
         },
         {
-            "intGrade": 76,
-            "Course": "MATH1002",
-            "LetterGrade": "CB"
+            "intGrade": 88,
+            "Course": "ATA122",
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 100,
+            "intGrade": 63,
+            "Course": "CSE1242",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 53,
+            "Course": "MATH1002",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 92,
             "Course": "MATH2256",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 87,
+            "intGrade": 83,
             "Course": "PHYS1102",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 53,
-            "Course": "PHYS1104",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 80,
-            "Course": "TRD122",
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 28,
-            "Course": "COMM2060",
+            "intGrade": 78,
+            "Course": "PHYS1104",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 18,
+            "Course": "TRD122",
             "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 74,
+            "Course": "HSS3002",
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "REMZİYE",
-    "StudentSurname": "ÖZMEN",
-    "CompletedCredits": 44,
+    "StudentName": "MUSTAFA",
+    "StudentSurname": "ÖZDEMİR",
+    "CompletedCredits": 57,
     "StudentId": "150119055",
-    "AdvisorSurname": "KURT"
+    "AdvisorSurname": "ALTUN"
 }

@@ -1,85 +1,89 @@
 {
     "Current Courses": [
-        "CSE1241",
-        "PHYS1103",
         "CSE2023",
+        "CSE2225",
         "ECON2004",
         "EE2031",
-        "MATH2055",
-        "MATH2059"
+        "MATH2055"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "CSE1241, PHYS1103, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "MATH1001, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
+        "The system didn't allow MATH1001 because course section is full. (100)",
+        "The system didn't allow MATH2059 because student failed prerequisites -> MATH1001 ",
         "",
         "Current Courses: ",
-        "CSE1241, PHYS1103, CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, "
     ],
-    "AdvisorName": "ELİF",
+    "AdvisorName": "ÇİĞDEM",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 53,
+            "intGrade": 100,
             "Course": "ATA121",
-            "LetterGrade": "DD"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 63,
+            "intGrade": 62,
             "Course": "MBG1201",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 78,
+            "intGrade": 75,
             "Course": "CSE1200",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 5,
+            "intGrade": 58,
             "Course": "CSE1241",
-            "LetterGrade": "FF"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 94,
+            "intGrade": 16,
             "Course": "MATH1001",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 80,
-            "Course": "PHYS1101",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 3,
-            "Course": "PHYS1103",
             "LetterGrade": "FF"
         },
         {
             "intGrade": 90,
-            "Course": "TRD121",
+            "Course": "PHYS1101",
             "LetterGrade": "AA"
         },
         {
+            "intGrade": 78,
+            "Course": "PHYS1103",
+            "LetterGrade": "CB"
+        },
+        {
             "intGrade": 72,
+            "Course": "TRD121",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 74,
             "Course": "ATA122",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 63,
+            "intGrade": 73,
+            "Course": "CSE1242",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 100,
             "Course": "MATH1002",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 56,
+            "Course": "MATH2256",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 82,
-            "Course": "MATH2256",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 95,
+            "intGrade": 63,
             "Course": "PHYS1102",
-            "LetterGrade": "AA"
+            "LetterGrade": "DC"
         },
         {
             "intGrade": 98,
@@ -87,19 +91,19 @@
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 86,
+            "intGrade": 73,
             "Course": "TRD122",
-            "LetterGrade": "BA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 70,
-            "Course": "NTE1002",
-            "LetterGrade": "CC"
+            "intGrade": 21,
+            "Course": "NTE1016",
+            "LetterGrade": "FF"
         }
     ],
-    "StudentName": "LEMAN",
-    "StudentSurname": "ELBÜKEN",
-    "CompletedCredits": 47,
+    "StudentName": "AYŞE GÜL",
+    "StudentSurname": "YURTLU",
+    "CompletedCredits": 52,
     "StudentId": "150119017",
-    "AdvisorSurname": "AKDEMİR"
+    "AdvisorSurname": "ÖNDER SİVİŞ"
 }

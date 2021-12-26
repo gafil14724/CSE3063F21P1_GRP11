@@ -1,9 +1,5 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
         "CSE2023",
         "ECON2004",
         "EE2031",
@@ -12,96 +8,101 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
         "The system didn't allow CSE2225 because student failed prerequisites -> CSE1242 ",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
+        "CSE2023, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "SEDA",
+    "AdvisorName": "HÜSEYİN",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 43,
+            "intGrade": 66,
             "Course": "ATA121",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 10,
-            "Course": "MBG1201",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 22,
-            "Course": "CSE1200",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 44,
-            "Course": "CSE1241",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 94,
-            "Course": "MATH1001",
-            "LetterGrade": "AA"
+            "LetterGrade": "CC"
         },
         {
             "intGrade": 93,
-            "Course": "PHYS1101",
+            "Course": "MBG1201",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 86,
-            "Course": "PHYS1103",
+            "intGrade": 85,
+            "Course": "CSE1200",
             "LetterGrade": "BA"
         },
         {
-            "intGrade": 63,
+            "intGrade": 62,
+            "Course": "CSE1241",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 56,
+            "Course": "MATH1001",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 50,
+            "Course": "PHYS1101",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 53,
+            "Course": "PHYS1103",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 61,
             "Course": "TRD121",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 34,
+            "intGrade": 71,
             "Course": "ATA122",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 1,
+            "Course": "CSE1242",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 56,
+            "intGrade": 53,
             "Course": "MATH1002",
-            "LetterGrade": "DC"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 92,
+            "intGrade": 93,
             "Course": "MATH2256",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 56,
+            "intGrade": 69,
             "Course": "PHYS1102",
-            "LetterGrade": "DC"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 80,
+            "intGrade": 88,
             "Course": "PHYS1104",
-            "LetterGrade": "BB"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 78,
+            "intGrade": 89,
             "Course": "TRD122",
-            "LetterGrade": "CB"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 50,
-            "Course": "BUS1004",
-            "LetterGrade": "DD"
+            "intGrade": 27,
+            "Course": "LAW2004",
+            "LetterGrade": "FF"
         }
     ],
-    "StudentName": "MEHMET CİHAT",
-    "StudentSurname": "ÖZİŞ",
-    "CompletedCredits": 36,
+    "StudentName": "HASİBE",
+    "StudentSurname": "KAPLAN",
+    "CompletedCredits": 52,
     "StudentId": "150119051",
-    "AdvisorSurname": "ÇATAK"
+    "AdvisorSurname": "CANACANKATAN"
 }

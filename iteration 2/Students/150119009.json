@@ -3,6 +3,7 @@
         "CSE2023",
         "CSE2225",
         "ECON2004",
+        "EE2031",
         "MATH2055",
         "MATH2059"
     ],
@@ -11,98 +12,97 @@
         "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow EE2031 because student failed prerequisites -> PHYS1102 ",
         "",
         "Current Courses: ",
-        "CSE2023, CSE2225, ECON2004, MATH2055, MATH2059, "
+        "CSE2023, CSE2225, ECON2004, EE2031, MATH2055, MATH2059, "
     ],
-    "AdvisorName": "FUAT ERNİS",
+    "AdvisorName": "ZEHRA BETÜL",
     "SemesterNumber": 3,
     "Past Courses": [
         {
-            "intGrade": 54,
+            "intGrade": 65,
             "Course": "ATA121",
-            "LetterGrade": "DD"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 73,
+            "intGrade": 99,
             "Course": "MBG1201",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 74,
+            "Course": "CSE1200",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 65,
+            "Course": "CSE1241",
             "LetterGrade": "CC"
         },
         {
             "intGrade": 76,
-            "Course": "CSE1200",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 64,
-            "Course": "CSE1241",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 90,
             "Course": "MATH1001",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 87,
-            "Course": "PHYS1101",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 64,
-            "Course": "PHYS1103",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 77,
-            "Course": "TRD121",
             "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 89,
-            "Course": "ATA122",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 56,
-            "Course": "CSE1242",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 99,
-            "Course": "MATH1002",
-            "LetterGrade": "AA"
         },
         {
             "intGrade": 83,
-            "Course": "MATH2256",
+            "Course": "PHYS1101",
             "LetterGrade": "BB"
         },
         {
-            "intGrade": 43,
-            "Course": "PHYS1102",
-            "LetterGrade": "FF"
+            "intGrade": 77,
+            "Course": "PHYS1103",
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 73,
-            "Course": "PHYS1104",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 99,
-            "Course": "TRD122",
+            "intGrade": 91,
+            "Course": "TRD121",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 84,
-            "Course": "YDIS1001",
+            "intGrade": 45,
+            "Course": "ATA122",
+            "LetterGrade": "FD"
+        },
+        {
+            "intGrade": 51,
+            "Course": "CSE1242",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 80,
+            "Course": "MATH1002",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 1,
+            "Course": "MATH2256",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 58,
+            "Course": "PHYS1102",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 97,
+            "Course": "PHYS1104",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 76,
+            "Course": "TRD122",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 83,
+            "Course": "CAS2004",
             "LetterGrade": "BB"
         }
     ],
-    "StudentName": "SEÇİL",
-    "StudentSurname": "TANRIVERDİ YILMAZ",
-    "CompletedCredits": 57,
+    "StudentName": "SEZEN",
+    "StudentSurname": "SEVİNÇ",
+    "CompletedCredits": 54,
     "StudentId": "150119009",
-    "AdvisorSurname": "KADAK"
+    "AdvisorSurname": "GÖKSEL"
 }
