@@ -1,29 +1,68 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
-        "MATH1001",
-        "PHYS1101",
-        "PHYS1103",
-        "TRD121"
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "IKT1054"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
-        "(0 NTE), (0 TE), (0 FTE), ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, IKT1054(NTE/UE), "
     ],
-    "AdvisorName": "OĞUZ KAĞAN",
-    "SemesterNumber": 1,
-    "Past Courses": [],
-    "StudentName": "FEVZİYE",
-    "StudentSurname": "ÖZER",
-    "CompletedCredits": 0,
-    "StudentId": "150120064",
-    "AdvisorSurname": "TOPAL"
+    "AdvisorName": "ONUR SALİH KALEM",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 77,
+            "Course": "ATA121",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 83,
+            "Course": "MBG1201",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 70,
+            "Course": "CSE1200",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 71,
+            "Course": "CSE1241",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 70,
+            "Course": "MATH1001",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 67,
+            "Course": "PHYS1101",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 51,
+            "Course": "PHYS1103",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 4,
+            "Course": "TRD121",
+            "LetterGrade": "FF"
+        }
+    ],
+    "StudentName": "VEDAT ALTUN",
+    "CompletedCredits": 29,
+    "StudentId": "150120064"
 }

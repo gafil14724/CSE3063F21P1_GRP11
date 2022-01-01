@@ -1,29 +1,68 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
-        "MATH1001",
-        "PHYS1101",
-        "PHYS1103",
-        "TRD121"
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "CAS1061"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
-        "(0 NTE), (0 TE), (0 FTE), ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS1061(NTE/UE), "
     ],
-    "AdvisorName": "AYLİN",
-    "SemesterNumber": 1,
-    "Past Courses": [],
-    "StudentName": "BENHUR ŞİRVAN",
-    "StudentSurname": "AKBULUT",
-    "CompletedCredits": 0,
-    "StudentId": "150120032",
-    "AdvisorSurname": "BAHÇEBAŞI"
+    "AdvisorName": "HATİKE ŞAHİN",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 51,
+            "Course": "ATA121",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 50,
+            "Course": "MBG1201",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 99,
+            "Course": "CSE1200",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 100,
+            "Course": "CSE1241",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 77,
+            "Course": "MATH1001",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 60,
+            "Course": "PHYS1101",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 6,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 99,
+            "Course": "TRD121",
+            "LetterGrade": "AA"
+        }
+    ],
+    "StudentName": "NECİP ERDEM",
+    "CompletedCredits": 29,
+    "StudentId": "150120032"
 }

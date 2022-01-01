@@ -1,29 +1,68 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
-        "MATH1001",
-        "PHYS1101",
-        "PHYS1103",
-        "TRD121"
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "CAS1001"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
-        "(0 NTE), (0 TE), (0 FTE), ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS1001(NTE/UE), "
     ],
-    "AdvisorName": "OĞUZHAN",
-    "SemesterNumber": 1,
-    "Past Courses": [],
-    "StudentName": "HURİYE",
-    "StudentSurname": "ASENA",
-    "CompletedCredits": 0,
-    "StudentId": "150120030",
-    "AdvisorSurname": "ÇETİN"
+    "AdvisorName": "KEZBAN DUMAN",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 59,
+            "Course": "ATA121",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 52,
+            "Course": "MBG1201",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 63,
+            "Course": "CSE1200",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 97,
+            "Course": "CSE1241",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 92,
+            "Course": "MATH1001",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 92,
+            "Course": "PHYS1101",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 66,
+            "Course": "PHYS1103",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 81,
+            "Course": "TRD121",
+            "LetterGrade": "BB"
+        }
+    ],
+    "StudentName": "EBRU BERK",
+    "CompletedCredits": 31,
+    "StudentId": "150120030"
 }

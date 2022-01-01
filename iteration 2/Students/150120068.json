@@ -1,29 +1,69 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
-        "MATH1001",
-        "PHYS1101",
-        "PHYS1103",
-        "TRD121"
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "CAS2001"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
-        "(0 NTE), (0 TE), (0 FTE), ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "Advisor didn't approve CAS2003(NTE/UE) because of more than one hour collision with -> TRD122 PHYS1104  in schedule",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS2001(NTE/UE), "
     ],
-    "AdvisorName": "TUĞBA",
-    "SemesterNumber": 1,
-    "Past Courses": [],
-    "StudentName": "HATİCE",
-    "StudentSurname": "BİLGİ",
-    "CompletedCredits": 0,
-    "StudentId": "150120068",
-    "AdvisorSurname": "YENİDOĞAN"
+    "AdvisorName": "TANER ATASOY",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 69,
+            "Course": "ATA121",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 61,
+            "Course": "MBG1201",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 91,
+            "Course": "CSE1200",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 75,
+            "Course": "CSE1241",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 1,
+            "Course": "MATH1001",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 64,
+            "Course": "PHYS1101",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 93,
+            "Course": "PHYS1103",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 50,
+            "Course": "TRD121",
+            "LetterGrade": "DD"
+        }
+    ],
+    "StudentName": "ZÜHAL ÖĞÜTMEN KOÇ",
+    "CompletedCredits": 25,
+    "StudentId": "150120068"
 }

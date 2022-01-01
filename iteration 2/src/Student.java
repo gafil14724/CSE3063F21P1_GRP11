@@ -4,7 +4,6 @@ import java.util.ArrayList;
 public class Student {
 
     private String name;
-    private String surname;
     private StudentId studentId;
     private int registrationOrder;
     private int currentYear;
@@ -15,9 +14,8 @@ public class Student {
     private RegistrationSystem registrationSystem;
     private StringBuilder executionTrace = new StringBuilder();
 
-    public Student(String name, String surname, String studentId, RegistrationSystem registrationSystem, int semesterNumber) {
+    public Student(String name, String studentId, RegistrationSystem registrationSystem, int semesterNumber) {
         this.name = name;
-        this.surname = surname;
         this.studentId = new StudentId(studentId, this);
         this.registrationSystem = registrationSystem;
         transcript = new Transcript(this);
@@ -25,9 +23,8 @@ public class Student {
         this.semesterNumber = semesterNumber;
     }
 
-    public Student(String name, String surname, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
+    public Student(String name, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
         this.name = name;
-        this.surname = surname;
         this.currentYear = currentYear;
         this.registrationOrder = registrationOrder;
         studentId = new StudentId(this);
@@ -35,6 +32,15 @@ public class Student {
         setSemesterNumber();
         transcript = new Transcript(this);
         schedule = new Schedule(this);
+    }
+
+    public void addPastCourse(Course course) {
+        if (Math.random() < registrationSystem.getPassProbability()) {
+            transcript.addPassedCourse(course);
+        }
+        else {
+            transcript.addFailedCourse(course);
+        }
     }
 
     /**Takes a Student and an ElectiveType and returns the
@@ -125,20 +131,9 @@ public class Student {
     }
 
 
-
     public String getName() {
         return name;
     }
-
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public String getFullName() {
-        return getName() + " " + getSurname();
-    }
-
 
 
     public int getRegistrationOrder() {

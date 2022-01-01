@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class Course {
 
@@ -9,6 +11,8 @@ public abstract class Course {
     private int practical;
     private CourseSection courseSection;
     private RegistrationSystem registrationSystem;
+    private Set<Student> nonRegisteredCollision = new HashSet<>();
+    private Set<Student> nonRegisteredQuota = new HashSet<>();
 
 
     protected Course(String courseCode, int quota,
@@ -23,7 +27,6 @@ public abstract class Course {
     }
 
     public abstract boolean isElligiblePastCourse(Student student);
-    public abstract boolean isOfferableForStudent(Student student);
 
 
     /**Checks for collision first when requested for all of the courses*/
@@ -32,10 +35,10 @@ public abstract class Course {
         if (student.getSchedule().isCollision(courseSection)) {
             student.getExecutionTrace().append("\nAdvisor didn't approve " + courseSection.getCourse().toString() +
                     " because of more than one hour collision with -> ");
-            for (CourseSection c: collidedSections) {
-                student.getExecutionTrace().append(c.getCourse().toString() + " ");
-            }
+
+            collidedSections.forEach(c -> student.getExecutionTrace().append(c.getCourse().toString() + " "));
             student.getExecutionTrace().append(" in schedule");
+            nonRegisteredCollision.add(student);
             return false; //return false if there is a problem
         }
         return true;
@@ -73,9 +76,24 @@ public abstract class Course {
         return courseSection;
     }
 
+    public Set<Student> getNonRegisteredCollision() {
+        return nonRegisteredCollision;
+    }
+
+    public void setNonRegisteredCollision(Set<Student> nonRegisteredCollision) {
+        this.nonRegisteredCollision = nonRegisteredCollision;
+    }
 
     public void setCourseSection(CourseSection courseSection) {
         this.courseSection = courseSection;
+    }
+
+    public Set<Student> getNonRegisteredQuota() {
+        return nonRegisteredQuota;
+    }
+
+    public void setNonRegisteredQuota(Set<Student> nonRegisteredQuota) {
+        this.nonRegisteredQuota = nonRegisteredQuota;
     }
 
     public String toString() {

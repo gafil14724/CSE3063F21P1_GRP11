@@ -1,0 +1,212 @@
+{
+    "Current Courses": [
+        "LAW2004",
+        "MGT4086"
+    ],
+    "Execution Trace": [
+        "Offered Courses: ",
+        "CSE1242, MATH2256, PHYS1104, TRD122, CSE2260, EE2032, CSE3038, CSE3044, CSE3264, IE3235, ISG122, CSE4298(Final Project), ",
+        "(1 NTE), (3 TE), (1 FTE), ",
+        "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "The system didn't allow MATH2256 because course section is full. (100)",
+        "The system didn't allow PHYS1104 because course section is full. (100)",
+        "The system didn't allow TRD122 because course section is full. (100)",
+        "The system didn't allow CSE2260 because student failed prerequisites -> CSE1242 ",
+        "The system didn't allow EE2032 because course section is full. (100)",
+        "The system didn't allow CSE3038 because course section is full. (100)",
+        "The system didn't allow CSE3044 because student failed prerequisites -> CSE3055 ",
+        "The system didn't allow CSE3264 because course section is full. (100)",
+        "The system didn't allow IE3235 because student failed prerequisites -> MATH2256 ",
+        "The system didn't allow ISG122 because course section is full. (100)",
+        "The system didn't allow CSE4298(Final Project) because Student completed credits is less than 165-> (102)",
+        "The system didn't allow CSE4095(TE) because Student completed credits is less than 155 -> (102)",
+        "The system didn't allow CSE4096(TE) because Student completed credits is less than 155 -> (102)",
+        "The system didn't allow CSE4061(TE) because Student completed credits is less than 155 -> (102)",
+        "",
+        "Current Courses: ",
+        "LAW2004(NTE/UE), MGT4086(FTE), "
+    ],
+    "AdvisorName": "NAGİHAN KARACA",
+    "SemesterNumber": 8,
+    "Past Courses": [
+        {
+            "intGrade": 96,
+            "Course": "ATA121",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 79,
+            "Course": "MBG1201",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 28,
+            "Course": "CSE1200",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 42,
+            "Course": "CSE1241",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 68,
+            "Course": "MATH1001",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 10,
+            "Course": "PHYS1101",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 3,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 3,
+            "Course": "TRD121",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 81,
+            "Course": "ATA122",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 79,
+            "Course": "MATH1002",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 18,
+            "Course": "MATH2256",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 50,
+            "Course": "PHYS1102",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 6,
+            "Course": "PHYS1104",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 30,
+            "Course": "TRD122",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 68,
+            "Course": "CSE2023",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 25,
+            "Course": "ECON2004",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 94,
+            "Course": "EE2031",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 86,
+            "Course": "MATH2055",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 95,
+            "Course": "MATH2059",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 60,
+            "Course": "CSE2246",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 86,
+            "Course": "CSE2138",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 24,
+            "Course": "EE2032",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 80,
+            "Course": "STAT2253",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 25,
+            "Course": "CSE3000",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 83,
+            "Course": "CSE3215",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 78,
+            "Course": "IE3081",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 30,
+            "Course": "CSE3038",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 98,
+            "Course": "CSE3048",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 3,
+            "Course": "CSE3264",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 92,
+            "Course": "COM2202",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 50,
+            "Course": "CSE4000",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 73,
+            "Course": "CSE4074",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 74,
+            "Course": "ISG121",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 87,
+            "Course": "BUS1004",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 61,
+            "Course": "BUS1004",
+            "LetterGrade": "DC"
+        }
+    ],
+    "StudentName": "ZARİFE AKCA ÇAĞLAR",
+    "CompletedCredits": 102,
+    "StudentId": "150117428"
+}

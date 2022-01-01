@@ -14,10 +14,6 @@ public abstract class ElectiveCourse extends Course {
         setCourseSection(new CourseSection(this));
     }
 
-    @Override
-    public boolean isOfferableForStudent(Student student) {
-        return false;
-    }
 
 
     @Override

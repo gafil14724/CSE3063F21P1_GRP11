@@ -6,8 +6,6 @@ public class MandatoryCourse extends Course {
 
     private float semesterNumber;
     private Semester semester;
-    private Set<Student> nonRegisteredQuota = new HashSet<>();
-    private Set<Student> nonRegisteredCollision = new HashSet<>();
     private Set<Student> nonRegisteredPrereq = new HashSet<>();//Students that couldn't register because of prerequisite condition
     private ArrayList<Course> preRequisites; //Every mandatory course has a prerequisite course
 
@@ -27,12 +25,12 @@ public class MandatoryCourse extends Course {
                 student.getSemesterNumber() > this.getSemesterNumber();
     }
 
-    @Override
-    public boolean isOfferableForStudent(Student student) {
-        return !student.hasPassedCourse(this) && (student.getSemesterNumber() == getSemesterNumber() || (student.getSemesterNumber() > getSemesterNumber() &&
-                    getRegistrationSystem().getSemester() == getSemester()));
-    }
 
+    public boolean isOfferableForStudent(Student student) {
+        return !student.hasPassedCourse(this) && (student.getSemesterNumber() == getSemesterNumber()
+                || (student.getSemesterNumber() > getSemesterNumber() && getRegistrationSystem().getSemester()
+                == getSemester()));
+    }
 
 
     @Override
@@ -48,14 +46,12 @@ public class MandatoryCourse extends Course {
             nonRegisteredPrereq.add(student);
             return false;
         }
-
         if (!super.onRequested(student)) { //If there is collision
-            nonRegisteredCollision.add(student);
             return false;
         }
 
         if (!getCourseSection().addStudent(student)) {//If there is quota problem
-            nonRegisteredQuota.add(student);
+            return false;
         }
         return true;
 
@@ -103,22 +99,6 @@ public class MandatoryCourse extends Course {
 
     public Set<Student> getNonRegisteredPrereq() {
         return nonRegisteredPrereq;
-    }
-
-    public Set<Student> getNonRegisteredQuota() {
-        return nonRegisteredQuota;
-    }
-
-    public void setNonRegisteredQuota(Set<Student> nonRegisteredQuota) {
-        this.nonRegisteredQuota = nonRegisteredQuota;
-    }
-
-    public Set<Student> getNonRegisteredCollision() {
-        return nonRegisteredCollision;
-    }
-
-    public void setNonRegisteredCollision(Set<Student> nonRegisteredCollision) {
-        this.nonRegisteredCollision = nonRegisteredCollision;
     }
 
     public void setNonRegisteredPrereq(Set<Student> nonRegisteredPrereq) {

@@ -1,29 +1,68 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
-        "MATH1001",
-        "PHYS1101",
-        "PHYS1103",
-        "TRD121"
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "NTE1016"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
-        "(0 NTE), (0 TE), (0 FTE), ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1016(NTE/UE), "
     ],
-    "AdvisorName": "TUĞBA",
-    "SemesterNumber": 1,
-    "Past Courses": [],
-    "StudentName": "GÜLBAHAR",
-    "StudentSurname": "AKDOĞAN",
-    "CompletedCredits": 0,
-    "StudentId": "150120034",
-    "AdvisorSurname": "YENİDOĞAN"
+    "AdvisorName": "HATİKE ŞAHİN",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 75,
+            "Course": "ATA121",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 67,
+            "Course": "MBG1201",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 95,
+            "Course": "CSE1200",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 88,
+            "Course": "CSE1241",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 68,
+            "Course": "MATH1001",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 84,
+            "Course": "PHYS1101",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 96,
+            "Course": "PHYS1103",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 48,
+            "Course": "TRD121",
+            "LetterGrade": "FD"
+        }
+    ],
+    "StudentName": "HASAN METE",
+    "CompletedCredits": 29,
+    "StudentId": "150120034"
 }

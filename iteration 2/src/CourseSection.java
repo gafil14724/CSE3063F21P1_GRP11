@@ -41,12 +41,6 @@ public class CourseSection {
             return false;
         }
 
-       /* ArrayList<CourseSection> mandatoryCourseSections = new ArrayList<>();
-        for (MandatoryCourse c: registrationSystem.getMandatoryCourses()) {
-            mandatoryCourseSections.add(c.getCourseSection());
-        }
-*/
-
         for (MandatoryCourse c: registrationSystem.getMandatoryCourses()) {
             if (((MandatoryCourse) course).getSemesterNumber() == c.getSemesterNumber() &&
                     c.getCourseSection().getCourseProgram()[randomHour][randomDay]) {
@@ -66,9 +60,9 @@ public class CourseSection {
         }else {
             student.getExecutionTrace().append("\nThe system didn't allow " + course.toString() + " because " +
                     "course section is full. ("  +  students.size() + ")");
+            course.getNonRegisteredQuota().add(student);
             return false;
         }
-
     }
 
     public int getQuota() {

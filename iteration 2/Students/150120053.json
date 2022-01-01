@@ -1,29 +1,68 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
-        "MATH1001",
-        "PHYS1101",
-        "PHYS1103",
-        "TRD121"
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "NTE1015"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
-        "(0 NTE), (0 TE), (0 FTE), ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1015(NTE/UE), "
     ],
-    "AdvisorName": "İLKNUR",
-    "SemesterNumber": 1,
-    "Past Courses": [],
-    "StudentName": "GÜHER",
-    "StudentSurname": "ÖZDEMİRKIRAN",
-    "CompletedCredits": 0,
-    "StudentId": "150120053",
-    "AdvisorSurname": "ÇELİKER"
+    "AdvisorName": "KORAY MERCAN",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 71,
+            "Course": "ATA121",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 68,
+            "Course": "MBG1201",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 53,
+            "Course": "CSE1200",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 61,
+            "Course": "CSE1241",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 76,
+            "Course": "MATH1001",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 50,
+            "Course": "PHYS1101",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 70,
+            "Course": "PHYS1103",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 2,
+            "Course": "TRD121",
+            "LetterGrade": "FF"
+        }
+    ],
+    "StudentName": "CEM MUTLU",
+    "CompletedCredits": 29,
+    "StudentId": "150120053"
 }

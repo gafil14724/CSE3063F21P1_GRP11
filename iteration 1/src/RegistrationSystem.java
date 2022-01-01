@@ -22,7 +22,7 @@ public class RegistrationSystem {
     private int advisorCount;
     private String statisticsBuffer = "";
 
-    public  RegistrationSystem( ) throws IOException, ParseException {
+    public  RegistrationSystem( ) {
         startTheSimulation();
     }
 
@@ -131,7 +131,8 @@ public class RegistrationSystem {
     private void addPastCourses() {
         ArrayList<Course> pastCourses = new ArrayList<>();
         for (Course c : courses) {
-            if (c.getSemester().equals("fall") || c.getSemester().equals("both")) {
+            if (semester.equals("fall")) return;
+            if ((c.getSemester().equals("fall") || c.getSemester().equals("both"))) {
                 pastCourses.add(c);
             }
         }

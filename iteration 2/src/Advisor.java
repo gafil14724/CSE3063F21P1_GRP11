@@ -1,12 +1,11 @@
 public class Advisor {
 
-    private String firstName;
-    private String lastName;
+    private String name;
 
 
-    public Advisor(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+
+    public Advisor(String firstName) {
+        this.name = firstName;
     }
 
     public void approveCourseSection(Student student, CourseSection courseSection) {
@@ -14,12 +13,14 @@ public class Advisor {
     }
 
 
-    public String getFirstName () {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public String getLastName() {
-        return lastName;
+
+    public void setName(String name) {
+        this.name = name;
     }
+
 }
 

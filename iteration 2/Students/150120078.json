@@ -1,29 +1,68 @@
 {
     "Current Courses": [
-        "ATA121",
-        "MBG1201",
-        "CSE1200",
-        "CSE1241",
-        "MATH1001",
-        "PHYS1101",
-        "PHYS1103",
-        "TRD121"
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "YDA2001"
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
-        "(0 NTE), (0 TE), (0 FTE), ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "",
         "Current Courses: ",
-        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA2001(NTE/UE), "
     ],
-    "AdvisorName": "OĞUZHAN",
-    "SemesterNumber": 1,
-    "Past Courses": [],
-    "StudentName": "İLKNUR",
-    "StudentSurname": "YENİÇERİ",
-    "CompletedCredits": 0,
-    "StudentId": "150120078",
-    "AdvisorSurname": "ÇETİN"
+    "AdvisorName": "HATİKE ŞAHİN",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 68,
+            "Course": "ATA121",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 89,
+            "Course": "MBG1201",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 99,
+            "Course": "CSE1200",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 96,
+            "Course": "CSE1241",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 44,
+            "Course": "MATH1001",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 50,
+            "Course": "PHYS1101",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 58,
+            "Course": "PHYS1103",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 99,
+            "Course": "TRD121",
+            "LetterGrade": "AA"
+        }
+    ],
+    "StudentName": "KUBİLAY KADAK",
+    "CompletedCredits": 25,
+    "StudentId": "150120078"
 }
