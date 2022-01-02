@@ -7,62 +7,63 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "CAS1001"
+        "YDA2001"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "Advisor didn't approve LAW2004(NTE/UE) because of more than one hour collision with -> PHYS1102 PHYS1104  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS1001(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA2001(NTE/UE), "
     ],
-    "AdvisorName": "KEZBAN DUMAN",
+    "AdvisorName": "KENAN AHMET YILDIRIM",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 59,
+            "intGrade": 71,
             "Course": "ATA121",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 52,
-            "Course": "MBG1201",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 63,
-            "Course": "CSE1200",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 97,
-            "Course": "CSE1241",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 92,
-            "Course": "MATH1001",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 92,
-            "Course": "PHYS1101",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 66,
-            "Course": "PHYS1103",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 81,
+            "intGrade": 87,
+            "Course": "MBG1201",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 35,
+            "Course": "CSE1200",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 75,
+            "Course": "CSE1241",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 38,
+            "Course": "MATH1001",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 55,
+            "Course": "PHYS1101",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 96,
+            "Course": "PHYS1103",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 92,
             "Course": "TRD121",
-            "LetterGrade": "BB"
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "EBRU BERK",
-    "CompletedCredits": 31,
+    "StudentName": "TUĞBA ABACIOĞLU",
+    "CompletedCredits": 21,
     "StudentId": "150120030"
 }

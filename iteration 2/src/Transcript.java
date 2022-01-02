@@ -10,27 +10,38 @@ public class Transcript {
         this.student = student;
     }
 
+    /**Adds past course as either failed or passed accoding
+     * to the pass probability of the registration system*/
+    public void addPastCourse(Course course) {
+        if (Math.random() < student.getRegistrationSystem().getPassProbability()) {
+            addPassedCourse(course);
+        }
+        else {
+            addFailedCourse(course);
+        }
+    }
+
+    /**Returns completed credits by iterating over every passed course*/
     public int getCompletedCredits() {
         int credits = 0;
-        for (Grade g: grades) {
-            if (g.isPassed()) { // If grade is greater or equal to 50
-                credits += g.getCourse().getCredits();
-            }
+        for (Course c: getPassedCourses()) {
+            credits += c.getCredits();
         }
         return credits;
     }
 
+    /**Returns passed courses of the student*/
     public ArrayList<Course> getPassedCourses() {
         ArrayList<Course> passedCourses = new ArrayList<>();
         for (Grade g : grades) {
-            if (g.getIntGrade() >= 50) {
+            if (g.isPassed()) {
                 passedCourses.add(g.getCourse());
             }
         }
         return passedCourses;
     }
 
-    public ArrayList<Course> getTakenCourses() {
+    /*public ArrayList<Course> getTakenCourses() {
         ArrayList<Course> takenCourses = new ArrayList<>();
 
         for (Grade g: grades) {
@@ -38,7 +49,7 @@ public class Transcript {
         }
 
         return takenCourses;
-    }
+    }*/
 
     /**Takes a course as argument and checks if student
      * has passed that course by iterating over student's
@@ -47,40 +58,29 @@ public class Transcript {
         if (course == null) { // If course is null, return true (Used for courses that have no prerequisite)
             return true;
         }
-
-        ArrayList<Course> passedCourses = getPassedCourses();
-
-        return passedCourses.contains(course);
+        return getPassedCourses().contains(course);
     }
 
     public boolean hasPassedCourses(ArrayList<Course> courses) {
-        for (Course c: courses) {
-            if (!hasPassedCourse(c)) {
+        for (Course course: courses) {
+            if (!hasPassedCourse(course)) {
                 return false;
             }
         }
         return true;
     }
 
-
-    public void addPassedCourse(Course course) { //Adds a passed course with a random grade that is greater than 50
+    /**Adds a passed course with a random grade that is between 50-100*/
+    public void addPassedCourse(Course course) {
         int grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
-
         grades.add(new Grade(course, grade));
-        /*student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
-        student.setBuffer(" " + course.toString());*/
-
 
     }
 
+    /**Adds a failed course with random grade between 0-49*/
     public void addFailedCourse(Course course) {
         int grade = (int) (Math.random() * 50); //random grade between 0-49
-
         grades.add(new Grade(course, grade));
-        /*student.setBuffer("\n" + course.getCourseCode() + ": " + grades.get(grades.size() - 1).getLetterGrade());
-        student.setBuffer(" " + course.toString());*/
-
-
     }
 
     public Student getStudent() {

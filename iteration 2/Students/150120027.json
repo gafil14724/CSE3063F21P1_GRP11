@@ -1,35 +1,36 @@
 {
     "Current Courses": [
         "ATA122",
+        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDI1004"
+        "NTE1011"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "Advisor didn't approve BUS1004(NTE/UE) because of more than one hour collision with -> MATH2256 MATH2256  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDI1004(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1011(NTE/UE), "
     ],
-    "AdvisorName": "İLKER BABACAN",
+    "AdvisorName": "ESER CANSEVER",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 26,
+            "intGrade": 5,
             "Course": "ATA121",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 94,
+            "intGrade": 69,
             "Course": "MBG1201",
-            "LetterGrade": "AA"
+            "LetterGrade": "CC"
         },
         {
             "intGrade": 63,
@@ -37,9 +38,9 @@
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 19,
+            "intGrade": 85,
             "Course": "CSE1241",
-            "LetterGrade": "FF"
+            "LetterGrade": "BA"
         },
         {
             "intGrade": 70,
@@ -47,22 +48,22 @@
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 28,
+            "intGrade": 57,
             "Course": "PHYS1101",
-            "LetterGrade": "FF"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 79,
+            "intGrade": 75,
             "Course": "PHYS1103",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 65,
+            "intGrade": 73,
             "Course": "TRD121",
             "LetterGrade": "CC"
         }
     ],
-    "StudentName": "İLKER DEMİR",
-    "CompletedCredits": 19,
+    "StudentName": "BERİL GÜLÜŞ TÖNGE",
+    "CompletedCredits": 29,
     "StudentId": "150120027"
 }

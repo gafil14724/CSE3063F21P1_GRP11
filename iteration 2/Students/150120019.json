@@ -1,68 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "HR4001"
+        "OB2041"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, HR4001(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, OB2041(NTE/UE), "
     ],
-    "AdvisorName": "KEZBAN DUMAN",
+    "AdvisorName": "ÜLKÜHAN KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 62,
+            "intGrade": 88,
             "Course": "ATA121",
-            "LetterGrade": "DC"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 79,
+            "intGrade": 73,
             "Course": "MBG1201",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 81,
-            "Course": "CSE1200",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 54,
-            "Course": "CSE1241",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 84,
-            "Course": "MATH1001",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 68,
-            "Course": "PHYS1101",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 77,
-            "Course": "PHYS1103",
-            "LetterGrade": "CB"
+            "intGrade": 69,
+            "Course": "CSE1200",
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 58,
+            "intGrade": 22,
+            "Course": "CSE1241",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 64,
+            "Course": "MATH1001",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 9,
+            "Course": "PHYS1101",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 21,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 60,
             "Course": "TRD121",
             "LetterGrade": "DC"
         }
     ],
-    "StudentName": "EREM ÇELİK",
-    "CompletedCredits": 31,
+    "StudentName": "TÜRKER HAVAS",
+    "CompletedCredits": 19,
     "StudentId": "150120019"
 }

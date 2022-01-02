@@ -1,50 +1,50 @@
 {
     "Current Courses": [
         "ATA122",
+        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "LAW2004"
+        "NTE1004"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, LAW2004(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1004(NTE/UE), "
     ],
-    "AdvisorName": "NEJDET YENİÇERİ",
+    "AdvisorName": "KENAN AHMET YILDIRIM",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 65,
+            "intGrade": 80,
             "Course": "ATA121",
-            "LetterGrade": "CC"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 91,
+            "intGrade": 56,
             "Course": "MBG1201",
-            "LetterGrade": "AA"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 73,
+            "intGrade": 52,
             "Course": "CSE1200",
-            "LetterGrade": "CC"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 43,
+            "intGrade": 55,
             "Course": "CSE1241",
-            "LetterGrade": "FF"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 67,
+            "intGrade": 60,
             "Course": "MATH1001",
-            "LetterGrade": "CC"
+            "LetterGrade": "DC"
         },
         {
             "intGrade": 76,
@@ -52,17 +52,17 @@
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 87,
+            "intGrade": 74,
             "Course": "PHYS1103",
-            "LetterGrade": "BA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 83,
+            "intGrade": 74,
             "Course": "TRD121",
-            "LetterGrade": "BB"
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "REFİK DUMAN",
-    "CompletedCredits": 25,
+    "StudentName": "AHMET MALÇOK",
+    "CompletedCredits": 31,
     "StudentId": "150120066"
 }

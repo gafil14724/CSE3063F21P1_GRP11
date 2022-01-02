@@ -1,68 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "COMM2060"
+        "MRK3084"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, COMM2060(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, MRK3084(NTE/UE), "
     ],
-    "AdvisorName": "ONUR SALİH KALEM",
+    "AdvisorName": "BERİL GÜLÜŞ KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 77,
+            "intGrade": 69,
             "Course": "ATA121",
-            "LetterGrade": "CB"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 58,
+            "intGrade": 91,
             "Course": "MBG1201",
-            "LetterGrade": "DC"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 0,
+            "intGrade": 90,
             "Course": "CSE1200",
-            "LetterGrade": "FF"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 55,
+            "intGrade": 47,
             "Course": "CSE1241",
-            "LetterGrade": "DC"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 56,
+            "intGrade": 46,
             "Course": "MATH1001",
-            "LetterGrade": "DC"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 66,
+            "intGrade": 48,
             "Course": "PHYS1101",
-            "LetterGrade": "CC"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 67,
+            "intGrade": 49,
             "Course": "PHYS1103",
-            "LetterGrade": "CC"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 81,
+            "intGrade": 62,
             "Course": "TRD121",
-            "LetterGrade": "BB"
+            "LetterGrade": "DC"
         }
     ],
-    "StudentName": "FİLİZ DÜZ",
-    "CompletedCredits": 27,
+    "StudentName": "TUBA ŞEYHANLI",
+    "CompletedCredits": 13,
     "StudentId": "150120049"
 }

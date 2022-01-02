@@ -1,5 +1,7 @@
 {
     "Current Courses": [
+        "ATA122",
+        "MATH2256",
         "CSE2246",
         "CSE2138",
         "CSE2260",
@@ -8,31 +10,31 @@
     ],
     "Execution Trace": [
         "Offered Courses: ",
-        "ATA122, CSE2246, CSE2138, CSE2260, EE2032, STAT2253, ",
+        "ATA122, MATH2256, PHYS1104, CSE2246, CSE2138, CSE2260, EE2032, STAT2253, ",
         "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow ATA122 because course section is full. (100)",
+        "The system didn't allow PHYS1104 because course section is full. (100)",
         "",
         "Current Courses: ",
-        "CSE2246, CSE2138, CSE2260, EE2032, STAT2253, "
+        "ATA122, MATH2256, CSE2246, CSE2138, CSE2260, EE2032, STAT2253, "
     ],
-    "AdvisorName": "NEJDET YENİÇERİ",
+    "AdvisorName": "BELGİN ZORLU KARAYİĞİT",
     "SemesterNumber": 4,
     "Past Courses": [
         {
-            "intGrade": 56,
+            "intGrade": 80,
             "Course": "ATA121",
-            "LetterGrade": "DC"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 72,
+            "intGrade": 31,
             "Course": "MBG1201",
-            "LetterGrade": "CC"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 78,
+            "intGrade": 17,
             "Course": "CSE1200",
-            "LetterGrade": "CB"
+            "LetterGrade": "FF"
         },
         {
             "intGrade": 92,
@@ -40,27 +42,27 @@
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 88,
+            "intGrade": 28,
             "Course": "MATH1001",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 85,
+            "Course": "PHYS1101",
             "LetterGrade": "BA"
         },
         {
-            "intGrade": 81,
-            "Course": "PHYS1101",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 59,
+            "intGrade": 88,
             "Course": "PHYS1103",
-            "LetterGrade": "DC"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 58,
+            "intGrade": 56,
             "Course": "TRD121",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 13,
+            "intGrade": 1,
             "Course": "ATA122",
             "LetterGrade": "FF"
         },
@@ -70,67 +72,62 @@
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 58,
+            "intGrade": 75,
             "Course": "MATH1002",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 52,
-            "Course": "MATH2256",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 67,
-            "Course": "PHYS1102",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 79,
-            "Course": "PHYS1104",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 60,
+            "intGrade": 20,
+            "Course": "MATH2256",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 59,
+            "Course": "PHYS1102",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 38,
+            "Course": "PHYS1104",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 64,
             "Course": "TRD122",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 75,
+            "intGrade": 58,
             "Course": "CSE2023",
-            "LetterGrade": "CB"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 72,
+            "intGrade": 23,
             "Course": "CSE2225",
-            "LetterGrade": "CC"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 60,
+            "intGrade": 100,
             "Course": "ECON2004",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 64,
-            "Course": "EE2031",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 48,
-            "Course": "MATH2055",
-            "LetterGrade": "FD"
-        },
-        {
-            "intGrade": 97,
-            "Course": "MATH2059",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 68,
-            "Course": "CAS2005",
+            "intGrade": 77,
+            "Course": "EE2031",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 41,
+            "Course": "MATH2055",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 71,
+            "Course": "YDA1002",
             "LetterGrade": "CC"
         }
     ],
-    "StudentName": "SİBEL EKEN",
-    "CompletedCredits": 85,
+    "StudentName": "MEHMET CİHAT ALTUN",
+    "CompletedCredits": 52,
     "StudentId": "150119086"
 }

@@ -1,68 +1,69 @@
 {
     "Current Courses": [
         "ATA122",
+        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "MGT3082"
+        "NTE1015"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "Advisor didn't approve FNCE3003(NTE/UE) because of more than one hour collision with -> MATH1002 PHYS1102  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, MGT3082(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1015(NTE/UE), "
     ],
-    "AdvisorName": "NEJDET YENİÇERİ",
+    "AdvisorName": "ÜLKÜHAN KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 83,
+            "intGrade": 92,
             "Course": "ATA121",
-            "LetterGrade": "BB"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 67,
+            "intGrade": 55,
             "Course": "MBG1201",
-            "LetterGrade": "CC"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 45,
+            "intGrade": 2,
             "Course": "CSE1200",
-            "LetterGrade": "FD"
-        },
-        {
-            "intGrade": 32,
-            "Course": "CSE1241",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 47,
-            "Course": "MATH1001",
-            "LetterGrade": "FD"
+            "intGrade": 63,
+            "Course": "CSE1241",
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 52,
-            "Course": "PHYS1101",
+            "intGrade": 51,
+            "Course": "MATH1001",
             "LetterGrade": "DD"
         },
         {
-            "intGrade": 73,
-            "Course": "PHYS1103",
-            "LetterGrade": "CC"
+            "intGrade": 88,
+            "Course": "PHYS1101",
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 77,
-            "Course": "TRD121",
+            "intGrade": 76,
+            "Course": "PHYS1103",
             "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 73,
+            "Course": "TRD121",
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "AZİZ YAĞCI",
-    "CompletedCredits": 15,
+    "StudentName": "AHMET GÖKHAN GÖKALP",
+    "CompletedCredits": 27,
     "StudentId": "150120039"
 }

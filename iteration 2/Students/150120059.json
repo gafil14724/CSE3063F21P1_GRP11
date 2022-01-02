@@ -1,68 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDA2001"
+        "YDA1003"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA2001(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA1003(NTE/UE), "
     ],
-    "AdvisorName": "NEJDET YENİÇERİ",
+    "AdvisorName": "GÜLBAHAR TEKİŞ",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 64,
+            "intGrade": 70,
             "Course": "ATA121",
-            "LetterGrade": "DC"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 77,
+            "intGrade": 80,
             "Course": "MBG1201",
-            "LetterGrade": "CB"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 72,
+            "intGrade": 70,
             "Course": "CSE1200",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 60,
+            "intGrade": 44,
             "Course": "CSE1241",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 60,
+            "Course": "MATH1001",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 90,
-            "Course": "MATH1001",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 95,
+            "intGrade": 85,
             "Course": "PHYS1101",
-            "LetterGrade": "AA"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 92,
+            "intGrade": 56,
             "Course": "PHYS1103",
-            "LetterGrade": "AA"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 53,
+            "intGrade": 71,
             "Course": "TRD121",
-            "LetterGrade": "DD"
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "ÖZEN ÖZLEM ERTEKİN",
-    "CompletedCredits": 31,
+    "StudentName": "AYŞE ESER",
+    "CompletedCredits": 25,
     "StudentId": "150120059"
 }

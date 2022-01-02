@@ -34,21 +34,11 @@ public class Student {
         schedule = new Schedule(this);
     }
 
-    public void addPastCourse(Course course) {
-        if (Math.random() < registrationSystem.getPassProbability()) {
-            transcript.addPassedCourse(course);
-        }
-        else {
-            transcript.addFailedCourse(course);
-        }
-    }
-
-    /**Takes a Student and an ElectiveType and returns the
-     * number of past elective courses according to student's
-     * current semester number*/
+    /**Gets the number of past elective courses of student by
+     * looking at student's semester number and parameter's semester
+     * numbers*/
     public int getNumOfPastElectives(ArrayList<Integer> semesterNums) {
         int count = 0;
-
         for (Integer i: semesterNums) {
             if (i < getSemesterNumber()) {
                 count++;
@@ -65,7 +55,6 @@ public class Student {
         this.semesterNumber = semesterNumber;
     }
 
-
     public void setSemesterNumber() {
         switch (registrationSystem.getSemester()) {
             case FALL:
@@ -78,10 +67,6 @@ public class Student {
         }
     }
 
-    public int getCompletedCredits() {
-        return transcript.getCompletedCredits();
-    }
-
     public void addToCurrentCourses(CourseSection courseSection) {
         schedule.addToProgram(courseSection);
         transcript.getCurrentCourses().add(courseSection.getCourse());
@@ -92,9 +77,7 @@ public class Student {
          advisor.approveCourseSection(this, courseSection);
     }
 
-    public boolean hasPassedCourse(Course course) {
-        return transcript.hasPassedCourse(course);
-    }
+
 
     public void requestMandatoryCourses() {
         ArrayList<CourseSection> offeredCourseSections = registrationSystem.getOfferedCourseSections(this);
@@ -165,6 +148,10 @@ public class Student {
 
     public void setSchedule(Schedule schedule) {
         this.schedule = schedule;
+    }
+
+    public RegistrationSystem getRegistrationSystem() {
+        return registrationSystem;
     }
 
     public Transcript getTranscript() {

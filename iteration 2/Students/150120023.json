@@ -7,62 +7,63 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "CAS2005"
+        "COMM2060"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "Advisor didn't approve NTE1002(NTE/UE) because of more than one hour collision with -> PHYS1104 PHYS1102  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS2005(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, COMM2060(NTE/UE), "
     ],
-    "AdvisorName": "KEZBAN DUMAN",
+    "AdvisorName": "BERİL GÜLÜŞ KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 57,
+            "intGrade": 59,
             "Course": "ATA121",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 50,
+            "intGrade": 97,
             "Course": "MBG1201",
-            "LetterGrade": "DD"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 21,
+            "intGrade": 95,
             "Course": "CSE1200",
-            "LetterGrade": "FF"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 81,
+            "intGrade": 93,
             "Course": "CSE1241",
-            "LetterGrade": "BB"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 50,
+            "intGrade": 56,
             "Course": "MATH1001",
-            "LetterGrade": "DD"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 68,
+            "intGrade": 59,
             "Course": "PHYS1101",
-            "LetterGrade": "CC"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 73,
+            "intGrade": 87,
             "Course": "PHYS1103",
-            "LetterGrade": "CC"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 81,
+            "intGrade": 66,
             "Course": "TRD121",
-            "LetterGrade": "BB"
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "GÜNAY AKSUN",
-    "CompletedCredits": 27,
+    "StudentName": "SERKAN SÖNMEZ",
+    "CompletedCredits": 31,
     "StudentId": "150120023"
 }

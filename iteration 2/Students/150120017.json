@@ -1,68 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "HR1013"
+        "NTE1014"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, HR1013(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1014(NTE/UE), "
     ],
-    "AdvisorName": "KEZBAN DUMAN",
+    "AdvisorName": "BERİL GÜLÜŞ KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 56,
+            "intGrade": 68,
             "Course": "ATA121",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 55,
-            "Course": "MBG1201",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 79,
-            "Course": "CSE1200",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 65,
-            "Course": "CSE1241",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 80,
-            "Course": "MATH1001",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 91,
-            "Course": "PHYS1101",
-            "LetterGrade": "AA"
-        },
-        {
             "intGrade": 76,
-            "Course": "PHYS1103",
+            "Course": "MBG1201",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 56,
-            "Course": "TRD121",
+            "intGrade": 59,
+            "Course": "CSE1200",
             "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 34,
+            "Course": "CSE1241",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 72,
+            "Course": "MATH1001",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 89,
+            "Course": "PHYS1101",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 8,
+            "Course": "PHYS1103",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 96,
+            "Course": "TRD121",
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "FUAT KALEM",
-    "CompletedCredits": 31,
+    "StudentName": "YUSUF KENAN SAĞDIK",
+    "CompletedCredits": 23,
     "StudentId": "150120017"
 }

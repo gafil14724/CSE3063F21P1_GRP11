@@ -62,7 +62,7 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
             student.getExecutionTrace().append("\nThe system didn't allow " +  toString() +
                     " because student failed prerequisites -> " );
             for (Course c: preRequisites) {
-                if (!student.hasPassedCourse(c)) {
+                if (!student.getTranscript().hasPassedCourse(c)) {
                     student.getExecutionTrace().append(c.toString() + " ");
                 }
             }
@@ -76,7 +76,7 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
 
 
     public boolean checkCreditCondition(Student student) {
-         return student.getCompletedCredits() >= requiredCredits;
+         return student.getTranscript().getCompletedCredits() >= requiredCredits;
     }
 
     public int getRequiredCredits() {

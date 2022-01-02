@@ -7,18 +7,19 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDA2001"
+        "HR1013"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "Advisor didn't approve YDA1001(NTE/UE) because of more than one hour collision with -> CSE1242 PHYS1102  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA2001(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, HR1013(NTE/UE), "
     ],
-    "AdvisorName": "HATİKE ŞAHİN",
+    "AdvisorName": "ASUMAN YILDIRIM",
     "SemesterNumber": 2,
     "Past Courses": [
         {
@@ -27,42 +28,42 @@
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 89,
+            "intGrade": 61,
             "Course": "MBG1201",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 99,
-            "Course": "CSE1200",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 96,
-            "Course": "CSE1241",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 44,
-            "Course": "MATH1001",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 50,
-            "Course": "PHYS1101",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 58,
-            "Course": "PHYS1103",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 99,
-            "Course": "TRD121",
+            "intGrade": 82,
+            "Course": "CSE1200",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 57,
+            "Course": "CSE1241",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 98,
+            "Course": "MATH1001",
             "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 75,
+            "Course": "PHYS1101",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 87,
+            "Course": "PHYS1103",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 55,
+            "Course": "TRD121",
+            "LetterGrade": "DC"
         }
     ],
-    "StudentName": "KUBİLAY KADAK",
-    "CompletedCredits": 25,
+    "StudentName": "CEMİLE AYŞE YILDIZ ALTUN",
+    "CompletedCredits": 31,
     "StudentId": "150120078"
 }

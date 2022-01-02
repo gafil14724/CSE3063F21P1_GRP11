@@ -6,7 +6,7 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "NTE1015"
+        "YDI1004"
     ],
     "Execution Trace": [
         "Offered Courses: ",
@@ -14,47 +14,48 @@
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "Advisor didn't approve LAW2004(NTE/UE) because of more than one hour collision with -> PHYS1102 PHYS1104  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1015(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDI1004(NTE/UE), "
     ],
-    "AdvisorName": "HATİKE ŞAHİN",
+    "AdvisorName": "ÜLKÜHAN KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 23,
+            "intGrade": 46,
             "Course": "ATA121",
-            "LetterGrade": "FF"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 78,
+            "intGrade": 70,
             "Course": "MBG1201",
-            "LetterGrade": "CB"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 53,
+            "intGrade": 63,
             "Course": "CSE1200",
-            "LetterGrade": "DD"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 43,
+            "intGrade": 20,
             "Course": "CSE1241",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 87,
+            "intGrade": 51,
             "Course": "MATH1001",
-            "LetterGrade": "BA"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 66,
+            "intGrade": 81,
             "Course": "PHYS1101",
-            "LetterGrade": "CC"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 90,
+            "intGrade": 80,
             "Course": "PHYS1103",
-            "LetterGrade": "AA"
+            "LetterGrade": "BB"
         },
         {
             "intGrade": 66,
@@ -62,7 +63,7 @@
             "LetterGrade": "CC"
         }
     ],
-    "StudentName": "ZÜLFİYE ALDİNÇ",
+    "StudentName": "BURAK TUNCEL",
     "CompletedCredits": 23,
     "StudentId": "150120070"
 }

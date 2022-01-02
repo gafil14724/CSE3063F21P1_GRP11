@@ -14,7 +14,10 @@ public abstract class ElectiveCourse extends Course {
         setCourseSection(new CourseSection(this));
     }
 
-
+    @Override
+    public boolean isElligiblePastCourse(Student student) {
+        return super.isElligiblePastCourse(student);
+    }
 
     @Override
     public boolean onRequested(Student student) {

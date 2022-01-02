@@ -1,69 +1,69 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDA1003"
+        "YDA1001"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve NTE1008(NTE/UE) because of more than one hour collision with -> PHYS1102 MATH1002  in schedule",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "Advisor didn't approve YDF1002(NTE/UE) because of more than one hour collision with -> MATH2256 PHYS1102  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA1003(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA1001(NTE/UE), "
     ],
-    "AdvisorName": "NEJDET YENİÇERİ",
+    "AdvisorName": "KENAN AHMET YILDIRIM",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 31,
+            "intGrade": 61,
             "Course": "ATA121",
-            "LetterGrade": "FF"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 100,
+            "intGrade": 73,
             "Course": "MBG1201",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 99,
-            "Course": "CSE1200",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 70,
-            "Course": "CSE1241",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 89,
-            "Course": "MATH1001",
-            "LetterGrade": "BA"
+            "intGrade": 49,
+            "Course": "CSE1200",
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 83,
-            "Course": "PHYS1101",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 11,
-            "Course": "PHYS1103",
+            "intGrade": 13,
+            "Course": "CSE1241",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 61,
+            "intGrade": 78,
+            "Course": "MATH1001",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 90,
+            "Course": "PHYS1101",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 67,
+            "Course": "PHYS1103",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 91,
             "Course": "TRD121",
-            "LetterGrade": "DC"
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "CENK KANYILMAZ",
-    "CompletedCredits": 27,
+    "StudentName": "AKSEL DEMİRÖZ",
+    "CompletedCredits": 21,
     "StudentId": "150120052"
 }

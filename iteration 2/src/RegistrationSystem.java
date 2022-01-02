@@ -2,7 +2,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -107,11 +106,10 @@ public class RegistrationSystem {
                     JSONArray currentCourses = (JSONArray) input.get("Current Courses");
                     ArrayList<Course> stuCurrCourses = new ArrayList<>();
                     for (int i = 0; i< currentCourses.size(); i++) {
-                        //techElectiveSemesters.add((int)(long)technicalSemesters.get(i));
                         stuCurrCourses.add(findCourse((String) currentCourses.get(i)));
                     }
 
-                    stuCurrCourses.forEach(newStudent::addPastCourse);//Addpast courses for student
+                    stuCurrCourses.forEach(newStudent.getTranscript()::addPastCourse);//Addpast courses for student
 
                 }
                 catch (IOException | ParseException e) {
@@ -192,7 +190,7 @@ public class RegistrationSystem {
     private void printRegistrationProcess() {
         for (Student s : students) {
             System.out.println("==========\nRegistration process for: " + s.getName() +  ": " + s.getStudentId() +
-                    " \nSemester Number: " +    s.getSemesterNumber() + "\nCompleted Credits: " + s.getCompletedCredits());
+                    " \nSemester Number: " +    s.getSemesterNumber() + "\nCompleted Credits: " + s.getTranscript().getCompletedCredits());
             System.out.println("Advisor: " + s.getAdvisor().getName() + "\n");
 
 
@@ -209,11 +207,6 @@ public class RegistrationSystem {
    private void printMandatoryStatistics() {
         for (MandatoryCourse c: mandatoryCourses) {
             if (c.getNonRegisteredCollision().size() > 0) {
-                System.out.print(c.getNonRegisteredCollision().size() + " Students couldn't register to " +
-                        c.toString() + " Because of a collision problem: (");
-                c.getNonRegisteredCollision().forEach(s -> System.out.print(s.getStudentId() + " "));
-                System.out.println(")");
-
                 statisticsBuffer += c.getNonRegisteredCollision().size() + " Students couldn't register to " +
                         c.toString() + " Because of a collision problem: (";
                 for (Student s: c.getNonRegisteredCollision()) {
@@ -223,11 +216,6 @@ public class RegistrationSystem {
             }
 
             if (c.getNonRegisteredQuota().size() > 0) {
-                System.out.print(c.getNonRegisteredQuota().size() + " students couldn't register to " +
-                        c.toString() + " because of quota problem: (");
-                c.getNonRegisteredQuota().forEach(s -> System.out.print(s.getStudentId() + " "));
-                System.out.println(")");
-
                 statisticsBuffer += c.getNonRegisteredQuota().size() + " Students couldn't register to " +
                         c.toString() + " Because of a quota problem: (";
                 for (Student s: c.getNonRegisteredQuota()) {
@@ -237,11 +225,6 @@ public class RegistrationSystem {
             }
 
             if (c.getNonRegisteredPrereq().size() > 0) {
-                System.out.print(c.getNonRegisteredPrereq().size() + " Students couldn't register to " +
-                        c.toString() + " Because of a Prerequisite Problem: (");
-                c.getNonRegisteredPrereq().forEach(s -> System.out.print(s.getStudentId() + " "));
-                System.out.println(")");
-
                 statisticsBuffer += c.getNonRegisteredPrereq().size() + " Students couldn't register to " +
                         c.toString() + " Because of a Prerequisite problem: (";
                 for (Student s: c.getNonRegisteredPrereq()) {
@@ -250,17 +233,16 @@ public class RegistrationSystem {
                 statisticsBuffer += ")\n";
             }
 
-
         }
     }
 
     private void printFinalProjectStatistics() {
         for (FinalProjectMandatoryCourse c: finalProjectMandatoryCourses) {
             if (c.getNonRegisteredCredit().size() > 0) {
-                System.out.print(c.getNonRegisteredCredit().size() + " Students couldn't register to " +
+                statisticsBuffer += (c.getNonRegisteredCredit().size() + " Students couldn't register to " +
                         c.toString() + " Because of credit problem: (");
-                c.getNonRegisteredCredit().forEach(s -> System.out.print(s.getStudentId() + " "));
-                System.out.println(")");
+                c.getNonRegisteredCredit().forEach(s -> statisticsBuffer += (s.getStudentId() + " "));
+                statisticsBuffer += (")\n");
             }
         }
     }
@@ -270,11 +252,12 @@ public class RegistrationSystem {
         for (TechnicalElectiveCourse te: techElectiveCourses) {
             teStudents.addAll(te.getUnregisteredStudents());
         }
-        System.out.print(teStudents.size() + " Student couldn't register to a Technical Elective " +
-                "(TE) this semester: (");
-
-        teStudents.forEach(s -> System.out.print(s.getStudentId() + ", "));
-        System.out.println(")");
+        if (teStudents.size() > 0) {
+            statisticsBuffer += (teStudents.size() + " Student couldn't register to a Technical Elective " +
+                    "(TE) this semester: (");
+            teStudents.forEach(s -> statisticsBuffer += (s.getStudentId() + ", "));
+            statisticsBuffer += (")\n");
+        }
     }
 
     private void printStatistics() {
@@ -282,6 +265,7 @@ public class RegistrationSystem {
         printMandatoryStatistics();
         printFinalProjectStatistics();
         printElectiveStatistics();
+        System.out.println(statisticsBuffer);
     }
 
 
@@ -327,7 +311,7 @@ public class RegistrationSystem {
             ElectiveCourse elective = nontechElectiveCourses.get(index);
             if (elective.isElligiblePastCourse(student)) {// If elective is an elligible past course for the student
                 //addPastCourse(student, elective);
-                student.addPastCourse(elective);
+                student.getTranscript().addPastCourse(elective);
             }
             else { //decrease i by 1 to have another random elective in case of choosing the same random elective
                 i--;
@@ -342,7 +326,7 @@ public class RegistrationSystem {
             int index = (int) (Math.random() * facultyElectiveCourses.size());
             ElectiveCourse elective = facultyElectiveCourses.get(index);
             if (elective.isElligiblePastCourse(student)) {// If elective is an elligible past course for the student
-                student.addPastCourse(elective);
+                student.getTranscript().addPastCourse(elective);
             }
             else { //decrease i by 1 to have another random elective in case of choosing the same random elective
                 i--;
@@ -357,7 +341,7 @@ public class RegistrationSystem {
             int index = (int) (Math.random() * techElectiveCourses.size());
             TechnicalElectiveCourse elective = techElectiveCourses.get(index);
             if (elective.isElligiblePastCourse(student)) {// If elective is an elligible past course for the student
-                student.addPastCourse(elective);
+                student.getTranscript().addPastCourse(elective);
             }
             else if (!elective.checkCreditCondition(student)) {
                 break;
@@ -369,6 +353,8 @@ public class RegistrationSystem {
     }
 
 
+
+
     private void addPastElectives(Student student) {
         addPastNTEs(student);
         addPastFTEs(student);
@@ -376,18 +362,16 @@ public class RegistrationSystem {
     }
 
 
-
-
     private void addPastMandatories(Student student) {
         for (Course course : mandatoryCourses) { //For each course, add it to past courses list if its semester is less than student's
             if (course.isElligiblePastCourse(student)) { //If course's semester is less than student's
-                student.addPastCourse(course);
+                student.getTranscript().addPastCourse(course);
             }
         }
     }
 
 
-    /**Adds past courses for each student by calling their methods*/
+    /**Adds past courses for each student*/
     private void addPastCourses() {
         for (Student s : students) {
             addPastMandatories(s);

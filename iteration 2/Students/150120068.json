@@ -7,63 +7,64 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "CAS2001"
+        "OB3043"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve CAS2003(NTE/UE) because of more than one hour collision with -> TRD122 PHYS1104  in schedule",
+        "Advisor didn't approve NTE1010(NTE/UE) because of more than one hour collision with -> MATH2256 PHYS1102  in schedule",
+        "Advisor didn't approve CAS1001(NTE/UE) because of more than one hour collision with -> ATA122 MATH1002  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS2001(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, OB3043(NTE/UE), "
     ],
-    "AdvisorName": "TANER ATASOY",
+    "AdvisorName": "ÜLKÜHAN KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 69,
+            "intGrade": 63,
             "Course": "ATA121",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 61,
-            "Course": "MBG1201",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 91,
-            "Course": "CSE1200",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 75,
-            "Course": "CSE1241",
+            "intGrade": 78,
+            "Course": "MBG1201",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 1,
-            "Course": "MATH1001",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 64,
-            "Course": "PHYS1101",
+            "intGrade": 63,
+            "Course": "CSE1200",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 93,
-            "Course": "PHYS1103",
+            "intGrade": 61,
+            "Course": "CSE1241",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 72,
+            "Course": "MATH1001",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 90,
+            "Course": "PHYS1101",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 50,
+            "intGrade": 80,
+            "Course": "PHYS1103",
+            "LetterGrade": "BB"
+        },
+        {
+            "intGrade": 90,
             "Course": "TRD121",
-            "LetterGrade": "DD"
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "ZÜHAL ÖĞÜTMEN KOÇ",
-    "CompletedCredits": 25,
+    "StudentName": "SEDAT KANDEMİR",
+    "CompletedCredits": 31,
     "StudentId": "150120068"
 }

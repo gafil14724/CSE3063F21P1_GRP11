@@ -7,24 +7,25 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "CAS1061"
+        "MGT3082"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "Advisor didn't approve BUS1004(NTE/UE) because of more than one hour collision with -> MATH2256 MATH2256  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS1061(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, MGT3082(NTE/UE), "
     ],
-    "AdvisorName": "KORAY MERCAN",
+    "AdvisorName": "ÜLKÜHAN KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 59,
+            "intGrade": 94,
             "Course": "ATA121",
-            "LetterGrade": "DC"
+            "LetterGrade": "AA"
         },
         {
             "intGrade": 70,
@@ -32,37 +33,37 @@
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 92,
+            "intGrade": 90,
             "Course": "CSE1200",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 75,
+            "intGrade": 59,
             "Course": "CSE1241",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 58,
+            "Course": "MATH1001",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 77,
+            "Course": "PHYS1101",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 6,
-            "Course": "MATH1001",
+            "intGrade": 8,
+            "Course": "PHYS1103",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 67,
-            "Course": "PHYS1101",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 66,
-            "Course": "PHYS1103",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 96,
+            "intGrade": 82,
             "Course": "TRD121",
-            "LetterGrade": "AA"
+            "LetterGrade": "BB"
         }
     ],
-    "StudentName": "TUĞBA EMLAKÇIOĞLU",
-    "CompletedCredits": 25,
+    "StudentName": "KADİR YAKAR",
+    "CompletedCredits": 29,
     "StudentId": "150120038"
 }

@@ -7,65 +7,62 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDIS1001"
+        "HR1013"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve NTE1004(NTE/UE) because of more than one hour collision with -> PHYS1102 MATH1002  in schedule",
-        "Advisor didn't approve SOC3082(NTE/UE) because of more than one hour collision with -> MATH2256 CSE1242  in schedule",
-        "Advisor didn't approve CAS2003(NTE/UE) because of more than one hour collision with -> TRD122 PHYS1104  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDIS1001(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, HR1013(NTE/UE), "
     ],
-    "AdvisorName": "ZÜLFİYE IŞIK",
+    "AdvisorName": "SERHAT BÖLÜK",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 75,
-            "Course": "ATA121",
-            "LetterGrade": "CB"
-        },
-        {
-            "intGrade": 81,
-            "Course": "MBG1201",
-            "LetterGrade": "BB"
-        },
-        {
             "intGrade": 71,
-            "Course": "CSE1200",
+            "Course": "ATA121",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 62,
+            "intGrade": 53,
+            "Course": "MBG1201",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 60,
+            "Course": "CSE1200",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 67,
             "Course": "CSE1241",
-            "LetterGrade": "DC"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 63,
+            "intGrade": 82,
             "Course": "MATH1001",
-            "LetterGrade": "DC"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 46,
+            "intGrade": 35,
             "Course": "PHYS1101",
-            "LetterGrade": "FD"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 63,
+            "intGrade": 98,
             "Course": "PHYS1103",
-            "LetterGrade": "DC"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 79,
+            "intGrade": 84,
             "Course": "TRD121",
-            "LetterGrade": "CB"
+            "LetterGrade": "BB"
         }
     ],
-    "StudentName": "FERHAT BABACAN",
+    "StudentName": "ÖMER AYKUT TANRIVERDİ YILMAZ",
     "CompletedCredits": 27,
     "StudentId": "150120072"
 }

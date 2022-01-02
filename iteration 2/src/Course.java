@@ -26,7 +26,11 @@ public abstract class Course {
         registrationSystem = RegistrationSystem.getInstance(); // Singleton Controller class
     }
 
-    public abstract boolean isElligiblePastCourse(Student student);
+    /**Returns true if student hasn't passed this course
+     * (common for all of the course types)*/
+    public boolean isElligiblePastCourse(Student student) {
+        return !student.getTranscript().hasPassedCourse(this);
+    }
 
 
     /**Checks for collision first when requested for all of the courses*/

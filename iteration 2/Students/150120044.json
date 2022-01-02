@@ -1,69 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "COMM2060"
+        "NTE1015"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve NTE1004(NTE/UE) because of more than one hour collision with -> PHYS1102 MATH1002  in schedule",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, COMM2060(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1015(NTE/UE), "
     ],
-    "AdvisorName": "ONUR SALİH KALEM",
+    "AdvisorName": "ÜLKÜHAN KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 94,
+            "intGrade": 90,
             "Course": "ATA121",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 70,
+            "intGrade": 29,
             "Course": "MBG1201",
-            "LetterGrade": "CC"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 89,
+            "intGrade": 76,
             "Course": "CSE1200",
-            "LetterGrade": "BA"
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 54,
+            "intGrade": 36,
             "Course": "CSE1241",
-            "LetterGrade": "DD"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 59,
+            "intGrade": 76,
             "Course": "MATH1001",
-            "LetterGrade": "DC"
+            "LetterGrade": "CB"
         },
         {
-            "intGrade": 69,
+            "intGrade": 68,
             "Course": "PHYS1101",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 78,
+            "intGrade": 48,
             "Course": "PHYS1103",
-            "LetterGrade": "CB"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 2,
+            "intGrade": 92,
             "Course": "TRD121",
-            "LetterGrade": "FF"
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "HASAN ULAŞ ATASOY",
-    "CompletedCredits": 29,
+    "StudentName": "YUSUF YILMAZ",
+    "CompletedCredits": 18,
     "StudentId": "150120044"
 }

@@ -7,62 +7,63 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "COMM2060"
+        "MRK3084"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "Advisor didn't approve NTE1002(NTE/UE) because of more than one hour collision with -> PHYS1104 PHYS1102  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, COMM2060(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, MRK3084(NTE/UE), "
     ],
-    "AdvisorName": "HANDAN OCAK",
+    "AdvisorName": "HASAN KARAHAN",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 68,
+            "intGrade": 71,
             "Course": "ATA121",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 64,
+            "intGrade": 91,
             "Course": "MBG1201",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 54,
-            "Course": "CSE1200",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 95,
-            "Course": "CSE1241",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 70,
-            "Course": "MATH1001",
-            "LetterGrade": "CC"
+            "intGrade": 44,
+            "Course": "CSE1200",
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 73,
-            "Course": "PHYS1101",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 62,
-            "Course": "PHYS1103",
+            "intGrade": 64,
+            "Course": "CSE1241",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 83,
+            "intGrade": 11,
+            "Course": "MATH1001",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 86,
+            "Course": "PHYS1101",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 46,
+            "Course": "PHYS1103",
+            "LetterGrade": "FD"
+        },
+        {
+            "intGrade": 78,
             "Course": "TRD121",
-            "LetterGrade": "BB"
+            "LetterGrade": "CB"
         }
     ],
-    "StudentName": "İLHAN DAM",
-    "CompletedCredits": 31,
+    "StudentName": "GÜLAY YILDIZ",
+    "CompletedCredits": 19,
     "StudentId": "150120026"
 }

@@ -1,68 +1,69 @@
 {
     "Current Courses": [
         "ATA122",
+        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "NTE1013"
+        "BUS1003"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "Advisor didn't approve YDA1001(NTE/UE) because of more than one hour collision with -> CSE1242 PHYS1102  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1013(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, BUS1003(NTE/UE), "
     ],
-    "AdvisorName": "ONUR SALİH KALEM",
+    "AdvisorName": "BERİL GÜLÜŞ KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 92,
+            "intGrade": 78,
             "Course": "ATA121",
+            "LetterGrade": "CB"
+        },
+        {
+            "intGrade": 58,
+            "Course": "MBG1201",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 63,
+            "Course": "CSE1200",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 93,
+            "Course": "CSE1241",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 54,
-            "Course": "MBG1201",
-            "LetterGrade": "DD"
+            "intGrade": 99,
+            "Course": "MATH1001",
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 88,
-            "Course": "CSE1200",
-            "LetterGrade": "BA"
+            "intGrade": 60,
+            "Course": "PHYS1101",
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 23,
-            "Course": "CSE1241",
+            "intGrade": 15,
+            "Course": "PHYS1103",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 55,
-            "Course": "MATH1001",
-            "LetterGrade": "DC"
-        },
-        {
-            "intGrade": 86,
-            "Course": "PHYS1101",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 72,
-            "Course": "PHYS1103",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 64,
+            "intGrade": 79,
             "Course": "TRD121",
-            "LetterGrade": "DC"
+            "LetterGrade": "CB"
         }
     ],
-    "StudentName": "HÜSEYİN CAHİT ATAY",
-    "CompletedCredits": 25,
+    "StudentName": "MUSTAFA FERHAT TOPALOĞLU",
+    "CompletedCredits": 29,
     "StudentId": "150120060"
 }

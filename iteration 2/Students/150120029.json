@@ -1,68 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "CAS2001"
+        "NTE1015"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS2001(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1015(NTE/UE), "
     ],
-    "AdvisorName": "KEZBAN DUMAN",
+    "AdvisorName": "BERİL GÜLÜŞ KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 72,
+            "intGrade": 96,
             "Course": "ATA121",
-            "LetterGrade": "CC"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 28,
+            "intGrade": 8,
             "Course": "MBG1201",
             "LetterGrade": "FF"
         },
         {
-            "intGrade": 51,
+            "intGrade": 85,
             "Course": "CSE1200",
-            "LetterGrade": "DD"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 63,
+            "intGrade": 45,
             "Course": "CSE1241",
-            "LetterGrade": "DC"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 42,
+            "intGrade": 95,
             "Course": "MATH1001",
-            "LetterGrade": "FF"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 66,
+            "intGrade": 72,
             "Course": "PHYS1101",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 82,
+            "intGrade": 61,
             "Course": "PHYS1103",
-            "LetterGrade": "BB"
+            "LetterGrade": "DC"
         },
         {
-            "intGrade": 52,
+            "intGrade": 83,
             "Course": "TRD121",
-            "LetterGrade": "DD"
+            "LetterGrade": "BB"
         }
     ],
-    "StudentName": "SEMİNE YALÇIN",
+    "StudentName": "GÜLDEN GÜNEY KOCABAŞ",
     "CompletedCredits": 20,
     "StudentId": "150120029"
 }

@@ -22,12 +22,12 @@ public class MandatoryCourse extends Course {
     @Override
     public boolean isElligiblePastCourse(Student student) {
         return student.getTranscript().hasPassedCourses(this.getPreRequisites()) &&
-                student.getSemesterNumber() > this.getSemesterNumber();
+                student.getSemesterNumber() > this.getSemesterNumber() && super.isElligiblePastCourse(student);
     }
 
 
     public boolean isOfferableForStudent(Student student) {
-        return !student.hasPassedCourse(this) && (student.getSemesterNumber() == getSemesterNumber()
+        return !student.getTranscript().hasPassedCourse(this) && (student.getSemesterNumber() == getSemesterNumber()
                 || (student.getSemesterNumber() > getSemesterNumber() && getRegistrationSystem().getSemester()
                 == getSemester()));
     }
@@ -39,7 +39,7 @@ public class MandatoryCourse extends Course {
             student.getExecutionTrace().append("\nThe system didn't allow " +  toString() +
                     " because student failed prerequisites -> " );
             for (Course c: preRequisites) {
-                if (!student.hasPassedCourse(c)) {
+                if (!student.getTranscript().hasPassedCourse(c)) {
                     student.getExecutionTrace().append(c.toString() + " ");
                 }
             }

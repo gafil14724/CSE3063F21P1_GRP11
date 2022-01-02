@@ -1,69 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "NTE1014"
+        "HSS3002"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve CAS3001(NTE/UE) because of more than one hour collision with -> ATA122 TRD122  in schedule",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1014(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, HSS3002(NTE/UE), "
     ],
-    "AdvisorName": "NEJDET YENİÇERİ",
+    "AdvisorName": "HASAN ULAŞ ÖZDEMİR",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 78,
+            "intGrade": 76,
             "Course": "ATA121",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 75,
+            "intGrade": 74,
             "Course": "MBG1201",
+            "LetterGrade": "CC"
+        },
+        {
+            "intGrade": 76,
+            "Course": "CSE1200",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 88,
-            "Course": "CSE1200",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 64,
+            "intGrade": 27,
             "Course": "CSE1241",
-            "LetterGrade": "DC"
+            "LetterGrade": "FF"
         },
         {
-            "intGrade": 81,
+            "intGrade": 52,
             "Course": "MATH1001",
-            "LetterGrade": "BB"
+            "LetterGrade": "DD"
         },
         {
-            "intGrade": 89,
+            "intGrade": 88,
             "Course": "PHYS1101",
             "LetterGrade": "BA"
         },
         {
-            "intGrade": 77,
+            "intGrade": 48,
             "Course": "PHYS1103",
-            "LetterGrade": "CB"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 16,
+            "intGrade": 80,
             "Course": "TRD121",
-            "LetterGrade": "FF"
+            "LetterGrade": "BB"
         }
     ],
-    "StudentName": "ÖZLEM KAYA",
-    "CompletedCredits": 29,
+    "StudentName": "GÜLPERİ TAŞ",
+    "CompletedCredits": 23,
     "StudentId": "150120082"
 }

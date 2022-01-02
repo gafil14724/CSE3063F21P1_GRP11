@@ -6,7 +6,7 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDI1004"
+        "NTE1016"
     ],
     "Execution Trace": [
         "Offered Courses: ",
@@ -14,55 +14,56 @@
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
         "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "Advisor didn't approve INF1001(NTE/UE) because of more than one hour collision with -> ATA122 PHYS1102  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDI1004(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1016(NTE/UE), "
     ],
-    "AdvisorName": "NEJDET YENİÇERİ",
+    "AdvisorName": "SERHAT BÖLÜK",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 4,
+            "intGrade": 87,
             "Course": "ATA121",
-            "LetterGrade": "FF"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 79,
+            "intGrade": 80,
             "Course": "MBG1201",
-            "LetterGrade": "CB"
+            "LetterGrade": "BB"
         },
         {
-            "intGrade": 59,
+            "intGrade": 63,
             "Course": "CSE1200",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 13,
+            "intGrade": 49,
             "Course": "CSE1241",
-            "LetterGrade": "FF"
+            "LetterGrade": "FD"
         },
         {
-            "intGrade": 57,
+            "intGrade": 93,
             "Course": "MATH1001",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 54,
+            "Course": "PHYS1101",
+            "LetterGrade": "DD"
+        },
+        {
+            "intGrade": 63,
+            "Course": "PHYS1103",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 89,
-            "Course": "PHYS1101",
-            "LetterGrade": "BA"
-        },
-        {
-            "intGrade": 6,
-            "Course": "PHYS1103",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 89,
+            "intGrade": 73,
             "Course": "TRD121",
-            "LetterGrade": "BA"
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "SEVGÜL MURT",
-    "CompletedCredits": 21,
+    "StudentName": "İREM ALIMLI",
+    "CompletedCredits": 25,
     "StudentId": "150120043"
 }

@@ -1,68 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
+        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "NTE1014"
+        "MGT3082"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1014(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, MGT3082(NTE/UE), "
     ],
-    "AdvisorName": "GÖKAY GÖZKAYA",
+    "AdvisorName": "BERİL GÜLÜŞ KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 88,
+            "intGrade": 71,
             "Course": "ATA121",
-            "LetterGrade": "BA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 86,
+            "intGrade": 69,
             "Course": "MBG1201",
-            "LetterGrade": "BA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 85,
+            "intGrade": 68,
             "Course": "CSE1200",
-            "LetterGrade": "BA"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 19,
+            "intGrade": 65,
             "Course": "CSE1241",
-            "LetterGrade": "FF"
+            "LetterGrade": "CC"
         },
         {
-            "intGrade": 29,
+            "intGrade": 61,
             "Course": "MATH1001",
-            "LetterGrade": "FF"
-        },
-        {
-            "intGrade": 75,
-            "Course": "PHYS1101",
-            "LetterGrade": "CB"
+            "LetterGrade": "DC"
         },
         {
             "intGrade": 57,
+            "Course": "PHYS1101",
+            "LetterGrade": "DC"
+        },
+        {
+            "intGrade": 61,
             "Course": "PHYS1103",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 100,
+            "intGrade": 88,
             "Course": "TRD121",
-            "LetterGrade": "AA"
+            "LetterGrade": "BA"
         }
     ],
-    "StudentName": "GÖZDE AKSUN",
-    "CompletedCredits": 19,
+    "StudentName": "GÖKMEN ALPASLAN TÜRKOĞLU",
+    "CompletedCredits": 31,
     "StudentId": "150120051"
 }

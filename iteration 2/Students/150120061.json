@@ -7,63 +7,62 @@
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDA2001"
+        "NTE1011"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve LAW2004(NTE/UE) because of more than one hour collision with -> CSE1242 ATA122  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDA2001(NTE/UE), "
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1011(NTE/UE), "
     ],
-    "AdvisorName": "GÖKAY GÖZKAYA",
+    "AdvisorName": "BERİL GÜLÜŞ KÖKSAL",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 56,
+            "intGrade": 8,
             "Course": "ATA121",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 20,
+            "Course": "MBG1201",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 63,
+            "Course": "CSE1200",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 83,
-            "Course": "MBG1201",
-            "LetterGrade": "BB"
-        },
-        {
-            "intGrade": 67,
-            "Course": "CSE1200",
+            "intGrade": 65,
+            "Course": "CSE1241",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 50,
-            "Course": "CSE1241",
-            "LetterGrade": "DD"
-        },
-        {
-            "intGrade": 100,
-            "Course": "MATH1001",
-            "LetterGrade": "AA"
-        },
-        {
             "intGrade": 56,
-            "Course": "PHYS1101",
+            "Course": "MATH1001",
             "LetterGrade": "DC"
         },
         {
-            "intGrade": 87,
+            "intGrade": 100,
+            "Course": "PHYS1101",
+            "LetterGrade": "AA"
+        },
+        {
+            "intGrade": 89,
             "Course": "PHYS1103",
             "LetterGrade": "BA"
         },
         {
-            "intGrade": 53,
+            "intGrade": 90,
             "Course": "TRD121",
-            "LetterGrade": "DD"
+            "LetterGrade": "AA"
         }
     ],
-    "StudentName": "BURHAN BAYRAMOĞLU",
-    "CompletedCredits": 31,
+    "StudentName": "ZEHRA AY GÜNEY",
+    "CompletedCredits": 24,
     "StudentId": "150120061"
 }

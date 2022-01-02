@@ -1,69 +1,68 @@
 {
     "Current Courses": [
         "ATA122",
-        "CSE1242",
         "MATH1002",
         "MATH2256",
         "PHYS1102",
         "PHYS1104",
         "TRD122",
-        "YDIS1002"
+        "BUS2005"
     ],
     "Execution Trace": [
         "Offered Courses: ",
         "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
         "(1 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve YDA1001(NTE/UE) because of more than one hour collision with -> MATH2256 CSE1242  in schedule",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, YDIS1002(NTE/UE), "
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, BUS2005(NTE/UE), "
     ],
-    "AdvisorName": "KEZBAN DUMAN",
+    "AdvisorName": "ESER CANSEVER",
     "SemesterNumber": 2,
     "Past Courses": [
         {
-            "intGrade": 51,
+            "intGrade": 93,
             "Course": "ATA121",
-            "LetterGrade": "DD"
+            "LetterGrade": "AA"
         },
         {
-            "intGrade": 75,
+            "intGrade": 87,
             "Course": "MBG1201",
+            "LetterGrade": "BA"
+        },
+        {
+            "intGrade": 79,
+            "Course": "CSE1200",
             "LetterGrade": "CB"
         },
         {
-            "intGrade": 90,
-            "Course": "CSE1200",
-            "LetterGrade": "AA"
-        },
-        {
-            "intGrade": 100,
+            "intGrade": 19,
             "Course": "CSE1241",
+            "LetterGrade": "FF"
+        },
+        {
+            "intGrade": 93,
+            "Course": "MATH1001",
             "LetterGrade": "AA"
         },
         {
-            "intGrade": 72,
-            "Course": "MATH1001",
-            "LetterGrade": "CC"
-        },
-        {
-            "intGrade": 69,
+            "intGrade": 67,
             "Course": "PHYS1101",
             "LetterGrade": "CC"
         },
         {
-            "intGrade": 62,
+            "intGrade": 86,
             "Course": "PHYS1103",
-            "LetterGrade": "DC"
+            "LetterGrade": "BA"
         },
         {
-            "intGrade": 40,
+            "intGrade": 74,
             "Course": "TRD121",
-            "LetterGrade": "FF"
+            "LetterGrade": "CC"
         }
     ],
-    "StudentName": "MUSTAFA SARI",
-    "CompletedCredits": 29,
+    "StudentName": "HALİL İBRAHİM AYHAN",
+    "CompletedCredits": 25,
     "StudentId": "150120062"
 }
