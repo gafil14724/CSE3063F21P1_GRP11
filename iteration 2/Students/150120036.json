@@ -1,0 +1,68 @@
+{
+    "Current Courses": [
+        "ATA122",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "BUS1003"
+    ],
+    "Execution Trace": [
+        "Current Semester Courses: ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
+        "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "",
+        "Current Courses: ",
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, BUS1003(NTE/UE), "
+    ],
+    "AdvisorName": "FADIL AÇIKGÖZ",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 52,
+            "LetterGrade": "DD",
+            "Course": "ATA121"
+        },
+        {
+            "intGrade": 92,
+            "LetterGrade": "AA",
+            "Course": "MBG1201"
+        },
+        {
+            "intGrade": 2,
+            "LetterGrade": "FF",
+            "Course": "CSE1200"
+        },
+        {
+            "intGrade": 9,
+            "LetterGrade": "FF",
+            "Course": "CSE1241"
+        },
+        {
+            "intGrade": 59,
+            "LetterGrade": "DC",
+            "Course": "MATH1001"
+        },
+        {
+            "intGrade": 73,
+            "LetterGrade": "CC",
+            "Course": "PHYS1101"
+        },
+        {
+            "intGrade": 98,
+            "LetterGrade": "AA",
+            "Course": "PHYS1103"
+        },
+        {
+            "intGrade": 94,
+            "LetterGrade": "AA",
+            "Course": "TRD121"
+        }
+    ],
+    "StudentName": "ZÜHAL GÜLSÜM KILIÇ",
+    "CompletedCredits": 21,
+    "StudentId": "150120036"
+}

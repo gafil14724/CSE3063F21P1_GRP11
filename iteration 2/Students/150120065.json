@@ -1,0 +1,68 @@
+{
+    "Current Courses": [
+        "ATA122",
+        "CAS2001"
+    ],
+    "Execution Trace": [
+        "Current Semester Courses: ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
+        "",
+        "The system didn't allow CSE1242 because course section is full. (100)",
+        "The system didn't allow MATH1002 because course section is full. (100)",
+        "The system didn't allow MATH2256 because course section is full. (100)",
+        "The system didn't allow PHYS1102 because course section is full. (100)",
+        "The system didn't allow PHYS1104 because course section is full. (100)",
+        "The system didn't allow TRD122 because course section is full. (100)",
+        "",
+        "Current Courses: ",
+        "ATA122, CAS2001(NTE/UE), "
+    ],
+    "AdvisorName": "AYŞEGÜL KÖROĞLU",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 73,
+            "LetterGrade": "CC",
+            "Course": "ATA121"
+        },
+        {
+            "intGrade": 90,
+            "LetterGrade": "AA",
+            "Course": "MBG1201"
+        },
+        {
+            "intGrade": 72,
+            "LetterGrade": "CC",
+            "Course": "CSE1200"
+        },
+        {
+            "intGrade": 75,
+            "LetterGrade": "CB",
+            "Course": "CSE1241"
+        },
+        {
+            "intGrade": 77,
+            "LetterGrade": "CB",
+            "Course": "MATH1001"
+        },
+        {
+            "intGrade": 100,
+            "LetterGrade": "AA",
+            "Course": "PHYS1101"
+        },
+        {
+            "intGrade": 2,
+            "LetterGrade": "FF",
+            "Course": "PHYS1103"
+        },
+        {
+            "intGrade": 5,
+            "LetterGrade": "FF",
+            "Course": "TRD121"
+        }
+    ],
+    "StudentName": "KORAY ERGE",
+    "CompletedCredits": 27,
+    "StudentId": "150120065"
+}

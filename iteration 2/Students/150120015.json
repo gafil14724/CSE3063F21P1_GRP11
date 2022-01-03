@@ -1,0 +1,68 @@
+{
+    "Current Courses": [
+        "ATA122",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "NTE1012"
+    ],
+    "Execution Trace": [
+        "Current Semester Courses: ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
+        "",
+        "The system didn't allow CSE1242 because student failed prerequisites -> CSE1241 ",
+        "",
+        "Current Courses: ",
+        "ATA122, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, NTE1012(NTE/UE), "
+    ],
+    "AdvisorName": "AYŞEGÜL KÖROĞLU",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 53,
+            "LetterGrade": "DD",
+            "Course": "ATA121"
+        },
+        {
+            "intGrade": 76,
+            "LetterGrade": "CB",
+            "Course": "MBG1201"
+        },
+        {
+            "intGrade": 11,
+            "LetterGrade": "FF",
+            "Course": "CSE1200"
+        },
+        {
+            "intGrade": 7,
+            "LetterGrade": "FF",
+            "Course": "CSE1241"
+        },
+        {
+            "intGrade": 97,
+            "LetterGrade": "AA",
+            "Course": "MATH1001"
+        },
+        {
+            "intGrade": 77,
+            "LetterGrade": "CB",
+            "Course": "PHYS1101"
+        },
+        {
+            "intGrade": 74,
+            "LetterGrade": "CC",
+            "Course": "PHYS1103"
+        },
+        {
+            "intGrade": 94,
+            "LetterGrade": "AA",
+            "Course": "TRD121"
+        }
+    ],
+    "StudentName": "BURAK ŞAHİNER",
+    "CompletedCredits": 21,
+    "StudentId": "150120015"
+}

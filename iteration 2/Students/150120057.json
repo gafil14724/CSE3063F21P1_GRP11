@@ -1,0 +1,69 @@
+{
+    "Current Courses": [
+        "ATA122",
+        "CSE1242",
+        "MATH1002",
+        "MATH2256",
+        "PHYS1102",
+        "PHYS1104",
+        "TRD122",
+        "MAN1001"
+    ],
+    "Execution Trace": [
+        "Current Semester Courses: ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
+        "(1 NTE), (0 TE), (0 FTE), ",
+        "",
+        "Advisor didn't approve YDA1003(NTE/UE) because of more than one hour collision with -> PHYS1102 CSE1242  in schedule",
+        "",
+        "Current Courses: ",
+        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, MAN1001(NTE/UE), "
+    ],
+    "AdvisorName": "ÖZNUR YÜCEL",
+    "SemesterNumber": 2,
+    "Past Courses": [
+        {
+            "intGrade": 88,
+            "LetterGrade": "BA",
+            "Course": "ATA121"
+        },
+        {
+            "intGrade": 91,
+            "LetterGrade": "AA",
+            "Course": "MBG1201"
+        },
+        {
+            "intGrade": 13,
+            "LetterGrade": "FF",
+            "Course": "CSE1200"
+        },
+        {
+            "intGrade": 98,
+            "LetterGrade": "AA",
+            "Course": "CSE1241"
+        },
+        {
+            "intGrade": 89,
+            "LetterGrade": "BA",
+            "Course": "MATH1001"
+        },
+        {
+            "intGrade": 93,
+            "LetterGrade": "AA",
+            "Course": "PHYS1101"
+        },
+        {
+            "intGrade": 63,
+            "LetterGrade": "DC",
+            "Course": "PHYS1103"
+        },
+        {
+            "intGrade": 83,
+            "LetterGrade": "BB",
+            "Course": "TRD121"
+        }
+    ],
+    "StudentName": "İSHAK TÜFEKÇİ",
+    "CompletedCredits": 27,
+    "StudentId": "150120057"
+}

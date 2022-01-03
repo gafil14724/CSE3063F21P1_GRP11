@@ -61,7 +61,7 @@ public class Student {
     }
 
     public void requestCourses() {
-        executionTrace.append("Offered Courses: \n");
+        executionTrace.append("Current Semester Courses: \n");
         requestMandatoryCourses();
         requestElectiveCourses();
     }
