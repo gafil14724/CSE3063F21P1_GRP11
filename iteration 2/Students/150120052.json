@@ -1,69 +1,27 @@
 {
     "Current Courses": [
-        "ATA122",
-        "CSE1242",
-        "MATH1002",
-        "MATH2256",
-        "PHYS1102",
-        "PHYS1104",
-        "TRD122",
-        "CAS2004"
+        "ATA121",
+        "MBG1201",
+        "CSE1200",
+        "CSE1241",
+        "MATH1001",
+        "PHYS1101",
+        "PHYS1103",
+        "TRD121"
     ],
     "Execution Trace": [
         "Current Semester Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, ",
-        "(1 NTE), (0 TE), (0 FTE), ",
+        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, ",
+        "(0 NTE), (0 TE), (0 FTE), ",
         "",
-        "Advisor didn't approve MRK3082(NTE/UE) because of more than one hour collision with -> MATH2256 CSE1242  in schedule",
         "",
         "Current Courses: ",
-        "ATA122, CSE1242, MATH1002, MATH2256, PHYS1102, PHYS1104, TRD122, CAS2004(NTE/UE), "
+        "ATA121, MBG1201, CSE1200, CSE1241, MATH1001, PHYS1101, PHYS1103, TRD121, "
     ],
-    "AdvisorName": "AYSEL CAMCI",
-    "SemesterNumber": 2,
-    "Past Courses": [
-        {
-            "intGrade": 6,
-            "LetterGrade": "FF",
-            "Course": "ATA121"
-        },
-        {
-            "intGrade": 65,
-            "LetterGrade": "CC",
-            "Course": "MBG1201"
-        },
-        {
-            "intGrade": 64,
-            "LetterGrade": "DC",
-            "Course": "CSE1200"
-        },
-        {
-            "intGrade": 61,
-            "LetterGrade": "DC",
-            "Course": "CSE1241"
-        },
-        {
-            "intGrade": 67,
-            "LetterGrade": "CC",
-            "Course": "MATH1001"
-        },
-        {
-            "intGrade": 20,
-            "LetterGrade": "FF",
-            "Course": "PHYS1101"
-        },
-        {
-            "intGrade": 99,
-            "LetterGrade": "AA",
-            "Course": "PHYS1103"
-        },
-        {
-            "intGrade": 68,
-            "LetterGrade": "CC",
-            "Course": "TRD121"
-        }
-    ],
-    "StudentName": "AYKAN GÜNDÜZ",
-    "CompletedCredits": 25,
+    "AdvisorName": "ADEM AKIN",
+    "SemesterNumber": 1,
+    "Past Courses": [],
+    "StudentName": "BERÇEM SARAL",
+    "CompletedCredits": 0,
     "StudentId": "150120052"
 }

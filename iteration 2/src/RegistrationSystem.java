@@ -8,6 +8,8 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
+/*Note: Before running the program, make sure to delete Students folder to reset all the students*/
+
 public class RegistrationSystem {
 
     private static RegistrationSystem registrationSystem = null;
@@ -63,7 +65,10 @@ public class RegistrationSystem {
     private void readStudents() {
         File folder = new File("Students/");
         File[] listOfFiles = folder.listFiles();
-
+        if (!folder.exists()) { //If there is no student to read
+            System.out.println("You must have Students folder before regenerating students!!!!!(change it to false first)");
+            System.exit(-1);
+        }
         for (File file : listOfFiles) {
             if (file.isFile()) {
                 try {
