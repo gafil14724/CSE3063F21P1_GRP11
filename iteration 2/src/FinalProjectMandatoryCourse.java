@@ -14,9 +14,9 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
     }
 
     @Override
-    public boolean isElligiblePastCourse(Student student) {
+    public boolean isEligiblePastCourse(Student student) {
         //Returns true if student completed the prerequisite course and has enough credits to take this course
-        return super.isElligiblePastCourse(student) && checkReqCredits(student);
+        return super.isEligiblePastCourse(student) && checkReqCredits(student);
 
     }
 
@@ -29,9 +29,9 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
                      student.getTranscript().getCompletedCredits() + ")");
             getNonRegisteredCredit().add(student);
             return false;
+        }else {
+            return super.onRequested(student);
         }
-
-        return super.onRequested(student);
     }
 
     public int getRequiredCredits() {

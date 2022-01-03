@@ -6,6 +6,7 @@ public class Transcript {
     private ArrayList<Course> currentCourses = new ArrayList<>();
     private ArrayList<Grade> grades = new ArrayList<>();
 
+
     public Transcript(Student student) {
         this.student = student;
     }
@@ -41,16 +42,6 @@ public class Transcript {
         return passedCourses;
     }
 
-    /*public ArrayList<Course> getTakenCourses() {
-        ArrayList<Course> takenCourses = new ArrayList<>();
-
-        for (Grade g: grades) {
-            takenCourses.add(g.getCourse());
-        }
-
-        return takenCourses;
-    }*/
-
     /**Takes a course as argument and checks if student
      * has passed that course by iterating over student's
      * grades*/
@@ -74,7 +65,6 @@ public class Transcript {
     public void addPassedCourse(Course course) {
         int grade = (int) (Math.random() * 51) + 50; // random grade that is greater than 50
         grades.add(new Grade(course, grade));
-
     }
 
     /**Adds a failed course with random grade between 0-49*/
@@ -106,6 +96,37 @@ public class Transcript {
     public void setCurrentCourses(ArrayList<Course> currentCourses) {
         this.currentCourses = currentCourses;
     }
+
+   /* public int getPassedTECount() {
+        int count = 0;
+        for (Course c : getPassedCourses()) {
+            if (c instanceof TechnicalElectiveCourse) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+
+    public int getPassedNTECount() {
+        int count = 0;
+        for (Course c : getPassedCourses()) {
+            if (c instanceof NonTechnicalUniversityElectiveCourse) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    public int getPassedFTECount() {
+        int count = 0;
+        for (Course c : getPassedCourses()) {
+            if (c instanceof FacultyTechnicalElectiveCourse) {
+                count++;
+            }
+        }
+        return count;
+    }*/
 
     public String toString() {
         String pastCourses = "";

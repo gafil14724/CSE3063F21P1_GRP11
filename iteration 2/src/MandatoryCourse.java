@@ -20,9 +20,9 @@ public class MandatoryCourse extends Course {
     }
 
     @Override
-    public boolean isElligiblePastCourse(Student student) {
+    public boolean isEligiblePastCourse(Student student) {
         return student.getTranscript().hasPassedCourses(this.getPreRequisites()) &&
-                student.getSemesterNumber() > this.getSemesterNumber() && super.isElligiblePastCourse(student);
+                student.getSemesterNumber() > this.getSemesterNumber() && super.isEligiblePastCourse(student);
     }
 
 
@@ -56,6 +56,8 @@ public class MandatoryCourse extends Course {
         return true;
 
     }
+
+
 
     public void setSemesterNumber(float semesterNumber) {
         if (semesterNumber < 0 || semesterNumber > 8) {

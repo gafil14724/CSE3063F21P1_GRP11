@@ -6,10 +6,8 @@ import java.util.Set;
 public class TechnicalElectiveCourse extends ElectiveCourse{
 
     private int requiredCredits;
-    private int creditStats;
     private ArrayList<Course> preRequisites;
-    private int preRequisiteStats;
-    private Set<Student> unregisteredStudents = new HashSet<>();
+    private Set<Student> nonRegisteredStudents = new HashSet<>();
 
     public TechnicalElectiveCourse(String courseCode, int quota, int credits, int theoretical, int practical,
                                    ArrayList<Integer> semesters, int requiredCredits, ArrayList<Course> preRequisites) {
@@ -19,22 +17,18 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
     }
 
     @Override
-    public boolean isElligiblePastCourse(Student student) {
-        return student.getTranscript().hasPassedCourses(this.getPreRequisites()) && checkCreditCondition(student);
+    public boolean isEligiblePastCourse(Student student) {
+        return student.getTranscript().hasPassedCourses(this.getPreRequisites()) && checkCreditCondition(student)
+                && super.isEligiblePastCourse(student);
     }
 
     @Override
-    public void whenRejectedForQuota(Student student) {
+    public void whenRejected(Student student) {
         if (getRegistrationSystem().isThereEmptyTechSection()) {
-            student.getAdvisor().approveCourseSection(student, getRandomElective().getCourseSection());
+            student.requestCourseSection(getRandomElective().getCourseSection());
             return;
         }
-        ArrayList<TechnicalElectiveCourse> techCourses = new ArrayList<>(getRegistrationSystem().getTechElectiveCourses());
-        techCourses.remove(this);
-        Collections.shuffle(techCourses);
-        for (Course c: techCourses) {
-            student.getAdvisor().approveCourseSection(student, c.getCourseSection());
-        }
+        student.getExecutionTrace().append("\nAll of the TE course Sections are full");
     }
 
     @Override
@@ -47,15 +41,13 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
     }
 
 
-
     @Override
     public boolean onRequested(Student student) {
         if (!checkCreditCondition(student)){
             student.getExecutionTrace().append("\nThe system didn't allow " + toString() +
                     " because Student completed credits is less than " + requiredCredits +
-                    " -> (" + student.getTranscript().getCompletedCredits() + ")");
-            setCreditStats();
-            unregisteredStudents.add(student);
+                    " -> (" + student.getTranscript().getCompletedCredits() + ")");;
+            nonRegisteredStudents.add(student);
             return false;
         }
         if (!student.getTranscript().hasPassedCourses(preRequisites)) {
@@ -66,13 +58,11 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
                     student.getExecutionTrace().append(c.toString() + " ");
                 }
             }
-            setPreRequisiteStats();
-                return false;
+            return false;
         }
 
         return super.onRequested(student);
     }
-
 
 
     public boolean checkCreditCondition(Student student) {
@@ -95,29 +85,12 @@ public class TechnicalElectiveCourse extends ElectiveCourse{
         this.preRequisites = preRequisites;
     }
 
-    public int getCreditStats() {
-        return creditStats;
+    public Set<Student> getNonRegisteredStudents() {
+        return nonRegisteredStudents;
     }
 
-    public void setCreditStats() {
-        creditStats++;
-    }
-
-    public int getPreRequisiteStats() {
-        return preRequisiteStats;
-    }
-
-    public void setPreRequisiteStats() {
-        preRequisiteStats++;
-    }
-
-
-    public Set<Student> getUnregisteredStudents() {
-        return unregisteredStudents;
-    }
-
-    public void setUnregisteredStudents(Set<Student> unregisteredStudents) {
-        this.unregisteredStudents = unregisteredStudents;
+    public void setNonRegisteredStudents(Set<Student> nonRegisteredStudents) {
+        this.nonRegisteredStudents = nonRegisteredStudents;
     }
 
     public String toString() {

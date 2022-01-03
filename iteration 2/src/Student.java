@@ -14,6 +14,7 @@ public class Student {
     private RegistrationSystem registrationSystem;
     private StringBuilder executionTrace = new StringBuilder();
 
+    /**Constructor for regenerating student from the input file*/
     public Student(String name, String studentId, RegistrationSystem registrationSystem, int semesterNumber) {
         this.name = name;
         this.studentId = new StudentId(studentId, this);
@@ -23,6 +24,7 @@ public class Student {
         this.semesterNumber = semesterNumber;
     }
 
+    /**Constructor for creating students from scratch*/
     public Student(String name, int currentYear, int registrationOrder, RegistrationSystem registrationSystem) {
         this.name = name;
         this.currentYear = currentYear;
@@ -47,6 +49,59 @@ public class Student {
         return count;
     }
 
+
+    public void addToCurrentCourses(CourseSection courseSection) {
+        schedule.addToProgram(courseSection);
+        transcript.getCurrentCourses().add(courseSection.getCourse());
+    }
+
+
+    public void requestCourseSection(CourseSection courseSection) {
+         advisor.approveCourseSection(this, courseSection);
+    }
+
+    public void requestCourses() {
+        executionTrace.append("Offered Courses: \n");
+        requestMandatoryCourses();
+        requestElectiveCourses();
+    }
+
+
+    private void requestMandatoryCourses() {
+        ArrayList<CourseSection> offeredCourseSections = registrationSystem.getOfferedMandatories(this);
+
+        for (CourseSection c : offeredCourseSections) {
+            executionTrace.append(c.getCourse().toString()).append(", ");
+        }
+        executionTrace.append("\n");
+        executionTrace.append("(").append(registrationSystem.offeredNTECount(this)).append(" NTE), ");
+        executionTrace.append("(").append(registrationSystem.offeredTECount(this)).append(" TE), ");
+        executionTrace.append("(").append(registrationSystem.offeredFTECount(this)).append(" FTE), ");
+        executionTrace.append("\n");
+        for (CourseSection c: offeredCourseSections) {
+            requestCourseSection(c);
+        }
+    }
+
+    /**Calls the getOfferedElectives method and after getting offered electives randomly,
+     **/
+    private void requestElectiveCourses() {
+
+        ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedElectives(this);
+
+        for (CourseSection c: offeredCourses) {
+            requestCourseSection(c);
+        }
+    }
+
+    public StringBuilder getExecutionTrace() {
+        return executionTrace;
+    }
+
+    public void setExecutionTrace(StringBuilder executionTrace) {
+        this.executionTrace = executionTrace;
+    }
+
     public int getSemesterNumber() {
         return semesterNumber;
     }
@@ -67,72 +122,22 @@ public class Student {
         }
     }
 
-    public void addToCurrentCourses(CourseSection courseSection) {
-        schedule.addToProgram(courseSection);
-        transcript.getCurrentCourses().add(courseSection.getCourse());
-    }
-
-
-    private void requestCourseSection(CourseSection courseSection) {
-         advisor.approveCourseSection(this, courseSection);
-    }
-
-
-
-    public void requestMandatoryCourses() {
-        ArrayList<CourseSection> offeredCourseSections = registrationSystem.getOfferedCourseSections(this);
-        executionTrace.append("Offered Courses: \n");
-        for (CourseSection c : offeredCourseSections) {
-            executionTrace.append(c.getCourse().toString() +  ", ");
-        }
-        executionTrace.append("\n");
-        executionTrace.append("(" + registrationSystem.getNontechElectiveCourses().get(0).offeredElectiveCount(this) + " NTE), ");
-        executionTrace.append("(" + registrationSystem.getTechElectiveCourses().get(0).offeredElectiveCount(this) + " TE), ");
-        executionTrace.append("(" + registrationSystem.getFacultyElectiveCourses().get(0).offeredElectiveCount(this) + " FTE), ");
-        executionTrace.append("\n");
-
-        for (CourseSection c: offeredCourseSections) {
-            requestCourseSection(c);
-        }
-
-    }
-
-    public void requestElectiveCourses() {
-        ArrayList<CourseSection> offeredCourses = registrationSystem.getOfferedElectiveCourseSections(this);
-
-        for (CourseSection c: offeredCourses) {
-            requestCourseSection(c);
-        }
-    }
-
-    public StringBuilder getExecutionTrace() {
-        return executionTrace;
-    }
-
-    public void setExecutionTrace(StringBuilder executionTrace) {
-        this.executionTrace = executionTrace;
-    }
-
 
     public String getName() {
         return name;
     }
 
-
     public int getRegistrationOrder() {
         return registrationOrder;
     }
-
 
     public String getStudentId() {
         return studentId.getStudentId();
     }
 
-
     public int getCurrentYear() {
         return currentYear;
     }
-
 
     public Advisor getAdvisor() {
         return advisor;
@@ -159,7 +164,6 @@ public class Student {
     }
 
     public String toString() {
-
         String studentStr = "Past Courses: \n" + transcript.toString() + "\n";
 
         return studentStr;

@@ -4,6 +4,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,7 +29,7 @@ public class RegistrationSystem {
     private ArrayList<Integer> facTechElectiveSemesters = new ArrayList<>();
     private String statisticsBuffer = "";
 
-    private RegistrationSystem( ) { //Prevent instantiation
+    private RegistrationSystem() { //Prevent instantiation
 
     }
 
@@ -52,7 +53,7 @@ public class RegistrationSystem {
     private void regenerateCheck() {
         if (isRegenerate) {
             readStudents();
-        }else {
+        } else {
             initializeAdvisors();
             appointAdvisors();
             addPastCourses();
@@ -69,9 +70,9 @@ public class RegistrationSystem {
                     JSONParser parser = new JSONParser();
                     JSONObject input = (JSONObject) parser.parse(new FileReader("Students/" + file.getName()));
 
-                    String name = (String)input.get("StudentName");
-                    String studentId = (String)input.get("StudentId");
-                    String advisorName = (String)input.get("AdvisorName");
+                    String name = (String) input.get("StudentName");
+                    String studentId = (String) input.get("StudentId");
+                    String advisorName = (String) input.get("AdvisorName");
                     int semesterNum = (int) (long) input.get("SemesterNumber");
                     int completedCredits = (int) (long) input.get("CompletedCredits");
 
@@ -82,7 +83,7 @@ public class RegistrationSystem {
 
                     if (completedCredits == 258 || ((getSemester() == Semester.FALL && semesterNum % 2 == 1) || (getSemester() == Semester.SPRING && semesterNum % 2 == 0))) {
                         newStudent.setSemesterNumber(semesterNum);
-                    }else {
+                    } else {
                         newStudent.setSemesterNumber(++semesterNum);
                     }
 
@@ -91,28 +92,25 @@ public class RegistrationSystem {
 
                     JSONArray pastCourses = (JSONArray) input.get("Past Courses");
                     ArrayList<Grade> grades = new ArrayList<>();
-                    for (Object c: pastCourses) {
+                    for (Object c : pastCourses) {
                         JSONObject grade = (JSONObject) c;
                         String courseCode = (String) grade.get("Course");
                         Course course = findCourse(courseCode);
-                        int intGrade = (int)(long)grade.get("intGrade");
+                        int intGrade = (int) (long) grade.get("intGrade");
                         grades.add(new Grade(course, intGrade));
                     }
-
-
                     newStudent.getTranscript().setGrades(grades);
 
 
                     JSONArray currentCourses = (JSONArray) input.get("Current Courses");
                     ArrayList<Course> stuCurrCourses = new ArrayList<>();
-                    for (int i = 0; i< currentCourses.size(); i++) {
+                    for (int i = 0; i < currentCourses.size(); i++) {
                         stuCurrCourses.add(findCourse((String) currentCourses.get(i)));
                     }
 
                     stuCurrCourses.forEach(newStudent.getTranscript()::addPastCourse);//Addpast courses for student
-
-                }
-                catch (IOException | ParseException e) {
+                    addPastSummerMandatories(newStudent);
+                } catch (IOException | ParseException e) {
                     e.printStackTrace();
                 }
             }
@@ -120,12 +118,15 @@ public class RegistrationSystem {
 
     }
 
+    /**
+     * Output overall statistics as json file using statisticsBuffer
+     */
     private void statisticsOutput() {
         org.json.JSONObject statJson = new org.json.JSONObject();
         String[] stats = statisticsBuffer.split("\n");
         statJson.put("Overall Statistics", stats);
 
-        try (FileWriter file = new FileWriter(new File(    "Statistics.json"))) {
+        try (FileWriter file = new FileWriter(new File("Statistics.json"))) {
             file.write(statJson.toString(4));
             file.flush();
 
@@ -134,10 +135,13 @@ public class RegistrationSystem {
         }
     }
 
+    /**
+     * Creates the registration process json files for each student inside
+     * newly created Students folder.
+     */
     private void registrationProcessOutput() {
-
         new File("Students").mkdir();
-        for (Student s: students) {
+        for (Student s : students) {
             org.json.JSONObject studentJson = new org.json.JSONObject();
             studentJson.put("StudentName", s.getName());
             studentJson.put("StudentId", s.getStudentId());
@@ -148,8 +152,8 @@ public class RegistrationSystem {
             ArrayList<Grade> stuGrades = s.getTranscript().getGrades();
 
             JSONArray pastCourses = new JSONArray();
-            for (Grade g: stuGrades) {
-                JSONObject grades = new JSONObject();
+            for (Grade g : stuGrades) {
+                org.json.JSONObject grades = new org.json.JSONObject();
                 grades.put("Course", g.getCourse().getCourseCode());
                 grades.put("LetterGrade", g.getLetterGrade());
                 grades.put("intGrade", g.getIntGrade());
@@ -160,7 +164,7 @@ public class RegistrationSystem {
             JSONArray currentCourses = new JSONArray();
             ArrayList<Course> stuCurrentCourses = s.getTranscript().getCurrentCourses();
 
-            for (Course c: stuCurrentCourses) {
+            for (Course c : stuCurrentCourses) {
                 currentCourses.add(c.getCourseCode());
             }
 
@@ -168,7 +172,7 @@ public class RegistrationSystem {
 
             JSONArray messages = new JSONArray();
             String[] executionMessages = s.getExecutionTrace().toString().split("\\n");
-            for (String st: executionMessages) {
+            for (String st : executionMessages) {
                 messages.add(st);
             }
             studentJson.put("Execution Trace", messages);
@@ -177,7 +181,7 @@ public class RegistrationSystem {
             studentJson.put("AdvisorName", s.getAdvisor().getName());
 
 
-            try (FileWriter file = new FileWriter(new File( "Students/" + s.getStudentId() +  ".json"))) {
+            try (FileWriter file = new FileWriter(new File("Students/" + s.getStudentId() + ".json"))) {
                 file.write(studentJson.toString(4));
                 file.close();
             } catch (IOException e) {
@@ -187,15 +191,16 @@ public class RegistrationSystem {
 
     }
 
+    /**
+     * Prints the registration process for each student to the terminal
+     */
     private void printRegistrationProcess() {
         for (Student s : students) {
-            System.out.println("==========\nRegistration process for: " + s.getName() +  ": " + s.getStudentId() +
-                    " \nSemester Number: " +    s.getSemesterNumber() + "\nCompleted Credits: " + s.getTranscript().getCompletedCredits());
+            System.out.println("==========\nRegistration process for: " + s.getName() + ": " + s.getStudentId() +
+                    " \nSemester Number: " + s.getSemesterNumber() + "\nCompleted Credits: " + s.getTranscript().getCompletedCredits());
             System.out.println("Advisor: " + s.getAdvisor().getName() + "\n");
-
-
-          s.getExecutionTrace().append("\n\nCurrent Courses: \n");
-            for (Course c: s.getTranscript().getCurrentCourses()) {
+            s.getExecutionTrace().append("\n\nCurrent Courses: \n");
+            for (Course c : s.getTranscript().getCurrentCourses()) {
                 s.getExecutionTrace().append(c.toString() + ", ");
             }
             System.out.println(s.toString());
@@ -204,12 +209,15 @@ public class RegistrationSystem {
         }
     }
 
-   private void printMandatoryStatistics() {
-        for (MandatoryCourse c: mandatoryCourses) {
+    /**
+     * Prints non registered student statistics for mandatory courses
+     */
+    private void printMandatoryStatistics() {
+        for (Course c : courses) {
             if (c.getNonRegisteredCollision().size() > 0) {
                 statisticsBuffer += c.getNonRegisteredCollision().size() + " Students couldn't register to " +
                         c.toString() + " Because of a collision problem: (";
-                for (Student s: c.getNonRegisteredCollision()) {
+                for (Student s : c.getNonRegisteredCollision()) {
                     statisticsBuffer += s.getStudentId() + " ";
                 }
                 statisticsBuffer += ")\n";
@@ -218,23 +226,24 @@ public class RegistrationSystem {
             if (c.getNonRegisteredQuota().size() > 0) {
                 statisticsBuffer += c.getNonRegisteredQuota().size() + " Students couldn't register to " +
                         c.toString() + " Because of a quota problem: (";
-                for (Student s: c.getNonRegisteredQuota()) {
+                for (Student s : c.getNonRegisteredQuota()) {
                     statisticsBuffer += s.getStudentId() + " ";
                 }
                 statisticsBuffer += ")\n";
             }
+        }
 
+        for (MandatoryCourse c: mandatoryCourses) {
             if (c.getNonRegisteredPrereq().size() > 0) {
                 statisticsBuffer += c.getNonRegisteredPrereq().size() + " Students couldn't register to " +
                         c.toString() + " Because of a Prerequisite problem: (";
-                for (Student s: c.getNonRegisteredPrereq()) {
+                for (Student s : c.getNonRegisteredPrereq()) {
                     statisticsBuffer += s.getStudentId() + " ";
                 }
                 statisticsBuffer += ")\n";
             }
-
         }
-    }
+}
 
     private void printFinalProjectStatistics() {
         for (FinalProjectMandatoryCourse c: finalProjectMandatoryCourses) {
@@ -250,7 +259,7 @@ public class RegistrationSystem {
     private void printElectiveStatistics() {
         Set<Student> teStudents = new HashSet<>();
         for (TechnicalElectiveCourse te: techElectiveCourses) {
-            teStudents.addAll(te.getUnregisteredStudents());
+            teStudents.addAll(te.getNonRegisteredStudents());
         }
         if (teStudents.size() > 0) {
             statisticsBuffer += (teStudents.size() + " Student couldn't register to a Technical Elective " +
@@ -258,10 +267,11 @@ public class RegistrationSystem {
             teStudents.forEach(s -> statisticsBuffer += (s.getStudentId() + ", "));
             statisticsBuffer += (")\n");
         }
+
     }
 
     private void printStatistics() {
-        System.out.println("\n\n");
+        System.out.println("\n\n=============  Overall Statistics About Courses ===========\n");
         printMandatoryStatistics();
         printFinalProjectStatistics();
         printElectiveStatistics();
@@ -287,7 +297,7 @@ public class RegistrationSystem {
     }
 
     /**Initializes students for each of the four year by calling
-     * initStudents byCount method*/
+     * initStudentsByCount method*/
     private void initializeStudents(int first, int second, int third, int fourth)  {
         initStudentsByCount(1, first);
         initStudentsByCount(2, second);
@@ -303,68 +313,45 @@ public class RegistrationSystem {
         }
     }
 
+
     private void addPastNTEs(Student student) {
         int count = student.getNumOfPastElectives(nonTechElectiveSemesters);
-
-        for (int i = 0; i < count; i++) { //Add non technical electives to the past courses list
-            int index = (int) (Math.random() * nontechElectiveCourses.size());
-            ElectiveCourse elective = nontechElectiveCourses.get(index);
-            if (elective.isElligiblePastCourse(student)) {// If elective is an elligible past course for the student
-                //addPastCourse(student, elective);
-                student.getTranscript().addPastCourse(elective);
-            }
-            else { //decrease i by 1 to have another random elective in case of choosing the same random elective
-                i--;
-            }
+        Collections.shuffle(nontechElectiveCourses); // shuffle nte courses.
+        for (int i = 0; i < count; i++) {
+            student.getTranscript().addPastCourse(nontechElectiveCourses.get(i));
         }
     }
 
     private void addPastFTEs(Student student) {
         int count = student.getNumOfPastElectives(facTechElectiveSemesters);
-
-        for (int i = 0; i < count; i++) { //Add non technical electives to the past courses list
-            int index = (int) (Math.random() * facultyElectiveCourses.size());
-            ElectiveCourse elective = facultyElectiveCourses.get(index);
-            if (elective.isElligiblePastCourse(student)) {// If elective is an elligible past course for the student
-                student.getTranscript().addPastCourse(elective);
-            }
-            else { //decrease i by 1 to have another random elective in case of choosing the same random elective
-                i--;
-            }
+        Collections.shuffle(facultyElectiveCourses); // shuffle FTE courses to get randomized courses.
+        for (int i = 0; i < count; i++) {
+            student.getTranscript().addPastCourse(facultyElectiveCourses.get(i));
         }
     }
 
     private void addPastTEs(Student student) {
         int count = student.getNumOfPastElectives(techElectiveSemesters);
+        Collections.shuffle(techElectiveCourses); // shuffle FTE courses to get randomized courses.
+        for (int i = 0; i < count; i++) {
+            student.getTranscript().addPastCourse(techElectiveCourses.get(i));
+        }
+    }
 
-        for (int i = 0; i < count; i++) { //Add non technical electives to the past courses list
-            int index = (int) (Math.random() * techElectiveCourses.size());
-            TechnicalElectiveCourse elective = techElectiveCourses.get(index);
-            if (elective.isElligiblePastCourse(student)) {// If elective is an elligible past course for the student
-                student.getTranscript().addPastCourse(elective);
-            }
-            else if (!elective.checkCreditCondition(student)) {
-                break;
-            }
-            else { //decrease i by 1 to have another random elective in case of choosing the same random elective
-                i--;
+    /**Adds past mandatory courses for each student*/
+    private void addPastMandatories(Student student) {
+        for (Course course : mandatoryCourses) { //For each course, add it to past courses list if its semester is less than student's
+            if (course.isEligiblePastCourse(student)) { //If course is an eligible past course for student
+                student.getTranscript().addPastCourse(course);
             }
         }
     }
 
-
-
-
-    private void addPastElectives(Student student) {
-        addPastNTEs(student);
-        addPastFTEs(student);
-        addPastTEs(student);
-    }
-
-
-    private void addPastMandatories(Student student) {
-        for (Course course : mandatoryCourses) { //For each course, add it to past courses list if its semester is less than student's
-            if (course.isElligiblePastCourse(student)) { //If course's semester is less than student's
+    /**Adds every past summer internship courses to student's
+     * past course list (Used when regenerating students)*/
+    private void addPastSummerMandatories(Student student) {
+        for (MandatoryCourse course: mandatoryCourses) {
+            if (course.isEligiblePastCourse(student) && course.getSemester() == Semester.SUMMER) {
                 student.getTranscript().addPastCourse(course);
             }
         }
@@ -373,63 +360,85 @@ public class RegistrationSystem {
 
     /**Adds past courses for each student*/
     private void addPastCourses() {
-        for (Student s : students) {
-            addPastMandatories(s);
-            addPastElectives(s);
+        for (Student student : students) {
+            addPastMandatories(student);
+            addPastNTEs(student);
+            addPastFTEs(student);
+            addPastTEs(student);
         }
     }
 
+    /**Calls every student's requestCourses method*/
     private void requestCourses() {
         for (Student s: students) {
-            s.requestMandatoryCourses();
-            s.requestElectiveCourses();
+            s.requestCourses();
         }
     }
 
-    public ArrayList<CourseSection> getOfferedCourseSections(Student student) {
+    /**Returns the number of technical elective courses
+     * that are offered for the student including failed past courses
+     * and current semester courses*/
+    public int offeredTECount(Student student) {
+        int count = 0;
+        for (Integer i : techElectiveSemesters) { //Add if student's semester is greater or equal to TE semesters
+            if (student.getSemesterNumber() == i) {
+                count++;
+            }
+        }
+        //count -= student.getTranscript().getPassedTECount(); //Exclude passed courses
+        return count;
+    }
+
+    public int offeredFTECount(Student student) {
+        int count = 0;
+        for (Integer i : facTechElectiveSemesters) { //Add if student's semester is greater or equal to FTE semesters
+            if (student.getSemesterNumber() == i) {
+                count++;
+            }
+        }
+        //count -= student.getTranscript().getPassedFTECount(); //Exclude passed courses
+        return count;
+    }
+
+    public int offeredNTECount(Student student) {
+        int count = 0;
+        for (Integer i : nonTechElectiveSemesters) { //Add if student's semester is greater or equal to NTE semesters
+            if (student.getSemesterNumber() == i) {
+                count++;
+            }
+        }
+        //count -= student.getTranscript().getPassedNTECount(); //Exclude passed courses
+        return count;
+    }
+
+    /**Returns a list of mandatory courses which are offered to the
+     * student in simulated semester*/
+    public ArrayList<CourseSection> getOfferedMandatories(Student student) {
         ArrayList<CourseSection> offeredCourseSections = new ArrayList<>();
         for (MandatoryCourse c: mandatoryCourses) {
             if (c.isOfferableForStudent(student)) {
                 offeredCourseSections.add(c.getCourseSection());
             }
         }
-
         return offeredCourseSections;
     }
 
-    public ArrayList<CourseSection> getOfferedElectiveCourseSections(Student student) {
-        int nteCount = nontechElectiveCourses.get(0).offeredElectiveCount(student);
-        int teCount = techElectiveCourses.get(0).offeredElectiveCount(student);
-        int fteCount = facultyElectiveCourses.get(0).offeredElectiveCount(student);
-
+    /**Takes a student and returns offered elective course sections
+     * for that student randomly, if there are any. */
+    public ArrayList<CourseSection> getOfferedElectives(Student student) {
+        int nteCount = offeredNTECount(student);
+        int teCount = offeredTECount(student);
+        int fteCount = offeredFTECount(student);
         ArrayList<CourseSection> offeredCourses = new ArrayList<>();
-        for (int i = 0; i < nteCount; i++) {
-            CourseSection courseSection = nontechElectiveCourses.get(0).getRandomElective().getCourseSection();
-            if (!offeredCourses.contains(courseSection)) {
-                offeredCourses.add(courseSection);
-            }else {
-                i--;
-            }
-        }
 
-        for (int i = 0; i < teCount; i++) {
-            CourseSection courseSection = techElectiveCourses.get(0).getRandomElective().getCourseSection();
-            if (!offeredCourses.contains(courseSection)) {
-                offeredCourses.add(courseSection);
-            }else {
-                i--;
-            }
-        }
+        Collections.shuffle(nontechElectiveCourses); //Shuffle and get first n elements
+        nontechElectiveCourses.subList(0, nteCount).forEach(c -> offeredCourses.add(c.getCourseSection()));
 
-        for (int i = 0; i < fteCount; i++) {
-            CourseSection courseSection = facultyElectiveCourses.get(0).getRandomElective().getCourseSection();
-            if (!offeredCourses.contains(courseSection)) {
-                offeredCourses.add(courseSection);
-            }else {
-                i--;
-            }
-        }
+        Collections.shuffle(techElectiveCourses);
+        techElectiveCourses.subList(0, teCount).forEach(c -> offeredCourses.add(c.getCourseSection()));
 
+        Collections.shuffle(facultyElectiveCourses);
+        facultyElectiveCourses.subList(0, fteCount).forEach(c -> offeredCourses.add(c.getCourseSection()));
 
         return offeredCourses;
     }
@@ -565,7 +574,8 @@ public class RegistrationSystem {
         }
     }
 
-    /**Reads general information about registration system*/
+    /**Reads general information about registration system
+     * and initializes students */
     private void readGeneralInformation(JSONObject input) {
         double prob =  ((Number)input.get("PassProbability")).doubleValue();
         setPassProbability(prob);
@@ -597,7 +607,6 @@ public class RegistrationSystem {
             readNonTechs(input);
             readTechElectives(input);
             readFacTechs(input);
-
         }
         catch (IOException | ParseException e) {
             e.printStackTrace();

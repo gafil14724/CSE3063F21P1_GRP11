@@ -28,7 +28,7 @@ public abstract class Course {
 
     /**Returns true if student hasn't passed this course
      * (common for all of the course types)*/
-    public boolean isElligiblePastCourse(Student student) {
+    public boolean isEligiblePastCourse(Student student) {
         return !student.getTranscript().hasPassedCourse(this);
     }
 
@@ -37,7 +37,7 @@ public abstract class Course {
     public boolean onRequested(Student student) {
         ArrayList<CourseSection> collidedSections = student.getSchedule().getCollidedHours(courseSection);
         if (student.getSchedule().isCollision(courseSection)) {
-            student.getExecutionTrace().append("\nAdvisor didn't approve " + courseSection.getCourse().toString() +
+            student.getExecutionTrace().append("\nAdvisor didn't approve " + toString() +
                     " because of more than one hour collision with -> ");
 
             collidedSections.forEach(c -> student.getExecutionTrace().append(c.getCourse().toString() + " "));
@@ -47,6 +47,7 @@ public abstract class Course {
         }
         return true;
     }
+
 
     public int getSectionHours() { //Returns the total section hours by summing theoretical and practical hours
         return theoretical + practical;

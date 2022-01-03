@@ -8,28 +8,16 @@ public class FacultyTechnicalElectiveCourse extends ElectiveCourse{
         super (courseCode, quota, credits, theoretical, practical, semesters);
     }
 
-    @Override
-    public boolean isElligiblePastCourse(Student student) {//It is always elligible
-        return true;
-    }
-
 
     @Override
-    public void whenRejectedForQuota(Student student) {
+    public void whenRejected(Student student) {
         if (getRegistrationSystem().isThereEmptyFacTechSection()) {
             student.getAdvisor().approveCourseSection(student, getRandomElective().getCourseSection());
             return;
         }
-
-        ArrayList<FacultyTechnicalElectiveCourse> facTechCourses = new ArrayList<>(getRegistrationSystem().
-                getFacultyElectiveCourses());
-
-        facTechCourses.remove(this);//Remove this object from the list
-        Collections.shuffle(facTechCourses);// shuffle the list
-        for (Course c: facTechCourses) { //For each course, request one by one
-            student.getAdvisor().approveCourseSection(student, c.getCourseSection());
-        }
+        student.getExecutionTrace().append("\nAll of the FTE course Sections are full");
     }
+
 
     @Override
     public Course getRandomElective() {

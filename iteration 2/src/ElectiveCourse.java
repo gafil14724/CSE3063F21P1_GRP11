@@ -14,34 +14,23 @@ public abstract class ElectiveCourse extends Course {
         setCourseSection(new CourseSection(this));
     }
 
-    @Override
-    public boolean isElligiblePastCourse(Student student) {
-        return super.isElligiblePastCourse(student);
-    }
 
     @Override
     public boolean onRequested(Student student) {
-        if (!super.onRequested(student)) { //If there is a collision
-            whenRejectedForQuota(student);
+       if (!super.onRequested(student)) { //If there is a collision
+            whenRejected(student);
             return false;
         }
-
         if (!getCourseSection().addStudent(student)) { //If Quota is full for elective
-            whenRejectedForQuota(student);
+            whenRejected(student);
             return false;
         }
 
         return true;
     }
 
-    public int offeredElectiveCount(Student student) {
-        int stuSemester = student.getSemesterNumber();
-        return Collections.frequency(getSemesters(), stuSemester);
-    }
-
-    public abstract void whenRejectedForQuota(Student student);
+    public abstract void whenRejected(Student student);
     public abstract Course getRandomElective();
-
 
     public ArrayList<Integer> getSemesters() {
         return semesters;

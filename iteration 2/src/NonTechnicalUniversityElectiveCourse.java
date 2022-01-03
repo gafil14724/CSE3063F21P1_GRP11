@@ -11,27 +11,14 @@ public class NonTechnicalUniversityElectiveCourse extends ElectiveCourse{
         super (courseCode, quota, credits, theoretical, practical, semesters);
     }
 
-    @Override
-    public boolean isElligiblePastCourse(Student student) {
-        return true;
-    }
-
-
 
     @Override
-    public void whenRejectedForQuota(Student student) {
-        if (getRegistrationSystem().isThereEmptyTechSection()) {
+    public void whenRejected(Student student) {
+        if (getRegistrationSystem().isThereEmptyNonTechSection()) {
             student.getAdvisor().approveCourseSection(student,getRandomElective().getCourseSection());
             return;
         }
-
-        ArrayList<NonTechnicalUniversityElectiveCourse> nonTechCourses = new ArrayList<>(getRegistrationSystem().
-                getNontechElectiveCourses());
-        nonTechCourses.remove(this);//Remove this object from the list
-        Collections.shuffle(nonTechCourses);// shuffle the list
-        for (Course c: nonTechCourses) { //For each course, request one by one
-            student.getAdvisor().approveCourseSection(student, c.getCourseSection());
-        }
+        student.getExecutionTrace().append("\nAll of the NTE course Sections are full");
     }
 
     @Override
