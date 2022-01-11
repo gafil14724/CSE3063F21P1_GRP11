@@ -2,8 +2,6 @@ public class Advisor {
 
     private String name;
 
-
-
     public Advisor(String firstName) {
         this.name = firstName;
     }
@@ -11,7 +9,6 @@ public class Advisor {
     public void approveCourseSection(Student student, CourseSection courseSection) {
         courseSection.getCourse().onRequested(student);
     }
-
 
     public String getName() {
         return name;

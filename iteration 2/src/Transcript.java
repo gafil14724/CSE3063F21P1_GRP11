@@ -97,37 +97,6 @@ public class Transcript {
         this.currentCourses = currentCourses;
     }
 
-   /* public int getPassedTECount() {
-        int count = 0;
-        for (Course c : getPassedCourses()) {
-            if (c instanceof TechnicalElectiveCourse) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-
-    public int getPassedNTECount() {
-        int count = 0;
-        for (Course c : getPassedCourses()) {
-            if (c instanceof NonTechnicalUniversityElectiveCourse) {
-                count++;
-            }
-        }
-        return count;
-    }
-
-    public int getPassedFTECount() {
-        int count = 0;
-        for (Course c : getPassedCourses()) {
-            if (c instanceof FacultyTechnicalElectiveCourse) {
-                count++;
-            }
-        }
-        return count;
-    }*/
-
     public String toString() {
         String pastCourses = "";
 

@@ -42,7 +42,7 @@ public class Schedule {
                 }
             }
         }
-        return collidedSections; // Return true if collided hours is greater than one, false otherwise.
+        return collidedSections;
     }
 
     public boolean isCollision(CourseSection courseSection) {
