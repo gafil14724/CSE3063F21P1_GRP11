@@ -31,7 +31,7 @@ public class FinalProjectMandatoryCourse extends MandatoryCourse {
             return false;
         }else {
             return super.onRequested(student);
-        }
+        }   
     }
 
     public int getRequiredCredits() {
