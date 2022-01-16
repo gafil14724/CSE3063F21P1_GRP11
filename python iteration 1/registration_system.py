@@ -1,7 +1,6 @@
 import json
 import os
 import random
-from shlex import join
 from advisor import Advisor
 from faculty_technical_elective_course import FacultyTechnicalElectiveCourse
 import final_project_mandatory_course
